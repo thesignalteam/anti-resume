@@ -6,6 +6,6 @@ services:
     container_name: thesignal-antiresume-ghost
     restart: always
     ports:
-      - "4100:2368"
+      - "2368:2368"
     entrypoint: ["docker-entrypoint.sh"]
     command: ["node", "current/index.js"]
