@@ -2,18 +2,23 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 const Profile = require('./models/profile.js');
-
+const Professor = require('./models/professors.js');
+const fileRoutes = require('./routes/file-upload.js'); 
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: 50000 }));
 
-mongoose.connect("mongodb+srv://rgemawat:DEvG4exC4PCpDWuT@cluster0-xsvdb.mongodb.net/test?retryWrites=true&w=majority",
+//email validation 
+
+mongoCred = "mongodb+srv://rgemawat:DEvG4exC4PCpDWuT@antires-xsvdb.mongodb.net/test?retryWrites=true&w=majority"
+mongoose.connect(mongoCred,
     { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         console.log('Connected to mongo db');
     })
-    .catch(() => {
+    .catch((err) => {
+        console.log(err)
         console.log('error in connecting to mongo db');
     });
 
@@ -25,6 +30,8 @@ app.use((req, res, next) => {
         "GET, POST, PATCH, DELETE, PUT, OPTIONS");
     next();
 });
+
+app.use('/api', fileRoutes)
 
 app.get('/api/getResume/:email', (req, res) => {
     var conditions = { email: req.params.email }
@@ -38,6 +45,33 @@ app.get('/api/getResume/:email', (req, res) => {
             }
         });
 });
+
+app.get('/api/getProfessorResume/:email', (req, res) => {
+    var conditions = { email: req.params.email }
+    Professor.findOne(conditions,
+        function (error, result) {
+            if (error) {
+                return res.status(400).end();
+            } else {
+                console.log(result);
+                return res.status(200).json(result);
+            }
+        });
+});
+
+app.get('/api/getAllProfessorResumes', (req, res) => {
+    var conditions = { }
+    Professor.find(conditions,
+        function (error, result) {
+            if (error) {
+                return res.status(400).end();
+            } else {
+                console.log("all prof : " + result);
+                return res.status(200).json(result);
+            }
+        });
+});
+
 
 app.get('/api/getAllResumes/:type', (req, res) => {
     var conditions = { email: req.params.type }
@@ -55,7 +89,7 @@ app.get('/api/getAllResumes/:type', (req, res) => {
 app.post('/api/addNewResume', (req, res) => {
     var newResume = new Profile({
         email: req.body.email,
-        name: req.body.name,
+        name: req.body.name, 
         type: req.body.type, 
         shortBio: req.body.shortBio,
         companiesRejectedFrom: req.body.companiesRejectedFrom,
@@ -85,7 +119,6 @@ app.post('/api/addNewResume', (req, res) => {
         }
     });
 });
-
 
 
 app.get('*', function (req, res) {

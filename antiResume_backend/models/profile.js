@@ -3,6 +3,8 @@ const mongoose = require("mongoose")
 const studentProfile = mongoose.Schema({
     email: {type: String, required: true, unique:true},
     name: {type: String, required: true},
+    profilePicUrl: {type: String}, 
+    class: {type: String}, 
     type: {type: String, required: true}, 
     shortBio: {type: String, required: true},
     companiesRejectedFrom: [{type: String }],
