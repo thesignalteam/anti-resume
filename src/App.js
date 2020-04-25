@@ -11,6 +11,10 @@ import {
 } from "semantic-ui-react";
 import "./App.css";
 import Top_tile from "./Components/Top_tile";
+import Scrolling_tile from "./Components/Scrolling_tile";
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
+
 
 class App extends Component {
   render() {
@@ -70,7 +74,51 @@ class App extends Component {
         - card contianers
         - scroll effect for different card container roster components */
         }
+
         <Segment vertical textAlign="center">
+
+        <Segment basic padded>
+        <Button>SENIORS</Button>
+        <Button>ALUMNI</Button>
+        <Button>PROFESSORS</Button>
+        </Segment>
+
+
+        {/*First carousel*/}
+
+        <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={80}
+        totalSlides={4}
+        visibleSlides={3}>
+      <Slider>
+          <Slide index={0}><Scrolling_tile /></Slide>
+          <Slide index={1}><Scrolling_tile /></Slide>
+          <Slide index={2}><Scrolling_tile /></Slide>
+          <Slide index={3}><Scrolling_tile /></Slide>
+
+        </Slider>
+          <ButtonBack>Back</ButtonBack>
+          <ButtonNext>Next</ButtonNext>
+        </CarouselProvider>
+
+        {/*Second carousel*/}
+
+        <CarouselProvider
+        naturalSlideWidth={100}
+        naturalSlideHeight={80}
+        totalSlides={4}
+        visibleSlides={3}>
+      <Slider>
+          <Slide index={0}><Scrolling_tile /></Slide>
+          <Slide index={1}><Scrolling_tile /></Slide>
+          <Slide index={2}><Scrolling_tile /></Slide>
+          <Slide index={3}><Scrolling_tile /></Slide>
+
+        </Slider>
+          <ButtonBack>Back</ButtonBack>
+          <ButtonNext>Next</ButtonNext>
+        </CarouselProvider>
 
         </Segment>
 
