@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import logo from './logo.svg';
-import { 
-  Button, 
-  Container, 
-  Header, 
-  Menu, 
-  Segment, 
+import {
+  Button,
+  Container,
+  Header,
+  Menu,
+  Segment,
   Image,
   Grid,
 } from "semantic-ui-react";
 import "./App.css";
+import Top_tile from "./Components/Top_tile";
 
 class App extends Component {
   render() {
@@ -34,28 +35,30 @@ class App extends Component {
                       The Anti-Resume Project
                     </Header>
                       <p >
-                        The goal of this project is to highlight both failures and accomplishments of people at Penn that 
-                        wouldn’t normally show up on a resume, and to promote the message that we are more than our resume, 
-                        our GPA, our internship, or our job. The Signal is currently sharing anti-resumes of Penn alumni 
+                        The goal of this project is to highlight both failures and accomplishments of people at Penn that
+                        wouldn’t normally show up on a resume, and to promote the message that we are more than our resume,
+                        our GPA, our internship, or our job. The Signal is currently sharing anti-resumes of Penn alumni
                         and students in an effort to promote discussion and reflection on what failure really means.
                       </p>
                     <Button size="huge">submit an anti resume</Button>
                   </Container>
-                  
+
               </Segment>
               </Grid.Column>
               <Grid.Column>
                 <Segment vertical textAlign="center">
-                  
-                </Segment> 
+
+                <Top_tile/>
+
+                </Segment>
               </Grid.Column>
             </Grid.Row>
           </Grid>
-          
+
           {/* TODO: put this at the bottom of the landing page */}
-          
+
         </Segment>
-        
+
         {/* video page */}
         <Segment vertical textAlign="center">
 
@@ -70,7 +73,7 @@ class App extends Component {
         <Segment vertical textAlign="center">
 
         </Segment>
-        
+
         {/* footer */}
         <Segment vertical as="footer" textAlign="center">
             Made with ♡ in Philadelphia by{" "}
