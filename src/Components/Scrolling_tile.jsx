@@ -6,10 +6,10 @@ import { Card, Icon, Button, Image, Divider, Segment, Header, Grid} from 'semant
 function Scrolling_tile() {
 
 
-    return <Card textAlign="center">
+    return <Card id="Scrolling_tile" textAlign="center">
       <Card.Content>
 
-        <Segment basic padded>
+        <Segment basic padded className="tile_content">
         <Image
           // floated='center'
           size='tiny'
@@ -17,8 +17,8 @@ function Scrolling_tile() {
           margin="50px"
           circular
         />
-        <Header as="h3">Tiffany Yau</Header>
-        <Card.Meta>C '19</Card.Meta>
+        <Header className="name" as="h3">Tiffany Yau</Header>
+        <Card.Meta className="year">C '19</Card.Meta>
         </Segment>
 
       </Card.Content>
