@@ -64,7 +64,9 @@ class App extends Component {
         </Segment>
 
         {/* video page */}
-        <Segment vertical textAlign="center">
+        <Segment id="video" vertical textAlign="center">
+          <Header as="h2">More About the Project </Header>
+          <p>This is the video caption. </p>
 
         </Segment>
 
@@ -75,12 +77,12 @@ class App extends Component {
         - scroll effect for different card container roster components */
         }
 
-        <Segment vertical textAlign="center">
+        <Segment vertical textAlign="center" id="carousel">
 
-        <Segment basic padded>
-        <Button>SENIORS</Button>
-        <Button>ALUMNI</Button>
-        <Button>PROFESSORS</Button>
+        <Segment basic padded id="scroll_section">
+        <Button className="top_button">SENIORS</Button>
+        <Button className="top_button">ALUMNI</Button>
+        <Button className="top_button">PROFESSORS</Button>
         </Segment>
 
 
@@ -89,13 +91,16 @@ class App extends Component {
         <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={4}
-        visibleSlides={3}>
-      <Slider>
+        totalSlides={6}
+        visibleSlides={4}>
+      <Slider className="slider_test">
           <Slide index={0}><Scrolling_tile /></Slide>
           <Slide index={1}><Scrolling_tile /></Slide>
           <Slide index={2}><Scrolling_tile /></Slide>
           <Slide index={3}><Scrolling_tile /></Slide>
+          <Slide index={4}><Scrolling_tile /></Slide>
+          <Slide index={5}><Scrolling_tile /></Slide>
+
 
         </Slider>
           <ButtonBack>Back</ButtonBack>
@@ -107,14 +112,15 @@ class App extends Component {
         <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={4}
-        visibleSlides={3}>
-      <Slider>
+        totalSlides={6}
+        visibleSlides={4}>
+      <Slider className="slider_test">
           <Slide index={0}><Scrolling_tile /></Slide>
           <Slide index={1}><Scrolling_tile /></Slide>
           <Slide index={2}><Scrolling_tile /></Slide>
           <Slide index={3}><Scrolling_tile /></Slide>
-
+          <Slide index={4}><Scrolling_tile /></Slide>
+          <Slide index={5}><Scrolling_tile /></Slide>
         </Slider>
           <ButtonBack>Back</ButtonBack>
           <ButtonNext>Next</ButtonNext>
