@@ -8,6 +8,7 @@ import {
   Segment,
   Image,
   Grid,
+  Icon
 } from "semantic-ui-react";
 import "./App.css";
 import Top_tile from "./Components/Top_tile";
@@ -66,6 +67,9 @@ class App extends Component {
         {/* video page */}
         <Segment id="video" vertical textAlign="center">
           <Header as="h2">More About the Project </Header>
+          <iframe width="420" height="315"
+          src="https://www.facebook.com/jointhesignal/videos/2073803059583829/">
+          </iframe>
           <p>This is the video caption. </p>
 
         </Segment>
@@ -85,14 +89,18 @@ class App extends Component {
         <Button className="top_button">PROFESSORS</Button>
         </Segment>
 
-
         {/*First carousel*/}
 
         <CarouselProvider
         naturalSlideWidth={100}
         naturalSlideHeight={80}
         totalSlides={6}
-        visibleSlides={4}>
+        visibleSlides={4}
+        infinite="true">
+        <div>
+        <h4 className="classYear">2019</h4>
+        <p className="seeAll">See All</p>
+        </div>
       <Slider className="slider_test">
           <Slide index={0}><Scrolling_tile /></Slide>
           <Slide index={1}><Scrolling_tile /></Slide>
@@ -103,8 +111,9 @@ class App extends Component {
 
 
         </Slider>
-          <ButtonBack>Back</ButtonBack>
-          <ButtonNext>Next</ButtonNext>
+        <ButtonNext className="buttonPanel" icon>
+        <Icon name='arrow right' />
+        </ButtonNext>
         </CarouselProvider>
 
         {/*Second carousel*/}
@@ -113,7 +122,12 @@ class App extends Component {
         naturalSlideWidth={100}
         naturalSlideHeight={80}
         totalSlides={6}
-        visibleSlides={4}>
+        visibleSlides={4}
+        infinite="true">
+        <div>
+        <h4 className="classYear">2019</h4>
+        <p className="seeAll">See All</p>
+        </div>
       <Slider className="slider_test">
           <Slide index={0}><Scrolling_tile /></Slide>
           <Slide index={1}><Scrolling_tile /></Slide>
@@ -122,8 +136,12 @@ class App extends Component {
           <Slide index={4}><Scrolling_tile /></Slide>
           <Slide index={5}><Scrolling_tile /></Slide>
         </Slider>
-          <ButtonBack>Back</ButtonBack>
-          <ButtonNext>Next</ButtonNext>
+
+
+          <ButtonNext className="buttonPanel" icon>
+          <Icon name='arrow right' />
+          </ButtonNext>
+
         </CarouselProvider>
 
         </Segment>

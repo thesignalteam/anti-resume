@@ -45,7 +45,7 @@ function Top_tile() {
               <Header className="number" as="h4" color="blue">50+</Header>
             </Grid.Column>
             <Grid.Column width={12} textAlign="left">
-              <Header className="category" as="h4" color="blue">"Thank you for applying but..."" jobs</Header>
+              <Header className="category" as="h4" color="blue">"Thank you for applying but..." jobs</Header>
             </Grid.Column>
           </Grid.Row>
 

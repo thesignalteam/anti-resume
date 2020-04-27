@@ -272,9 +272,55 @@ color: #A8AAB5;
 }
 
 #carousel {
-  height: 1200px;
+  height: 1500px;
 }
 
 #carousel .slider_test {
-  height: 500px;
+  height: 450px;
+}
+
+#carousel .classYear {
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: left;
+/* identical to box height, or 150% */
+  color: #2F80ED;
+  width: 50%;
+  float: left;
+
+
+}
+
+#carousel .seeAll {
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 36px;
+  /* identical to box height, or 180% */
+
+  text-align: right;
+
+  color: #9F9F9F;
+  width: 50%;
+  /* margin-right: 0; */
+  /* display: inline-block; */
+  /* float: right; */
+
+}
+
+
+#carousel .buttonPanel {
+  float: right;
+  position: relative;
+  bottom: 470px;
+  left: 30px;
+  width: 145px;
+  height: 416px;
+  background-color: white;
+  border: 0;
+
 }
