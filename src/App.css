@@ -9,6 +9,13 @@ body {
     max-width: 700px;
   }
 
+nav.ui.container {
+  /* background-color: blue; */
+  position: absolute;
+  top: 0;
+  width: 1200px;
+}
+
   nav.ui.container .ui.header {
     float: left;
     margin-top: 12px;
@@ -47,6 +54,10 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
   border-bottom-color: white;
   border-bottom-style: solid;
   border-bottom-width: 2px;
+}
+
+#nav-menu {
+  float: right;
 }
 
 .ui.inverted.vertical.segment {
@@ -102,6 +113,22 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 
 .ui.inverted.vertical.segment footer.ui.segment a {
   color: white;
+}
+
+#submit-button {
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 36px;
+  /* identical to box height, or 180% */
+  color: #2F80ED;
+  background-color: white;
+}
+
+#top_tile {
+  position: relative;
+  top: 100px;
 }
 
 #top_tile .read_more{
@@ -211,6 +238,7 @@ height: 583px;
 
 #video {
   background-color: #F8FAFE;
+  height: 700px;
 }
 
 #scroll_section .top_button {

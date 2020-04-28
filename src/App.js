@@ -15,6 +15,7 @@ import Top_tile from "./Components/Top_tile";
 import Scrolling_tile from "./Components/Scrolling_tile";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import NavBar from "./Components/NavBar";
 
 
 class App extends Component {
@@ -26,15 +27,18 @@ class App extends Component {
         <Segment vertical textAlign="left">
           <Grid divided='vertically'>
             <Grid.Row columns={2}>
+              <NavBar/>
               <Grid.Column>
                 <Segment vertical textAlign="left">
-                  <Container as="nav">
-                    {/* TODO: fix image embedding in header */}
+                  {/* <Container as="nav">
+                    TODO: fix image embedding in header
                     <Header as="h2">
-                      <Image circular src='/public/tower.png'/>
+                      <Image circular src='./tower.png'/>
                       The Signal
                     </Header>
-                  </Container>
+                    <NavBar/>
+                  </Container>*/}
+
                   <Container className="content">
                     <Header inverted as="h1">
                       The Anti-Resume Project
@@ -45,7 +49,7 @@ class App extends Component {
                         our GPA, our internship, or our job. The Signal is currently sharing anti-resumes of Penn alumni
                         and students in an effort to promote discussion and reflection on what failure really means.
                       </p>
-                    <Button size="huge">submit an anti resume</Button>
+                    <Button id="submit-button" size="huge">SUBMIT AN ANTI-RESUME<Icon name='arrow right' /></Button>
                   </Container>
 
               </Segment>
@@ -67,10 +71,13 @@ class App extends Component {
         {/* video page */}
         <Segment id="video" vertical textAlign="center">
           <Header as="h2">More About the Project </Header>
-          <iframe width="420" height="315"
-          src="https://www.facebook.com/jointhesignal/videos/2073803059583829/">
-          </iframe>
+
+          <iframe width="560" height="315" style={{border:"none", overflow:"hidden"}} scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjointhesignal%2Fvideos%2F2073803059583829%2F&show_text=0&width=560" ></iframe>
+
+
           <p>This is the video caption. </p>
+
+
 
         </Segment>
 
