@@ -97,22 +97,18 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 }
 
 .ui.content.container p {
-  font-size: 20px;
+  font-size: 15px;
   line-height: 1.6;
   font-weight: 300;
   font-family: "Avenir Next", Helvetica, Arial, sans-serif;
 }
 
-.ui.inverted.vertical.segment footer.ui.segment {
+#footer {
   height: 80px;
   width: 100%;
   position: absolute;
   bottom: 0;
   color: gray;
-}
-
-.ui.inverted.vertical.segment footer.ui.segment a {
-  color: white;
 }
 
 #submit-button {

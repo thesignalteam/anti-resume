@@ -81,13 +81,6 @@ class App extends Component {
 
         </Segment>
 
-        {/* roster */}
-        {/* TODO:
-        - implement grid
-        - card contianers
-        - scroll effect for different card container roster components */
-        }
-
         <Segment vertical textAlign="center" id="carousel">
 
         <Segment basic padded id="scroll_section">
