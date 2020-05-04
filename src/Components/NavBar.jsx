@@ -1,55 +1,45 @@
-import React, {useState} from "react";
-import { Card, Icon, Button, Image, Divider, Segment, Header, Grid, Menu, Container} from 'semantic-ui-react'
+import React, {Component} from "react";
+import { Card, Icon, Button, Image, Divider, Segment, Header, Grid, Container} from 'semantic-ui-react'
+import MenuBar from "./MenuBar";
 
 
 
+// function NavBar() {
+//   const [activeItem, setState] = useState('Home');
+//
+//   const handleItemClick = (e, { name }) => setState({ activeItem: name })
 
-function NavBar() {
 
-  
-  const [activeItem, setState] = useState('Alumni');
+  // const [activeItem, setState] = useState('Home');
+  //
+  //
+  // function handleItemClick(event, {name}) {
+  //   // const name = event.target.name;
+  //   setState(name);
+  //   console.log(name);
+  //
+  // }
 
-  // function handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  export default class NavBar extends Component {
+    state = { activeItem: 'Home' }
 
-  function handleItemClick(event) {
-    setState(event.name);
+    handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
-  }
+    render() {
+      const { activeItem } = this.state;
 
-  return <Container as="nav">
+  return (
+    <Container as="nav">
       <Header as="h2">
         <Image circular src='./tower.png'/>
         The Signal
           </Header>
 
-          <Menu text size="huge" id="nav-menu">
-          <Menu.Item
-            name='Home'
-            active={activeItem === 'Home'}
-            onClick={handleItemClick}
-          />
-          <Menu.Item
-            name='About'
-            active={activeItem === 'About'}
-            onClick={handleItemClick}
-          />
-          <Menu.Item
-            name='Seniors'
-            active={activeItem === 'Seniors'}
-            onClick={handleItemClick}
-          />
-          <Menu.Item
-            name='Alumni'
-            active={activeItem === 'Alumni'}
-            onClick={handleItemClick}
-          />
-          <Menu.Item
-            name='Professors'
-            active={activeItem === 'Professors'}
-            onClick={handleItemClick}
-          />
-          </Menu>
-  </Container>
+        <MenuBar/>
+
+
+  </Container>)
+}
 }
 
-export default NavBar;
+// export default NavBar;
