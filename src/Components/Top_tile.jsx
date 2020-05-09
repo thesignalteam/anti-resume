@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Icon, Button, Image, Divider, Segment, Header, Grid} from 'semantic-ui-react'
+import StarIcon from '@material-ui/icons/Star';
 
 
 // const extra = (
@@ -22,7 +23,7 @@ function Top_tile() {
 
     return <Card id="top_tile" >
       <Card.Content>
-        <Card.Meta className="featured" textAlign="left"><i class="fa fa-star" aria-hidden="true"></i>
+        <Card.Meta className="featured" textAlign="left"><StarIcon/>
           FEATURED</Card.Meta>
 
         <Segment basic>
@@ -39,7 +40,7 @@ function Top_tile() {
 
         <Segment basic>
 
-        <Grid columns={2} relaxed >
+        <Grid columns={2} relaxed>
           <Grid.Row class="row">
             <Grid.Column width={2} >
               <Header className="number" as="h4" color="blue">50+</Header>
@@ -48,6 +49,7 @@ function Top_tile() {
               <Header className="category" as="h4" color="blue">"Thank you for applying but..." jobs</Header>
             </Grid.Column>
           </Grid.Row>
+
 
           <Grid.Row>
             <Grid.Column width={2}>
@@ -58,12 +60,13 @@ function Top_tile() {
               </Grid.Column>
           </Grid.Row>
 
+
           <Grid.Row>
             <Grid.Column width={2}>
 
             </Grid.Column>
             <Grid.Column width={12} textAlign="left" >
-              <Header as="h5" className="description">Working full time on my company instead of going with the traditional route of most Penn students</Header>
+              <Header className="description">Working full time on my company instead of going with the traditional route of most Penn students</Header>
             </Grid.Column>
           </Grid.Row>
 
