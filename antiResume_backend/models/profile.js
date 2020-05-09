@@ -20,6 +20,8 @@ const studentProfile = mongoose.Schema({
     comfortZone : [{type: String}],
     endOfTheWorld : [{type: String}],
     leapsOfFaith : [{type: String}],
+    obstacles :[{type: String}], 
+    lifeEvents : {type: String}, 
     other : [{type: String}]
 });
 

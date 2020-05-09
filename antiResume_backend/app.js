@@ -4,14 +4,15 @@ const app = express();
 const Profile = require('./models/profile.js');
 const Professor = require('./models/professors.js');
 const fileRoutes = require('./routes/file-upload.js'); 
+const config = require("./config.json");
+
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: 50000 }));
 
-//email validation 
 
-mongoCred = "mongodb+srv://rgemawat:DEvG4exC4PCpDWuT@antires-xsvdb.mongodb.net/test?retryWrites=true&w=majority"
+mongoCred = "mongodb+srv://rgemawat:" + config.mongo_pass + "@antires-xsvdb.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(mongoCred,
     { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -72,9 +73,9 @@ app.get('/api/getAllProfessorResumes', (req, res) => {
         });
 });
 
-
+// class
 app.get('/api/getAllResumes/:type', (req, res) => {
-    var conditions = { email: req.params.type }
+    var conditions = { type: req.params.type }
     Profile.find(conditions,
         function (error, result) {
             if (error) {
