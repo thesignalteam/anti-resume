@@ -402,3 +402,155 @@ color: #A8AAB5;
   /* padding: 0;
   margin: auto; */
 }
+
+#resume .section {
+  width: 60%;
+  margin: auto;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.11);
+}
+
+#resume .top {
+  text-align: center;
+  padding: 0;
+
+}
+
+#resume .category-head {
+  font-family: Avenir Next;
+font-style: normal;
+font-weight: 600;
+font-size: 28px;
+line-height: 36px;
+/* identical to box height, or 129% */
+
+
+color: #333333;
+padding-left: 20px;
+padding-top: 20px;
+padding-bottom: 15px;
+}
+
+#resume .name {
+  font-family: Avenir Next;
+font-style: normal;
+font-weight: 600;
+font-size: 28px;
+line-height: 36px;
+/* or 129% */
+
+text-align: center;
+
+color: #333333;
+}
+
+#resume .year {
+  font-family: Avenir Next;
+font-style: normal;
+font-weight: bold;
+font-size: 16px;
+line-height: 36px;
+/* or 225% */
+
+text-align: center;
+
+color: #A8AAB5;
+}
+
+#resume .description {
+  font-family: Avenir Next;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 150%;
+/* or 24px */
+
+
+color: #333333;
+margin-left: 80px;
+margin-right: 80px;
+text-align: left;
+
+}
+
+#resume .icon {
+  text-align: center;
+  height: 196px;
+  width: 196px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  position: relative;
+  bottom: 50px;
+}
+
+#resume .background {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 10px 10px 0 0;
+  z-index: -1;
+}
+
+#resume .number {
+  font-family: Avenir Next;
+font-style: normal;
+font-weight: bold;
+font-size: 32px;
+line-height: 36px;
+/* identical to box height, or 112% */
+
+color: #2F80ED;
+text-align: right;
+padding-left: 20px;
+}
+
+#resume .category {
+  font-family: Avenir Next;
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 28px;
+/* identical to box height, or 140% */
+
+color: #2F80ED;
+margin-bottom: 5px;
+}
+
+#resume .content {
+  font-family: Avenir Next;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+line-height: 150%;
+/* identical to box height, or 24px */
+margin-top: 0px;
+margin-bottom: 15px;
+
+
+color: #333333;
+}
+
+#resume .divider {
+  width: 65%;
+  /* color: #EBEBEB; */
+  border: 1px solid #EBEBEB;
+  /* margin-top: 10px; */
+  margin-bottom: 10px;
+}
+
+#resume .icons {
+  padding-bottom: 30px;
+  padding-top: 10px;
+  color: #A8AAB5;
+}
+
+#resume .resume-icons {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+#resume .bullet {
+  color: #D3D3D3;
+}
