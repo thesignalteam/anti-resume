@@ -4,15 +4,13 @@ const app = express();
 const Profile = require('./models/profile.js');
 const Professor = require('./models/professors.js');
 const fileRoutes = require('./routes/file-upload.js'); 
-const config = require("./config.json");
-
+const configuration = require("./config.json")["production"];
 
 const bodyParser = require("body-parser");
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: 50000 }));
 
-
-mongoCred = "mongodb+srv://rgemawat:" + config.mongo_pass + "@antires-xsvdb.mongodb.net/test?retryWrites=true&w=majority"
+mongoCred = "mongodb+srv://rgemawat:" + configuration.mongo.password + "@antires-xsvdb.mongodb.net/test?retryWrites=true&w=majority"
 mongoose.connect(mongoCred,
     { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
