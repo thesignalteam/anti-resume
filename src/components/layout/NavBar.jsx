@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Card, Icon, Button, Image, Divider, Segment, Header, Grid, Container} from 'semantic-ui-react'
-import MenuBar from "./MenuBar";
+import MenuBar from "../MenuBar";
 
 
 
