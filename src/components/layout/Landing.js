@@ -25,13 +25,13 @@ class Landing extends Component {
 
       {/* main landing page */}
       <Segment vertical textAlign="left" id="top-section">
-        <Grid divided='vertically'>
-          <Grid.Row columns={2}>
+        <Grid divided='vertically' id="main-grid">
+          <Grid.Row stackable columns={2}>
             {/* <NavBar/> */}
-            <Grid.Column>
-              <Segment vertical textAlign="left">
+            <Grid.Column mobile={16} tablet={16} computer={8} className="left-column">
+              <Segment vertical textAlign="left" className="segment-content">
 
-                <Container className="content">
+                <Container className="container-content">
                   <Header className="main-header" inverted as="h1">
                     The Anti-Resume Project
                   </Header>
@@ -46,8 +46,8 @@ class Landing extends Component {
 
             </Segment>
             </Grid.Column>
-            <Grid.Column>
-              <Segment vertical textAlign="center">
+            <Grid.Column mobile={16} tablet={16} computer={8} className="right-column">
+              <Segment vertical textAlign="center" className="tile-segment">
 
               <Top_tile/>
 
@@ -68,7 +68,8 @@ class Landing extends Component {
         <iframe width="560" height="315" style={{border:"none", overflow:"hidden"}} scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjointhesignal%2Fvideos%2F2073803059583829%2F&show_text=0&width=560" ></iframe>
 
 
-        <p>This is the video caption. </p>
+        <p>In Spring 2019, we interviewed a dozen graduating seniors on their failures at Penn.</p>
+
         </Container>
 
 
@@ -90,7 +91,10 @@ class Landing extends Component {
       <Button className="top_button">PROFESSORS</Button>
       </Segment>
 
+      <div className="spacer"></div>
+
       {/*First carousel*/}
+
 
       <CarouselProvider
         naturalSlideWidth={100}
@@ -98,9 +102,9 @@ class Landing extends Component {
         totalSlides={6}
         visibleSlides={4}
         infinite="true">
-        <div>
+        <div className="carousel-header">
           <h4 className="classYear">2020</h4>
-          <p className="seeAll">See All</p>
+          <p>See All</p>
         </div>
         <Slider className="slider_test">
           <Slide index={0}><Scrolling_tile /></Slide>
@@ -115,6 +119,7 @@ class Landing extends Component {
         </ButtonNext>
       </CarouselProvider>
 
+
       {/*Second carousel*/}
 
       <CarouselProvider
@@ -123,9 +128,9 @@ class Landing extends Component {
         totalSlides={6}
         visibleSlides={4}
         infinite="true">
-        <div>
+        <div className="carousel-header">
           <h4 className="classYear">2019</h4>
-          <p className="seeAll">See All</p>
+          <p>See All</p>
         </div>
         <Slider className="slider_test">
           <Slide index={0}><Scrolling_tile /></Slide>
@@ -145,14 +150,15 @@ class Landing extends Component {
       </Segment>
 
       {/* footer */}
-      <Segment id="footer-seg" vertical as="footer" textAlign="center">
-        <div class="footer-text">
-          Made with ♡ in Philadelphia by{" "}
-          <a href="https://thesign.al">
-            The Signal
-          </a>
-          </div>
+      <Segment basic id="footer-seg" vertical as="footer" textAlign="center">
+        <div className="footer-text">
+          Made with ♡ in Philadelphia by  {" "}
+          <a className="footer-p" href="https://thesign.al">
+          The Signal </a>
           .
+          </div>
+
+
       </Segment>
 
 
