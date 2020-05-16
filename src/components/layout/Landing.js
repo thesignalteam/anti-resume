@@ -24,6 +24,7 @@ class Landing extends Component {
   constructor() {
     super();
     this.state = {
+      data: '',
       resumes: [],
     }
   }
@@ -84,7 +85,7 @@ class Landing extends Component {
                     </p>
                   <Button id="submit-button" size="huge">SUBMIT AN ANTI-RESUME<Icon name='arrow right' /></Button>
 
-                  { this.renderAllResumes() }
+                  { this.renderAllResumes(this.state.resumes) }
 
                 </Container>
 

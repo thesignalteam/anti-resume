@@ -7,7 +7,7 @@ const Profile = require('../models/profile.js');
  * @route POST antiResume_backend/routes/resume/resumeInfo
  * @desc returns all resumes in array
  */
-router.post("/resumeInfo", (req, res) => {
+router.get("/resumeInfo", (req, res) => {
     Profile.find().then(profiles => {
         return res.json(profiles)
       })
