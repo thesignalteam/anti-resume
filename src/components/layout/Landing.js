@@ -16,9 +16,51 @@ import Scrolling_tile from "../Scrolling_tile";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import NavBar from "./NavBar";
+import axios from "axios";
 
 
 class Landing extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      data: '',
+      resumes: [],
+    }
+  }
+
+  componentDidMount = () => {
+    axios 
+    .get("../../antiResume_backend/routes/resume")
+    .then(result => {
+      this.setState({ resumes: result.data.data })
+    })
+  }
+
+  callApi = () => {}
+
+  renderAllResumes = (resumes, key) => {
+    resumes = this.state.resumes
+    let gridValues = []
+    if (Array.isArray(resumes)) {
+      resumes.forEach((i, index) => {
+        gridValues.push(this.createButton(i))
+      })
+    } else {
+      return(<p>none</p>)
+    }
+
+    return gridValues
+  }
+
+  createButton = (resume) => {
+    return (
+      <div>
+        <button class="ui button">{ resume.email }</button>
+      </div>
+    )
+  }
+
   render() {
     return (
       <div className="App">
@@ -42,6 +84,9 @@ class Landing extends Component {
                       and students in an effort to promote discussion and reflection on what failure really means.
                     </p>
                   <Button id="submit-button" size="huge">SUBMIT AN ANTI-RESUME<Icon name='arrow right' /></Button>
+
+                  { this.renderAllResumes(this.state.resumes) }
+
                 </Container>
 
             </Segment>
