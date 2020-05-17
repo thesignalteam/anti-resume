@@ -18,7 +18,7 @@ console.log("secred AccessKey Id: ", s3.config.credentials.accessKeyId);
 const upload = multer({
   storage: multerS3({
     s3: s3,
-    bucket: 'anti-resume-files',
+    bucket: 'anti-resume-photos',
     acl: 'public-read', 
     metadata: function (req, file, cb) {
       //cb(null, {fieldName: file.fieldname});
