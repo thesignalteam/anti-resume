@@ -12,7 +12,6 @@ import Top_tile from "../Top_tile";
 import Scrolling_tile from "../Scrolling_tile";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import axios from "axios";
 
 
 class Landing extends Component {
@@ -26,25 +25,50 @@ class Landing extends Component {
     }
   }
 
+  // componentDidMount = () => {
+  //   // axios 
+  //   // .get("")
+  //   // .then(result => {
+  //   //   this.setState({ resumes: result.data.data })
+  //   // })
+  //   this.callApi()
+  //     .then(res => this.setState({ response: res.express }))
+  //     .then(this.setState({ resumes: this.state.response }))
+  //     .catch(err => console.log("err:  " + err));
+  //     console.log("respone is " );
+  // }
+
+  // callApi = async () => {
+  //   const response = await fetch('/api/getAllResumes/senior/2020');
+  //   const body = await response.json();
+  //   const resumes_arr = JSON.stringify(body);
+  //   console.log("Res:" + JSON.stringify(body))
+  //   if (response.status !== 200) throw Error(body.message);
+  //   return resumes_arr;
+  // }
+
+
   componentDidMount = () => {
-    // axios 
-    // .get("")
-    // .then(result => {
-    //   this.setState({ resumes: result.data.data })
-    // })
-    this.callApi()
-      .then(res => this.setState({ response: res.express }))
-      // .then( this.setState({ resumes: this.state.response }))
-      .catch(err => console.log(err));
+    fetch('/api/getAllResumes/senior/2020')
+    .then(res => res.json())
+    .then(
+      (result) => {
+        console.log("type of result " + typeof(result))
+        console.log(result); 
+        // const resumes_arr = JSON.stringify(result);
+        // console.log("result is " + resumes_arr);
+        // console.log("type of resumes_arr" + typeof(resumes_arr)) 
+        this.setState({
+          resumes: result
+        });
+      },
+     
+      (error) => {
+        console.log("error is " + error);
+      }
+    )
   }
 
-  callApi = async () => {
-    const response = await fetch('/api/getAllResumes/senior/2020');
-    const body = await response.json();
-    if (response.status !== 200) throw Error(body.message);
-    // console.log(response);
-    return body;
-  }
 
   createButton = (resume, key) => {
     return (

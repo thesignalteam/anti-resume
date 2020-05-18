@@ -5,7 +5,6 @@ import Top_tile from "../Top_tile";
 import Scrolling_tile from "../Scrolling_tile";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import axios from "axios";
 
 
 class AllResumes extends Component {

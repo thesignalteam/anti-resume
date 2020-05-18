@@ -6,7 +6,6 @@ const Professor = require('./models/professors.js');
 const fileRoutes = require('./routes/file-upload.js'); 
 const configuration = require("./config.json")["production"];
 
-
 const bodyParser = require("body-parser");
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: 50000 }));
@@ -41,7 +40,8 @@ app.get('/api/getResume/:email', (req, res) => {
                 return res.status(400).end();
             } else {
                 console.log(result);
-                return res.status(200).json(result);
+                res.json(result);
+               // return res.status(200).json(result);
             }
         });
 });
@@ -54,7 +54,8 @@ app.get('/api/getProfessorResume/:email', (req, res) => {
                 return res.status(400).end();
             } else {
                 console.log(result);
-                return res.status(200).json(result);
+                res.json(result);
+               // return res.status(200).json(result);
             }
         });
 });
@@ -67,7 +68,8 @@ app.get('/api/getAllProfessorResumes', (req, res) => {
                 return res.status(400).end();
             } else {
                 console.log("all prof : " + result);
-                return res.status(200).json(result);
+                res.json(result);
+               // return res.status(200).json(result);
             }
         });
 });
@@ -81,9 +83,10 @@ app.get('/api/getAllResumes/:type/:class', (req, res) => {
             if (error) {
                 return res.status(400).end();
             } else {
-                console.log("all : " + result);
+                // console.log("all : " + result);
                 console.log("class size " + result.length);
-                return res.status(200).json(result);
+                res.json(result);
+                //return res.status(200).json(result);
             }
         });
 });
@@ -96,9 +99,10 @@ app.get('/api/getAllResumes/:type', (req, res) => {
             if (error) {
                 return res.status(400).end();
             } else {
-                console.log("all : " + result);
+                // console.log("all : " + result);
                 console.log("size " + result.length);
-                return res.status(200).json(result);
+                res.json(result);
+                //return res.status(200).json(result);
             }
         });
 });
