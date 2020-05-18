@@ -20,20 +20,31 @@ class Landing extends Component {
   constructor() {
     super();
     this.state = {
-      data: '',
       resumes: [],
+      response: '',
+      responseToPost: '',
     }
   }
 
   componentDidMount = () => {
-    axios 
-    .get("../../../antiResume_backend/routes/resume/")
-    .then(result => {
-      this.setState({ resumes: result.data.data })
-    })
+    // axios 
+    // .get("")
+    // .then(result => {
+    //   this.setState({ resumes: result.data.data })
+    // })
+    this.callApi()
+      .then(res => this.setState({ response: res.express }))
+      // .then( this.setState({ resumes: this.state.response }))
+      .catch(err => console.log(err));
   }
 
-  callApi = () => {}
+  callApi = async () => {
+    const response = await fetch('/api/getAllResumes/senior/2020');
+    const body = await response.json();
+    if (response.status !== 200) throw Error(body.message);
+    // console.log(response);
+    return body;
+  }
 
   createButton = (resume, key) => {
     return (
