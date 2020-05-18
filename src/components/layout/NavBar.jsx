@@ -30,13 +30,12 @@ import MenuBar from "../MenuBar";
 
   return (
     <Container as="nav">
-      <Header as="h2">
+      <Header as="h2" id="nav-left">
         <Image circular src='./tower.png'/>
         The Signal
-          </Header>
+      </Header>
 
         <MenuBar/>
-
 
   </Container>)
 }

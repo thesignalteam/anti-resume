@@ -110,7 +110,7 @@ class Landing extends Component {
         <Container className="video-content">
         <Header as="h2">More About the Project </Header>
 
-        <iframe width="560" height="315" style={{border:"none", overflow:"hidden"}} scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjointhesignal%2Fvideos%2F2073803059583829%2F&show_text=0&width=560" ></iframe>
+        <iframe className="video-screen" width="560" height="315" style={{border:"none", overflow:"hidden"}} scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjointhesignal%2Fvideos%2F2073803059583829%2F&show_text=0&width=560" ></iframe>
 
 
         <p>In Spring 2019, we interviewed a dozen graduating seniors on their failures at Penn.</p>
@@ -136,12 +136,11 @@ class Landing extends Component {
       <Button className="top_button">PROFESSORS</Button>
       </Segment>
 
-      <div className="spacer"></div>
 
       {/*First carousel*/}
 
 
-      <CarouselProvider
+      <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
         totalSlides={6}
@@ -164,10 +163,32 @@ class Landing extends Component {
         </ButtonNext>
       </CarouselProvider>
 
+      <CarouselProvider className="carousel-container-mobile"
+        naturalSlideWidth={100}
+        naturalSlideHeight={80}
+        totalSlides={6}
+        visibleSlides={1}
+        infinite="true">
+        <div className="carousel-header">
+          <h4 className="classYear">2020</h4>
+        </div>
+        <Slider className="slider_test">
+          <Slide className="slider-card" index={0}><Scrolling_tile /></Slide>
+          <Slide index={1}><Scrolling_tile /></Slide>
+          <Slide index={2}><Scrolling_tile /></Slide>
+          <Slide index={3}><Scrolling_tile /></Slide>
+          <Slide index={4}><Scrolling_tile /></Slide>
+          <Slide index={5}><Scrolling_tile /></Slide>
+        </Slider>
+        <ButtonNext className="buttonPanel" icon>
+          <Icon name='arrow right' />
+        </ButtonNext>
+      </CarouselProvider>
+
 
       {/*Second carousel*/}
 
-      <CarouselProvider
+      <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
         totalSlides={6}
@@ -176,6 +197,30 @@ class Landing extends Component {
         <div className="carousel-header">
           <h4 className="classYear">2019</h4>
           <p>See All</p>
+        </div>
+        <Slider className="slider_test">
+          <Slide index={0}><Scrolling_tile /></Slide>
+          <Slide index={1}><Scrolling_tile /></Slide>
+          <Slide index={2}><Scrolling_tile /></Slide>
+          <Slide index={3}><Scrolling_tile /></Slide>
+          <Slide index={4}><Scrolling_tile /></Slide>
+          <Slide index={5}><Scrolling_tile /></Slide>
+        </Slider>
+
+        <ButtonNext className="buttonPanel" icon>
+          <Icon name='arrow right' />
+        </ButtonNext>
+
+      </CarouselProvider>
+
+      <CarouselProvider className="carousel-container-mobile"
+        naturalSlideWidth={100}
+        naturalSlideHeight={80}
+        totalSlides={6}
+        visibleSlides={1}
+        infinite="true">
+        <div className="carousel-header">
+          <h4 className="classYear">2019</h4>
         </div>
         <Slider className="slider_test">
           <Slide index={0}><Scrolling_tile /></Slide>
