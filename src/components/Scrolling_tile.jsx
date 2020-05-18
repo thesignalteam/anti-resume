@@ -3,7 +3,7 @@ import { Card, Icon, Button, Image, Divider, Segment, Header, Grid} from 'semant
 
 
 
-function Scrolling_tile() {
+function Scrolling_tile(props) {
 
 
     return <Card id="Scrolling_tile" textAlign="center">

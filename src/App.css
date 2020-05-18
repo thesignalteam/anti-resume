@@ -132,10 +132,14 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 
 #nav-menu {
   float: right;
+  margin-top: 3%;
+  margin-right: -15%;
+  font-family: "Avenir";
 }
 
 #nav-left {
-  margin-left: 100px;
+  margin-left: 10%;
+  margin-top: 3%;
 }
 
 .ui.inverted.vertical.segment {
@@ -695,4 +699,29 @@ color: #333333;
 
 #resume .bullet {
   color: #D3D3D3;
+}
+
+#all_resumes {
+  margin-top: 10%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+#all_resumes .year_header {
+  width: 100%;
+  min-height: 10px;
+}
+
+#all_resumes .classYear {
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: left;
+/* identical to box height, or 150% */
+  color: #2F80ED;
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 2%;
 }
