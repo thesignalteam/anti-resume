@@ -6,6 +6,7 @@ const Professor = require('./models/professors.js');
 const fileRoutes = require('./routes/file-upload.js'); 
 const configuration = require("./config.json")["production"];
 
+
 const bodyParser = require("body-parser");
 app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '50mb', parameterLimit: 50000 }));
@@ -71,15 +72,32 @@ app.get('/api/getAllProfessorResumes', (req, res) => {
         });
 });
 
+
 // class
-app.get('/api/getAllResumes/:type', (req, res) => {
-    var conditions = { type: req.params.type }
+app.get('/api/getAllResumes/:type/:class', (req, res) => {
+    var conditions = { type: req.params.type, class: req.params.class}
     Profile.find(conditions,
         function (error, result) {
             if (error) {
                 return res.status(400).end();
             } else {
                 console.log("all : " + result);
+                console.log("class size " + result.length);
+                return res.status(200).json(result);
+            }
+        });
+});
+
+// class
+app.get('/api/getAllResumes/:type', (req, res) => {
+    var conditions = { type: req.params.type}
+    Profile.find(conditions,
+        function (error, result) {
+            if (error) {
+                return res.status(400).end();
+            } else {
+                console.log("all : " + result);
+                console.log("size " + result.length);
                 return res.status(200).json(result);
             }
         });
@@ -117,6 +135,13 @@ app.post('/api/addNewResume', (req, res) => {
             return res.status(201).json({ message: 'resume added successfully' });
         }
     });
+});
+
+app.post('/api/addClass', (req, res) => {
+    Profile.updateMany({}, { class: "2020" }, { multi: true }, function (err, raw) {
+        if (err) return handleError(err);
+        console.log('The raw response from Mongo was ', raw);
+      });
 });
 
 
