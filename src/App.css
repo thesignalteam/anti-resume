@@ -701,6 +701,35 @@ color: #333333;
   color: #D3D3D3;
 }
 
+
+#about .segment {
+  text-align: center;
+  width: 50%;
+  margin: 100px auto;
+}
+
+#about .segment p{
+
+font-family: Avenir Next;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 36px;
+}
+
+#about .segment a {
+
+font-family: Avenir Next;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 36px;
+}
+
+#about .top-segment {
+  margin-top: 150px;
+}
+
 #all_resumes {
   margin-top: 10%;
   margin-right: 5%;

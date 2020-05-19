@@ -115,8 +115,7 @@ class Landing extends Component {
                       our GPA, our internship, or our job. The Signal is currently sharing anti-resumes of Penn alumni
                       and students in an effort to promote discussion and reflection on what failure really means.
                     </p>
-                  <Button id="submit-button" size="huge">SUBMIT AN ANTI-RESUME<Icon name='arrow right' /></Button>
-
+                  <Button id="submit-button" size="huge">LEARN MORE ABOUT US<Icon name='arrow right' /></Button>
                 </Container>
 
             </Segment>
@@ -242,17 +241,6 @@ class Landing extends Component {
 
       </Segment>
 
-      {/* footer */}
-      <Segment basic id="footer-seg" vertical as="footer" textAlign="center">
-        <div className="footer-text">
-          Made with ♡ in Philadelphia by  {" "}
-          <a className="footer-p" href="https://thesign.al">
-          The Signal </a>
-          .
-          </div>
-
-
-      </Segment>
 
 
       </div>
