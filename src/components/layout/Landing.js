@@ -3,22 +3,105 @@ import {
   Button,
   Container,
   Header,
-  Menu,
   Segment,
-  Image,
   Grid,
   Icon,
-  Card
 } from "semantic-ui-react";
 import "../../App.css";
 import Top_tile from "../Top_tile";
 import Scrolling_tile from "../Scrolling_tile";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-import NavBar from "./NavBar";
 
 
 class Landing extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      resumes: [],
+      response: '',
+      responseToPost: '',
+    }
+  }
+
+  // componentDidMount = () => {
+  //   // axios 
+  //   // .get("")
+  //   // .then(result => {
+  //   //   this.setState({ resumes: result.data.data })
+  //   // })
+  //   this.callApi()
+  //     .then(res => this.setState({ response: res.express }))
+  //     .then(this.setState({ resumes: this.state.response }))
+  //     .catch(err => console.log("err:  " + err));
+  //     console.log("respone is " );
+  // }
+
+  // callApi = async () => {
+  //   const response = await fetch('/api/getAllResumes/senior/2020');
+  //   const body = await response.json();
+  //   const resumes_arr = JSON.stringify(body);
+  //   console.log("Res:" + JSON.stringify(body))
+  //   if (response.status !== 200) throw Error(body.message);
+  //   return resumes_arr;
+  // }
+
+
+  componentDidMount = () => {
+    fetch('/api/getAllResumes/senior/2020')
+    .then(res => res.json())
+    .then(
+      (result) => {
+        console.log("type of result " + typeof(result))
+        console.log(result); 
+        // const resumes_arr = JSON.stringify(result);
+        // console.log("result is " + resumes_arr);
+        // console.log("type of resumes_arr" + typeof(resumes_arr)) 
+        this.setState({
+          resumes: result
+        });
+      },
+     
+      (error) => {
+        console.log("error is " + error);
+      }
+    )
+  }
+
+
+  createButton = (resume, key) => {
+    return (
+      <div>
+        <button class="ui button" href={ "/resume/" + (key + 1) }>{ resume.email }</button>
+      </div>
+    )
+  }
+
+  renderAllResumes = (resumes, key) => {
+    resumes = this.state.resumes
+    let gridValues = []
+    if (Array.isArray(resumes)) {
+      resumes.forEach((i) => {
+        gridValues.push(this.createButton(i, gridValues.length - 1))
+      })
+    } else if (resumes.length === 1) {
+        gridValues.push(this.createButton(resumes, 0))
+    } else {
+      return (
+        <div>
+          <p>none</p>
+        </div>
+        
+      )
+    }
+    return resumes.length
+  }
+
+  onChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
+  };
+
   render() {
     return (
       <div className="App">
@@ -27,7 +110,6 @@ class Landing extends Component {
       <Segment vertical textAlign="left" id="top-section">
         <Grid divided='vertically' id="main-grid">
           <Grid.Row stackable columns={2}>
-            {/* <NavBar/> */}
             <Grid.Column mobile={16} tablet={16} computer={8} className="left-column">
               <Segment vertical textAlign="left" className="segment-content">
 
@@ -60,6 +142,12 @@ class Landing extends Component {
 
       </Segment>
 
+      <Segment>
+        <div>
+          { this.renderAllResumes() }
+        </div>
+      </Segment>
+
       {/* video page */}
       <Segment id="video" vertical textAlign="center">
         <Container className="video-content">
@@ -75,13 +163,6 @@ class Landing extends Component {
 
 
       </Segment>
-
-      {/* roster */}
-      {/* TODO:
-      - implement grid
-      - card contianers
-      - scroll effect for different card container roster components */
-      }
 
       <Segment vertical textAlign="center" id="carousel">
 

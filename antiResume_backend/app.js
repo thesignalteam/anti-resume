@@ -40,7 +40,8 @@ app.get('/api/getResume/:email', (req, res) => {
                 return res.status(400).end();
             } else {
                 console.log(result);
-                return res.status(200).json(result);
+                res.json(result);
+               // return res.status(200).json(result);
             }
         });
 });
@@ -53,7 +54,8 @@ app.get('/api/getProfessorResume/:email', (req, res) => {
                 return res.status(400).end();
             } else {
                 console.log(result);
-                return res.status(200).json(result);
+                res.json(result);
+               // return res.status(200).json(result);
             }
         });
 });
@@ -66,21 +68,41 @@ app.get('/api/getAllProfessorResumes', (req, res) => {
                 return res.status(400).end();
             } else {
                 console.log("all prof : " + result);
-                return res.status(200).json(result);
+                res.json(result);
+               // return res.status(200).json(result);
+            }
+        });
+});
+
+
+// class
+app.get('/api/getAllResumes/:type/:class', (req, res) => {
+    var conditions = { type: req.params.type, class: req.params.class}
+    Profile.find(conditions,
+        function (error, result) {
+            if (error) {
+                return res.status(400).end();
+            } else {
+                // console.log("all : " + result);
+                console.log("class size " + result.length);
+                res.json(result);
+                //return res.status(200).json(result);
             }
         });
 });
 
 // class
 app.get('/api/getAllResumes/:type', (req, res) => {
-    var conditions = { type: req.params.type }
+    var conditions = { type: req.params.type}
     Profile.find(conditions,
         function (error, result) {
             if (error) {
                 return res.status(400).end();
             } else {
-                console.log("all : " + result);
-                return res.status(200).json(result);
+                // console.log("all : " + result);
+                console.log("size " + result.length);
+                res.json(result);
+                //return res.status(200).json(result);
             }
         });
 });
@@ -117,6 +139,13 @@ app.post('/api/addNewResume', (req, res) => {
             return res.status(201).json({ message: 'resume added successfully' });
         }
     });
+});
+
+app.post('/api/addClass', (req, res) => {
+    Profile.updateMany({}, { class: "2020" }, { multi: true }, function (err, raw) {
+        if (err) return handleError(err);
+        console.log('The raw response from Mongo was ', raw);
+      });
 });
 
 
