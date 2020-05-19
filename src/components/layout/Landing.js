@@ -69,51 +69,28 @@ class Landing extends Component {
 
   renderScrollingTiles = (resumes, buffer) => {
     let gridValues = []
-    let temp = []
     let index = 0;
-    let slideIndex = 0;
     if (Array.isArray(resumes)) {
       resumes.forEach((i) => {
-        if (index < 4) {
-          temp.push(i)
-          index+=1
-        } else {
-          index = 0
-          gridValues.push(this.createResumeSlide(temp, buffer + gridValues.length - 1, slideIndex))
-          slideIndex+=1
-        }
+        gridValues.push(this.createResumeCard(i, buffer + gridValues.length - 1, index))
+        index++
       })
     } else if (resumes.length === 1) {
-        gridValues.push(this.createResumeSlide(resumes, buffer))
+        gridValues.push(this.createResumeCard(resumes, buffer, index))
     }
 
     return gridValues
   }
 
-  createResumeSlide = (resumes, key, index) => {
-    let gridValues = []
-    if (Array.isArray(resumes)) {
-      resumes.forEach((i) => {
-        gridValues.push(this.createResumeCard(i, key))
-      })
-    }
-
+  createResumeCard = (resume, key, index) => {
     return (
       <Slide className="slider-card" index={ index }>
-        { gridValues }
-      </Slide>
-    )
-  }
-
-  createResumeCard = (resume, key) => {
-    return (
-      // <Slide className="slider-card" index={ key - buffer }>
         <Scrolling_tile name={ resume.name } 
                         class={ resume.class } 
                         index={ key + 1 }
                         pic={ resume.profilePicUrl }
         />
-      // </Slide>
+      </Slide>
     )
   }
 
@@ -189,7 +166,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={6}
+        totalSlides={42}
         visibleSlides={4}
         infinite="true">
         <div className="carousel-header" id="2020">
@@ -197,18 +174,7 @@ class Landing extends Component {
           <p><a href="/all/#2020">See All</a></p>
         </div>
         <Slider className="slider_test">
-          {/* { this.renderScrollingTiles(this.state.resumes_2020, 0)} */}
-          <Slide index={0}>
-            <Scrolling_tile />
-            <Scrolling_tile />
-            <Scrolling_tile />
-            <Scrolling_tile />
-          </Slide>
-          <Slide index={1}><Scrolling_tile /></Slide>
-          <Slide index={2}><Scrolling_tile /></Slide>
-          <Slide index={3}><Scrolling_tile /></Slide>
-          <Slide index={4}><Scrolling_tile /></Slide>
-          <Slide index={5}><Scrolling_tile /></Slide>
+          { this.renderScrollingTiles(this.state.resumes_2020, 0)}
         </Slider>
         <ButtonNext className="buttonPanel" icon>
           <Icon name='arrow right' />
@@ -238,7 +204,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={6}
+        totalSlides={19}
         visibleSlides={4}
         infinite="true">
         <div className="carousel-header" id="2019">
