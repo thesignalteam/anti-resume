@@ -19,34 +19,12 @@ class Landing extends Component {
   constructor() {
     super();
     this.state = {
-      resumes: [],
+      resumes_2020: [],
+      resumes_2019: [],
       response: '',
       responseToPost: '',
     }
   }
-
-  // componentDidMount = () => {
-  //   // axios 
-  //   // .get("")
-  //   // .then(result => {
-  //   //   this.setState({ resumes: result.data.data })
-  //   // })
-  //   this.callApi()
-  //     .then(res => this.setState({ response: res.express }))
-  //     .then(this.setState({ resumes: this.state.response }))
-  //     .catch(err => console.log("err:  " + err));
-  //     console.log("respone is " );
-  // }
-
-  // callApi = async () => {
-  //   const response = await fetch('/api/getAllResumes/senior/2020');
-  //   const body = await response.json();
-  //   const resumes_arr = JSON.stringify(body);
-  //   console.log("Res:" + JSON.stringify(body))
-  //   if (response.status !== 200) throw Error(body.message);
-  //   return resumes_arr;
-  // }
-
 
   componentDidMount = () => {
     fetch('/api/getAllResumes/senior/2020')
@@ -59,7 +37,7 @@ class Landing extends Component {
         // console.log("result is " + resumes_arr);
         // console.log("type of resumes_arr" + typeof(resumes_arr)) 
         this.setState({
-          resumes: result
+          resumes_2020: result
         });
       },
      
@@ -67,40 +45,54 @@ class Landing extends Component {
         console.log("error is " + error);
       }
     )
-  }
 
-
-  createButton = (resume, key) => {
-    return (
-      <div>
-        <button class="ui button" href={ "/resume/" + (key + 1) }>{ resume.email }</button>
-      </div>
-    )
-  }
-
-  renderAllResumes = (resumes, key) => {
-    resumes = this.state.resumes
-    let gridValues = []
-    if (Array.isArray(resumes)) {
-      resumes.forEach((i) => {
-        gridValues.push(this.createButton(i, gridValues.length - 1))
-      })
-    } else if (resumes.length === 1) {
-        gridValues.push(this.createButton(resumes, 0))
-    } else {
-      return (
-        <div>
-          <p>none</p>
-        </div>
+    fetch('/api/getAllResumes/senior/2019')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          console.log("type of result " + typeof(result))
+          console.log(result);  
+          this.setState({
+            resumes_2019: result
+          });
+        },
         
+        (error) => {
+          console.log("error is " + error);
+        }
       )
-    }
-    return resumes.length
   }
 
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
+
+  renderScrollingTiles = (resumes, buffer) => {
+    let gridValues = []
+    let index = 0;
+    if (Array.isArray(resumes)) {
+      resumes.forEach((i) => {
+        gridValues.push(this.createResumeCard(i, buffer + gridValues.length - 1, index))
+        index++
+      })
+    } else if (resumes.length === 1) {
+        gridValues.push(this.createResumeCard(resumes, buffer, index))
+    }
+
+    return gridValues
+  }
+
+  createResumeCard = (resume, key, index) => {
+    return (
+      <Slide className="slider-card" index={ index }>
+        <Scrolling_tile name={ resume.name } 
+                        class={ resume.class } 
+                        index={ key + 1 }
+                        pic={ resume.profilePicUrl }
+        />
+      </Slide>
+    )
+  }
 
   render() {
     return (
@@ -142,12 +134,6 @@ class Landing extends Component {
 
       </Segment>
 
-      <Segment>
-        <div>
-          { this.renderAllResumes() }
-        </div>
-      </Segment>
-
       {/* video page */}
       <Segment id="video" vertical textAlign="center">
         <Container className="video-content">
@@ -167,9 +153,9 @@ class Landing extends Component {
       <Segment vertical textAlign="center" id="carousel">
 
       <Segment basic padded id="scroll_section">
-      <Button className="top_button">SENIORS</Button>
-      <Button className="top_button">ALUMNI</Button>
-      <Button className="top_button">PROFESSORS</Button>
+      <Button className="top_button" href="#2020">SENIORS</Button>
+      <Button className="top_button" href="#2019">ALUMNI</Button>
+      {/* <Button className="top_button">PROFESSORS</Button> */}
       </Segment>
 
 
@@ -179,20 +165,15 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={6}
+        totalSlides={42}
         visibleSlides={4}
         infinite="true">
-        <div className="carousel-header">
+        <div className="carousel-header" id="2020">
           <h4 className="classYear">2020</h4>
-          <p>See All</p>
+          <p><a href="/all/#2020">See All</a></p>
         </div>
         <Slider className="slider_test">
-          <Slide index={0}><Scrolling_tile /></Slide>
-          <Slide index={1}><Scrolling_tile /></Slide>
-          <Slide index={2}><Scrolling_tile /></Slide>
-          <Slide index={3}><Scrolling_tile /></Slide>
-          <Slide index={4}><Scrolling_tile /></Slide>
-          <Slide index={5}><Scrolling_tile /></Slide>
+          { this.renderScrollingTiles(this.state.resumes_2020, 0)}
         </Slider>
         <ButtonNext className="buttonPanel" icon>
           <Icon name='arrow right' />
@@ -209,12 +190,7 @@ class Landing extends Component {
           <h4 className="classYear">2020</h4>
         </div>
         <Slider className="slider_test">
-          <Slide className="slider-card" index={0}><Scrolling_tile /></Slide>
-          <Slide index={1}><Scrolling_tile /></Slide>
-          <Slide index={2}><Scrolling_tile /></Slide>
-          <Slide index={3}><Scrolling_tile /></Slide>
-          <Slide index={4}><Scrolling_tile /></Slide>
-          <Slide index={5}><Scrolling_tile /></Slide>
+          { this.renderScrollingTiles(this.state.resumes_2020, 0)}
         </Slider>
         <ButtonNext className="buttonPanel" icon>
           <Icon name='arrow right' />
@@ -227,20 +203,15 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={6}
+        totalSlides={19}
         visibleSlides={4}
         infinite="true">
-        <div className="carousel-header">
+        <div className="carousel-header" id="2019">
           <h4 className="classYear">2019</h4>
-          <p>See All</p>
+          <p><a href="/all/#2019">See All</a></p>
         </div>
         <Slider className="slider_test">
-          <Slide index={0}><Scrolling_tile /></Slide>
-          <Slide index={1}><Scrolling_tile /></Slide>
-          <Slide index={2}><Scrolling_tile /></Slide>
-          <Slide index={3}><Scrolling_tile /></Slide>
-          <Slide index={4}><Scrolling_tile /></Slide>
-          <Slide index={5}><Scrolling_tile /></Slide>
+          { this.renderScrollingTiles(this.state.resumes_2019, this.state.resumes_2020.length) }
         </Slider>
 
         <ButtonNext className="buttonPanel" icon>
@@ -259,12 +230,7 @@ class Landing extends Component {
           <h4 className="classYear">2019</h4>
         </div>
         <Slider className="slider_test">
-          <Slide index={0}><Scrolling_tile /></Slide>
-          <Slide index={1}><Scrolling_tile /></Slide>
-          <Slide index={2}><Scrolling_tile /></Slide>
-          <Slide index={3}><Scrolling_tile /></Slide>
-          <Slide index={4}><Scrolling_tile /></Slide>
-          <Slide index={5}><Scrolling_tile /></Slide>
+          { this.renderScrollingTiles(this.state.resumes_2019, this.state.resumes_2020.length) }
         </Slider>
 
         <ButtonNext className="buttonPanel" icon>
