@@ -56,7 +56,7 @@ class ResumePage extends Component {
 
   }
 
-  getCurrentResume2020 = (resumes) => {
+  getCurrentResume = (resumes) => {
     resumes = this.state.resumes_2020.concat(this.state.resumes_2019)
     let resumeId = this.state.resumeId
     let gridValues = []
@@ -189,20 +189,31 @@ class ResumePage extends Component {
   }
 
   renderResumePage = (resume, key) => {
+
+    let email = resume.email
+    if (resume.name == "Anonymous") {
+      email = ""
+    }
+
+    let propic = '../tower.png'
+    if (resume.profilePicUrl) {
+      propic = resume.profilePicUrl
+    }
+
     return (
       <div className="App" id="resume" key={ key }>
 
       <Segment className="section top">
         <img className="background" src="../background.jpg" alt="background"/>
 
-        <img className="icon" src={ resume.profilePicUrl }/>
+        <img className="icon" src={ propic }/>
         <Header className="name"as="h3">{ resume.name }</Header>
         <p className="year">{ resume.class }</p>
         <p class="description">{ resume.shortBio }</p>
         <div className="icons">
         <LinkIcon className="resume-icons"/>
         <LinkedInIcon className="resume-icons"/>
-        <MailOutlineIcon className="resume-icons"/>
+        <MailOutlineIcon className="resume-icons" href={ email } />
         </div>
       </Segment>
 
@@ -216,7 +227,7 @@ class ResumePage extends Component {
   render() {
     return (
       <div>
-        { this.getCurrentResume2020() }
+        { this.getCurrentResume() }
       </div>
     );
   }

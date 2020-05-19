@@ -67,32 +67,11 @@ class AllResumes extends Component {
         )
       }
     
-      render2020Resumes = (resumes) => {
-        resumes = this.state.resumes_2020
+      renderResumes = (resumes, buffer) => {
         let gridValues = []
         if (Array.isArray(resumes)) {
           resumes.forEach((i) => {
-            gridValues.push(this.createResumeCard(i, gridValues.length - 1))
-          })
-        } else if (resumes.length === 1) {
-            gridValues.push(this.createResumeCard(resumes, 0))
-        } else {
-          return (
-            <div>
-              <p>none</p>
-            </div>
-            
-          )
-        }
-        return gridValues
-      }
-
-      render2019Resumes = (resumes) => {
-        resumes = this.state.resumes_2019
-        let gridValues = []
-        if (Array.isArray(resumes)) {
-          resumes.forEach((i) => {
-            gridValues.push(this.createResumeCard(i, this.state.resumes_2020.length + gridValues.length - 1))
+            gridValues.push(this.createResumeCard(i, buffer + gridValues.length - 1))
           })
         } else if (resumes.length === 1) {
             gridValues.push(this.createResumeCard(resumes, 0))
@@ -117,7 +96,7 @@ class AllResumes extends Component {
                         <h4 className="classYear">2020</h4>
                     </div>
                     <Grid columns={5} relaxed>
-                        { this.render2020Resumes() }
+                        { this.renderResumes(this.state.resumes_2020, 0) }
                     </Grid>
 
                     <br></br>
@@ -128,7 +107,7 @@ class AllResumes extends Component {
                         <h4 className="classYear">2019</h4>
                     </div>
                     <Grid columns={5} relaxed>
-                        { this.render2019Resumes() }
+                        { this.renderResumes(this.state.resumes_2019, this.state.resumes_2020.length) }
                     </Grid>
 
                 </Segment>
