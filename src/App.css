@@ -725,3 +725,16 @@ color: #333333;
   display: inline-block;
   margin-bottom: 2%;
 }
+
+#video h2 {
+  font-family: Avenir Next;
+  font-size: 30px;
+  font-weight: 550;
+  padding-bottom: 3%;
+}
+
+#video p { 
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: 3%;
+}
