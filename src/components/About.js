@@ -10,7 +10,7 @@ function About() {
     <Segment className="top-segment segment">
       <h2>Learn More</h2>
       <h3>Daily Pennsylvanian Article </h3>
-      <p>In 2019, the Daily Pennsylvanian wrote an article, "Students create <a  href="https://www.thedp.com/article/2019/03/penn-anti-resume-ocr-recruiting-failure-signal">'anti-resumes'</a> to normalize Failure at Penn", to showcase our project.</p>
+      <p>In 2019, the Daily Pennsylvanian wrote an article, <a  href="https://www.thedp.com/article/2019/03/penn-anti-resume-ocr-recruiting-failure-signal">"Students create 'anti-resumes' to normalize Failure at Penn"</a>, to showcase our project.</p>
       <h3>Podcast</h3>
       <p style={{paddingBottom: 20}}>In 2019, The Art of Failure <a href="https://www.artoffailurepodcast.com/episodes-blog/failureresume">interviewed Olivia and Sophia about the project</a> in their podcast.</p>
     </Segment>
