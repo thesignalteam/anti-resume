@@ -25,29 +25,6 @@ class Landing extends Component {
     }
   }
 
-  // componentDidMount = () => {
-  //   // axios 
-  //   // .get("")
-  //   // .then(result => {
-  //   //   this.setState({ resumes: result.data.data })
-  //   // })
-  //   this.callApi()
-  //     .then(res => this.setState({ response: res.express }))
-  //     .then(this.setState({ resumes: this.state.response }))
-  //     .catch(err => console.log("err:  " + err));
-  //     console.log("respone is " );
-  // }
-
-  // callApi = async () => {
-  //   const response = await fetch('/api/getAllResumes/senior/2020');
-  //   const body = await response.json();
-  //   const resumes_arr = JSON.stringify(body);
-  //   console.log("Res:" + JSON.stringify(body))
-  //   if (response.status !== 200) throw Error(body.message);
-  //   return resumes_arr;
-  // }
-
-
   componentDidMount = () => {
     fetch('/api/getAllResumes/senior/2020')
     .then(res => res.json())
@@ -95,7 +72,7 @@ class Landing extends Component {
         
       )
     }
-    return resumes.length
+    return gridValues
   }
 
   onChange = e => {

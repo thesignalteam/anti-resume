@@ -5,25 +5,30 @@ import { Card, Icon, Button, Image, Divider, Segment, Header, Grid} from 'semant
 
 function Scrolling_tile(props) {
 
+  const pic = props.pic;
+  var propic = '../tower.png';
+  if (pic) {
+    propic = pic;
+  }
 
-    return <Card id="Scrolling_tile" textAlign="center">
-      <Card.Content>
+  return <Card id="Scrolling_tile" textAlign="center" href={ "/resume/" + props.class + "/" + props.index }>
+    <Card.Content>
 
-        <Segment basic padded className="tile_content">
-        <Image
-          // floated='center'
-          size='tiny'
-          src='../tower.png'
-          margin="50px"
-          circular
-        />
-        <Header className="name" as="h3">Tiffany Yau</Header>
-        <Card.Meta className="year">C '19</Card.Meta>
-        </Segment>
+      <Segment basic padded className="tile_content">
+      <Image
+        // floated='center'
+        size='tiny'
+        src={ propic }
+        margin="50px"
+        circular
+      />
+      <Header className="name" as="h3">{ props.name }</Header>
+      <Card.Meta className="year">{ props.class }</Card.Meta>
+      </Segment>
 
-      </Card.Content>
+    </Card.Content>
 
-    </Card>
+  </Card>
 
 
 }

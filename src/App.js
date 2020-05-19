@@ -14,7 +14,7 @@ class App extends Component {
           <NavBar />
           <Route exact path="/" component={Landing} />
           <Route exact path="/all" component={AllResumes} />
-          <Route exact path="/resume/:resumeId" component={Resume} />
+          <Route exact path="/resume/:class/:resumeId" component={Resume} />
         </div>
      </Router>
     );
