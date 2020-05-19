@@ -701,33 +701,94 @@ color: #333333;
   color: #D3D3D3;
 }
 
-
 #about .segment {
-  text-align: center;
-  width: 50%;
-  margin: 100px auto;
+  width: 60%;
+  margin: auto;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.11);
 }
 
-#about .segment p{
-
-font-family: Avenir Next;
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 36px;
+#about h1 {
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 36px;
+  margin-left: 20%;
+  margin-top: 10%;
 }
 
-#about .segment a {
+#about h2 {
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  /* identical to box height, or 129% */
 
+  color: #333333;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-bottom: 3px;
+}
+
+#about h3 {
+  font-family: Avenir Next;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #2F80ED;
+  padding-left: 20px;
+  padding-bottom: 5px;
+}
+
+#about .segment p {
 font-family: Avenir Next;
 font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 36px;
+font-weight: 450;
+font-size: 17px;
+padding-left: 20px;
+padding-right: 20px;
+/* line-height: 36px; */
+}
+
+#about h4 {
+  padding-left: 25px;
+  font-family: Avenir Next;
+  font-size: 17px;
+  font-weight: 600;
+  color: #676767;
+}
+
+#about ul {
+  font-family: Avenir Next;
+  font-size: 17px;
+  line-height: 1.6;
+  list-style-type: none;
+  font-weight: 450;
+  padding-left: 25px;
+}
+
+#about a {
+  font-size: 17px;
+  color: #2F80ED;
+}
+
+#about .box {
+  background-color: #F7F7F7;
+  width: 95%;
+  border-radius: 10px;
+  padding-top: 6%;
+  padding-bottom: 0.5%;
+  margin-bottom: 8%;
+  margin-top: 2%;
 }
 
 #about .top-segment {
-  margin-top: 150px;
+  margin-top: 50px;
 }
 
 #all_resumes {
