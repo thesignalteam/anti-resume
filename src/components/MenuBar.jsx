@@ -22,25 +22,27 @@ export default class MenuBar extends Component {
         />
         <Menu.Item
           name='About'
+          href="/about"
           active={activeItem === 'About'}
           onClick={this.handleItemClick}
         />
         <Menu.Item 
           name='Seniors'
-          href="/all/"
+          href="/all/#2020"
           active={activeItem === 'Seniors'}
           onClick={this.handleItemClick}
         />
         <Menu.Item
           name='Alumni'
+          href="/all/#2019"
           active={activeItem === 'Alumni'}
           onClick={this.handleItemClick}
         />
-        <Menu.Item
+        {/* <Menu.Item
           name='Professors'
           active={activeItem === 'Professors'}
           onClick={this.handleItemClick}
-        />
+        /> */}
 
       </Menu>
     );

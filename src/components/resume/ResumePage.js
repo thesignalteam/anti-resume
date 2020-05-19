@@ -12,6 +12,7 @@ class ResumePage extends Component {
     super();
     this.state = {
       resumes_2020: [],
+      resumes_2019: [],
       response: '',
       responseToPost: '',
       resumeClass: props.match.params.class,
@@ -36,10 +37,27 @@ class ResumePage extends Component {
         console.log("error is " + error);
       }
     )
+
+    fetch('/api/getAllResumes/senior/2019')
+        .then(res => res.json())
+        .then(
+          (result) => {
+            console.log("type of result " + typeof(result))
+            console.log(result);  
+            this.setState({
+              resumes_2019: result,
+            });
+          },
+         
+          (error) => {
+            console.log("error is " + error);
+          }
+        )
+
   }
 
   getCurrentResume2020 = (resumes) => {
-    resumes = this.state.resumes_2020
+    resumes = this.state.resumes_2020.concat(this.state.resumes_2019)
     let resumeId = this.state.resumeId
     let gridValues = []
 
