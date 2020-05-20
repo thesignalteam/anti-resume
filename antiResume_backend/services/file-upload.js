@@ -2,7 +2,6 @@ const aws = require('aws-sdk')
 const multer = require('multer')
 const multerS3 = require('multer-s3')
 const configuration = require("../config.json")["production"];
-console.log(configuration.s3_cred); 
 
 aws.config.update({
     region: 'us-east-2',
@@ -11,9 +10,9 @@ aws.config.update({
 });
 
 const s3 = new aws.S3();
-console.log("Region: ", s3.config.region);
-console.log("secred AccessKey: ", s3.config.credentials.secretAccessKey);
-console.log("secred AccessKey Id: ", s3.config.credentials.accessKeyId);
+// console.log("Region: ", s3.config.region);
+// console.log("secred AccessKey: ", s3.config.credentials.secretAccessKey);
+// console.log("secred AccessKey Id: ", s3.config.credentials.accessKeyId);
  
 const upload = multer({
   storage: multerS3({
