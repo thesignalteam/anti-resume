@@ -44,8 +44,8 @@ function About() {
           <div className="box">
             <h4>MARKETING & DESIGN</h4>
             <ul>
-              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:">Melinda Hu</a></li>
-              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:">Jessica Tan</a></li>
+              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:hmelinda@wharton.upenn.edu">Melinda Hu</a></li>
+              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:jytan@sas.upenn.edu">Jessica Tan</a></li>
             </ul>
           </div>
         </Grid.Column>
