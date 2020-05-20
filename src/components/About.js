@@ -9,6 +9,14 @@ function About() {
 
     <Segment className="top-segment segment">
       <h2>Learn More</h2>
+      <h3>Failures at Penn Video</h3>
+
+      <p align="center">
+        <iframe className="video-screen" width="700" height="400" style={{border:"none", overflow:"hidden", position: "center"}} scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjointhesignal%2Fvideos%2F2073803059583829%2F&show_text=0&width=560" ></iframe>
+      </p>
+
+      <p>In Spring 2019, we interviewed a dozen graduating seniors on their failures at Penn.</p>
+
       <h3>Daily Pennsylvanian Article </h3>
       <p>In 2019, the Daily Pennsylvanian wrote an article, <a  href="https://www.thedp.com/article/2019/03/penn-anti-resume-ocr-recruiting-failure-signal">"Students create 'anti-resumes' to normalize Failure at Penn"</a>, to showcase our project.</p>
       <h3>Podcast</h3>
