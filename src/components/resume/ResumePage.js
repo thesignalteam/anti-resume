@@ -88,16 +88,17 @@ class ResumePage extends Component {
 
         <Grid columns={2} relaxed>
           
-          { this.renderCategoryList(resume.memoriesImade, "Memories I Made", false) }
-          { this.renderCategoryList(resume.thingsLearnt, "Things I Learned", false) }
-          { this.renderCategoryList(resume.booksForFun, "Books I Read For Fun", false) }
-          { this.renderCategoryList(resume.thingsProudOf, "Things I'm Proud Of", false) }
+          { this.renderCategoryList(resume.memoriesImade, "Memories I Made When I Wasn't Studying / Working:", false) }
+          { this.renderCategoryList(resume.thingsLearnt, "Things I've Learned That Will Still Matter in 10 Years", false) }
+          { this.renderCategoryList(resume.booksForFun, "Books I've Read For Fun", false) }
+          { this.renderCategoryList(resume.thingsProudOf, "Things I'm Proud of That You Won't See on a Resume", false) }
           { this.renderCategoryList(resume.unconventionalSkills, "Unconventional Skills", false) }
-          { this.renderCategoryList(resume.quirks, "Quirks I have", false) }
-          { this.renderCategoryList(resume.comfortZone, "Times I Stepped Out of my Comfort Zone", false) }
+          { this.renderCategoryList(resume.quirks, "Quirks That Make Me Who I Am", false) }
+          { this.renderCategoryList(resume.comfortZone, "Things I've Done That Pushed Me Out of My Comfort Zone", false) }
+          { this.renderCategoryList(resume.thingsProudOf, "Failure That Seemed Like the End of the World Back Then But Doesn't Matter in Hindsight", false) }
           { this.renderCategoryList(resume.leapsOfFaith, "Leaps of Faith", false) }
-          { this.renderCategoryList(resume.obstacles, "Obstacles I Overcame", false) }
-          { this.renderCategoryList(resume.thingsProudOf, "Big Life Events", false) }
+          { this.renderCategoryList(resume.obstacles, "Obstacles I Have Overcome", false) }
+          { this.renderCategoryList(resume.thingsProudOf, "Life Events That Have Made Me Stronger", false) }
           { this.renderCategoryList(resume.other, "Other Things I Appreciated", true) }
 
         </Grid>
@@ -117,10 +118,8 @@ class ResumePage extends Component {
 
             { this.renderCategoryList(resume.companiesRejectedFrom, 'Thank you for applying but..." Jobs', false) }
             { this.renderCategoryList(resume.clubsRejectedFrom, "Clubs that Weren't a Good Fit", false) }
-            { this.renderCategoryList(resume.thingsIsworeIdFinish, "Things I Swore I'd Finish", false) }
-            { this.renderCategoryList(resume.everydayLs, "Everyday L's", false) }
-            { this.renderCategoryList(resume.thingsProudOf, "Failure That Seemed Like the End of the World Back Then But Doesn't Matter in Hindsight", true) }
-
+            { this.renderCategoryList(resume.thingsIsworeIdFinish, "Things I Swore I'd Finish But Never Did", false) }
+            { this.renderCategoryList(resume.everydayLs, "Everyday L's", true) }
           </Grid>
 
       </Segment>
