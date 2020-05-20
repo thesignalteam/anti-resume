@@ -424,6 +424,18 @@ border-radius: 16px;
 /* padding-left: 0; */
 }
 
+#Scrolling_tile .center-cropped {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+#Scrolling_tile .default {
+  width: 100px;
+  height: 100px;
+}
+
 #Scrolling_tile .name {
   font-family: Avenir Next;
 font-style: normal;
@@ -615,6 +627,7 @@ text-align: left;
   border-radius: 50%;
   position: relative;
   bottom: 50px;
+  object-fit: cover;
 }
 
 #resume .background {
@@ -805,4 +818,3 @@ padding-right: 20px;
 .App {
   scroll-behavior: smooth;
 }
-
