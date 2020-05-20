@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-import NavBar from "./components/layout/NavBar";
-import Landing from "./components/layout/Landing";
-import Resume from "./components/resume/ResumePage";
+import NavBar from "./components/NavBar";
+import Landing from "./components/Landing";
+import Resume from "./components/ResumePage";
 
 import About from "./components/About";
-import Footer from "./components/layout/Footer";
+import Footer from "./components/Footer";
 
-import AllResumes from "./components/resume/AllResumes";
+import AllResumes from "./components/AllResumes";
 
 
 class App extends Component {
