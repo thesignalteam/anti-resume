@@ -130,25 +130,8 @@ class Landing extends Component {
           </Grid.Row>
         </Grid>
 
-        {/* TODO: put this at the bottom of the landing page */}
-
       </Segment>
 
-      {/* video page */}
-      <Segment id="video" vertical textAlign="center">
-        <Container className="video-content">
-        <Header as="h2">More About the Project </Header>
-
-        <iframe className="video-screen" width="560" height="315" style={{border:"none", overflow:"hidden"}} scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjointhesignal%2Fvideos%2F2073803059583829%2F&show_text=0&width=560" ></iframe>
-
-
-        <p>In Spring 2019, we interviewed a dozen graduating seniors on their failures at Penn.</p>
-
-        </Container>
-
-
-
-      </Segment>
 
       <Segment vertical textAlign="center" id="carousel">
 

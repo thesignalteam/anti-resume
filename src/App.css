@@ -83,8 +83,7 @@ nav.ui.container {
   }
 
 
-  #video .video-screen {
-    /* margin-right: 100px; */
+  #video iframe {
     width: 100%;
   }
 
@@ -200,13 +199,12 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 #main-grid .left-column{
   position: relative;
   left: 60px;
-  min-height: 800px;
-  margin-bottom: 30px;
+  min-height: vh;
 }
 
 #top-section {
-  /* min-height: 850px; */
   padding-bottom: 0;
+  height: 85vh;
 }
 
 #top-section .main-header{
@@ -371,19 +369,6 @@ color: #A8AAB5;
   margin-bottom: 30px;
 }
 
-#video {
-  background-color: #F8FAFE;
-  height: 700px;
-}
-
-#video .video-content {
-  margin-top: 100px;
-  text-align: center;
-  position: relative;
-  /* overflow: hidden; */
-  /* padding-top: 56.25%; */
-}
-
 #scroll_section .top_button {
   color: #676767;
   background: #F7F7F7;
@@ -470,7 +455,8 @@ color: #A8AAB5;
 }
 
 #carousel {
-  height: 1200px;
+  height: 100vh;
+  border: none;
 }
 
 #carousel .carousel {
@@ -816,15 +802,7 @@ padding-right: 20px;
   margin-bottom: 2%;
 }
 
-#video h2 {
-  font-family: Avenir Next;
-  font-size: 30px;
-  font-weight: 550;
-  padding-bottom: 3%;
+.App {
+  scroll-behavior: smooth;
 }
 
-#video p { 
-  font-size: 15px;
-  font-weight: 500;
-  padding-top: 3%;
-}

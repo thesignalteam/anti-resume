@@ -31,7 +31,7 @@ function Top_tile() {
           // floated='center'
           size='tiny'
           src= 'https://anti-resume-photos.s3.us-east-2.amazonaws.com/2018-07-18%2006.02.42%202%20-%20Benjamin%20Oh.jpg'
-          margin="50px"
+          margin="60px"
           circular
         />
         <Header className="name"as="h3">Benjamin Oh</Header>
