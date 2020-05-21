@@ -630,6 +630,17 @@ text-align: left;
   object-fit: cover;
 }
 
+#resume .default-icon {
+  text-align: center;
+  height: 196px;
+  width: 196px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 50%;
+  position: relative;
+  bottom: 50px;
+  /* object-fit: cover; */
+}
+
 #resume .background {
   width: 100%;
   margin: 0;
