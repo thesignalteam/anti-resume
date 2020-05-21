@@ -194,18 +194,20 @@ class ResumePage extends Component {
       email = ""
     }
 
-    let propic = '../tower.png'
+    let propic = '../../tower.png'
+    let style = 'default-icon'
     if (resume.profilePicUrl) {
-      propic = resume.profilePicUrl
+      propic = resume.profilePicUrl;
+      style='icon';
     }
 
     return (
       <div className="App" id="resume" key={ key }>
 
       <Segment className="section top">
-        <img className="background" src="../background.jpg" alt="background"/>
+        <img className="background" src="../../background.jpg" alt="background"/>
 
-        <img className="icon" src={ propic }/>
+        <img className={style} src={ propic }/>
         <Header className="name"as="h3">{ resume.name }</Header>
         <p className="year">{ resume.class }</p>
         <p class="description">{ resume.shortBio }</p>
