@@ -54,7 +54,7 @@ class AllResumes extends Component {
     
       createResumeCard = (resume, key) => {
         return (
-            <Grid.Column>
+            <Grid.Column mobile={16} tablet={8} computer={4}>
                 <Scrolling_tile name={ resume.name } 
                                 class={ resume.class } 
                                 index={ key + 1 }
@@ -92,7 +92,7 @@ class AllResumes extends Component {
                     <div className="year_header" id="2020">
                         <h4 className="classYear">2020</h4>
                     </div>
-                    <Grid columns={5} relaxed>
+                    <Grid columns={5} only='computer' relaxed>
                         { this.renderResumes(this.state.resumes_2020, 0) }
                     </Grid>
 
