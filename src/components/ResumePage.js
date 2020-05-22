@@ -94,7 +94,7 @@ class ResumePage extends Component {
           { this.renderCategoryList(resume.unconventionalSkills, "Unconventional Skills", false) }
           { this.renderCategoryList(resume.quirks, "Quirks That Make Me Who I Am", false) }
           { this.renderCategoryList(resume.comfortZone, "Things I've Done That Pushed Me Out of My Comfort Zone", false) }
-          { this.renderCategoryList(resume.endOfTheWorld, "Failures That Seemed Like the End of the World Back Then But Doesn't Matter in Hindsight", false) }
+          { this.renderCategoryList(resume.endOfTheWorld, "Failures That Seemed Like the End of the World Back Then But Don't Matter in Hindsight", false) }
           { this.renderCategoryList(resume.leapsOfFaith, "Leaps of Faith", false) }
           { this.renderCategoryList(resume.obstacles, "Obstacles I Have Overcome", false) }
           { this.renderCategoryList(resume.lifeEvents, "Life Events That Have Made Me Stronger", false) }
