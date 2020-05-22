@@ -80,7 +80,6 @@ class ResumePage extends Component {
   }
 
   // bright side
-
   renderBrightSide = (resume) => {
     return (
       <Segment className="section">
@@ -95,10 +94,10 @@ class ResumePage extends Component {
           { this.renderCategoryList(resume.unconventionalSkills, "Unconventional Skills", false) }
           { this.renderCategoryList(resume.quirks, "Quirks That Make Me Who I Am", false) }
           { this.renderCategoryList(resume.comfortZone, "Things I've Done That Pushed Me Out of My Comfort Zone", false) }
-          { this.renderCategoryList(resume.thingsProudOf, "Failure That Seemed Like the End of the World Back Then But Doesn't Matter in Hindsight", false) }
+          { this.renderCategoryList(resume.endOfTheWorld, "Failure That Seemed Like the End of the World Back Then But Doesn't Matter in Hindsight", false) }
           { this.renderCategoryList(resume.leapsOfFaith, "Leaps of Faith", false) }
           { this.renderCategoryList(resume.obstacles, "Obstacles I Have Overcome", false) }
-          { this.renderCategoryList(resume.thingsProudOf, "Life Events That Have Made Me Stronger", false) }
+          { this.renderCategoryList(resume.lifeEvents, "Life Events That Have Made Me Stronger", false) }
           { this.renderCategoryList(resume.other, "Other Things I Appreciated", true) }
 
         </Grid>
@@ -107,7 +106,6 @@ class ResumePage extends Component {
   }
 
   // l's taken
-
   renderLsTaken = (resume) => {
     return (
       <Segment className="section middle">
