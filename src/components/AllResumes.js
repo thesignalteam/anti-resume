@@ -11,6 +11,7 @@ class AllResumes extends Component {
         this.state = {
           resumes_2020: [],
           resumes_2019: [],
+          resumes_alums: [],
           response: '',
           responseToPost: '',
         }
@@ -49,6 +50,21 @@ class AllResumes extends Component {
           }
         )
 
+        fetch('/api/getAllResumes/alumni')
+        .then(res => res.json())
+        .then(
+          (result) => {
+            console.log("type of result " + typeof(result))
+            console.log(result);  
+            this.setState({
+              resumes_alums: result
+            });
+          },
+          
+          (error) => {
+            console.log("error is " + error);
+          }
+        )
       }
     
     
@@ -88,7 +104,7 @@ class AllResumes extends Component {
             <div className="App" id="all_resumes">
                 <Segment vertical textAlign="center">
 
-                    {/* seniors */}
+                    {/* 2020 */}
                     <div className="year_header" id="2020">
                         <h4 className="classYear">2020</h4>
                     </div>
@@ -99,12 +115,23 @@ class AllResumes extends Component {
                     <br></br>
                     <br></br>
 
-                    {/* alums */}
+                    {/* 2019 */}
                     <div className="year_header" id="2019">
                         <h4 className="classYear">2019</h4>
                     </div>
                     <Grid columns={5} relaxed>
                         { this.renderResumes(this.state.resumes_2019, this.state.resumes_2020.length) }
+                    </Grid>
+
+                    <br></br>
+                    <br></br>
+
+                     {/* alums */}
+                     <div className="year_header" id="alumni">
+                        <h4 className="classYear">ALUMNI</h4>
+                    </div>
+                    <Grid columns={5} relaxed>
+                        { this.renderResumes(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length) }
                     </Grid>
 
                 </Segment>

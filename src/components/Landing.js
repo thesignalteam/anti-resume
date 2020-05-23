@@ -21,6 +21,7 @@ class Landing extends Component {
     this.state = {
       resumes_2020: [],
       resumes_2019: [],
+      resumes_alums: [],
       response: '',
       responseToPost: '',
     }
@@ -54,6 +55,22 @@ class Landing extends Component {
           console.log(result);  
           this.setState({
             resumes_2019: result
+          });
+        },
+        
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
+
+      fetch('/api/getAllResumes/alumni')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          console.log("type of result " + typeof(result))
+          console.log(result);  
+          this.setState({
+            resumes_alums: result
           });
         },
         
@@ -137,7 +154,7 @@ class Landing extends Component {
 
       <Segment basic padded id="scroll_section">
       <Button className="top_button" href="#2020">SENIORS</Button>
-      <Button className="top_button" href="#2019">ALUMNI</Button>
+      <Button className="top_button" href="#alumni">ALUMNI</Button>
       {/* <Button className="top_button">PROFESSORS</Button> */}
       </Segment>
 
@@ -169,7 +186,7 @@ class Landing extends Component {
         totalSlides={6}
         visibleSlides={1}
         infinite="true">
-        <div className="carousel-header">
+        <div className="carousel-header" id="alumni">
           <h4 className="classYear">2020</h4>
         </div>
         <Slider className="slider_test">
@@ -181,7 +198,7 @@ class Landing extends Component {
       </CarouselProvider>
 
 
-      {/*Second carousel*/}
+      {/*Second Carousel*/}
 
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
@@ -214,6 +231,47 @@ class Landing extends Component {
         </div>
         <Slider className="slider_test">
           { this.renderScrollingTiles(this.state.resumes_2019, this.state.resumes_2020.length) }
+        </Slider>
+
+        <ButtonNext className="buttonPanel" icon>
+          <Icon name='arrow right' />
+        </ButtonNext>
+
+      </CarouselProvider>
+
+      {/*Third Carousel*/}
+
+      <CarouselProvider className="carousel-container"
+        naturalSlideWidth={100}
+        naturalSlideHeight={80}
+        totalSlides={19}
+        visibleSlides={4}
+        infinite="true">
+        <div className="carousel-header" id="alumni">
+          <h4 className="classYear">ALUMNI</h4>
+          <p><a href="/all/#alumni">See All</a></p>
+        </div>
+        <Slider className="slider_test">
+          { this.renderScrollingTiles(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length) }
+        </Slider>
+
+        <ButtonNext className="buttonPanel" icon>
+          <Icon name='arrow right' />
+        </ButtonNext>
+
+      </CarouselProvider>
+
+      <CarouselProvider className="carousel-container-mobile"
+        naturalSlideWidth={100}
+        naturalSlideHeight={80}
+        totalSlides={6}
+        visibleSlides={1}
+        infinite="true">
+        <div className="carousel-header" id="alumni">
+          <h4 className="classYear">ALUMNI</h4>
+        </div>
+        <Slider className="slider_test">
+          { this.renderScrollingTiles(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length) }
         </Slider>
 
         <ButtonNext className="buttonPanel" icon>
