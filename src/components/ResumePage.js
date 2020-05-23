@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import { Card, Icon, Button, Image, Divider, Segment, Header, Grid} from 'semantic-ui-react';
+import {Segment, Header, Grid} from 'semantic-ui-react';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import LinkIcon from '@material-ui/icons/Link';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-import { render } from "@testing-library/react";
-
 
 class ResumePage extends Component {
 
@@ -93,7 +91,6 @@ class ResumePage extends Component {
     }
 
     return gridValues
-
   }
 
   // bright side
@@ -101,9 +98,7 @@ class ResumePage extends Component {
     return (
       <Segment className="section">
       <div class="ui medium header category-head">On the Bright Side</div>
-
         <Grid columns={2} relaxed>
-          
           { this.renderCategoryList(resume.memoriesImade, "Memories I Made When I Wasn't Studying / Working:", false) }
           { this.renderCategoryList(resume.thingsLearnt, "Things I've Learned That Will Still Matter in 10 Years", false) }
           { this.renderCategoryList(resume.booksForFun, "Books I've Read For Fun", false) }
@@ -116,7 +111,6 @@ class ResumePage extends Component {
           { this.renderCategoryList(resume.obstacles, "Obstacles I Have Overcome", false) }
           { this.renderCategoryList(resume.lifeEvents, "Life Events That Have Made Me Stronger", false) }
           { this.renderCategoryList(resume.other, "Other Things I Appreciated", true) }
-
         </Grid>
       </Segment>
     )
@@ -126,30 +120,26 @@ class ResumePage extends Component {
   renderLsTaken = (resume) => {
     return (
       <Segment className="section middle">
-
         <div class="ui medium header category-head">L's Taken</div>
-
           <Grid columns={2} relaxed>
-
-            { this.renderCategoryList(resume.companiesRejectedFrom, 'Thank you for applying but..." Jobs', false) }
+            { this.renderCategoryList(resume.companiesRejectedFrom, '"Thank you for applying but..." Jobs', false) }
             { this.renderCategoryList(resume.clubsRejectedFrom, "Clubs that Weren't a Good Fit", false) }
-            { this.renderCategoryList(resume.thingsIsworeIdFinish, "Things I Swore I'd Finish But Never Did", false) }
+            { this.renderCategoryList(resume.thingIsworeIdFinish, "Things I Swore I'd Finish But Never Did", false) }
             { this.renderCategoryList(resume.everydayLs, "Everyday L's", true) }
           </Grid>
-
       </Segment>
     )
   }
 
   renderCategoryList = (list, name, last) => {
     if (list) {
-      if (list.length > 1) {
+      if (list.length >= 1) {
         return (
           <Grid.Row class="row">
             <Grid.Column width={2} >
               <Header className="number" color="blue">{ list.length }</Header>
             </Grid.Column>
-            <Grid.Column width={10} textAlign="left">
+            <Grid.Column width={10} textalign="left">
               { this.renderName(name) }
                 <ul>
                   { this.renderList(list) }
@@ -203,7 +193,7 @@ class ResumePage extends Component {
   }
 
   renderResumePage = (resume, key) => {
-
+   // console.log("current Resume is  " + JSON.stringify(resume));
     let email = resume.email
     if (resume.name == "Anonymous") {
       email = ""
@@ -221,7 +211,6 @@ class ResumePage extends Component {
 
       <Segment className="section top">
         <img className="background" src="../../background.jpg" alt="background"/>
-
         <img className={style} src={ propic }/>
         <Header className="name"as="h3">{ resume.name }</Header>
         <p className="year">{ resume.class }</p>
@@ -235,7 +224,6 @@ class ResumePage extends Component {
 
       { this.renderLsTaken(resume) }
       { this.renderBrightSide(resume) }
-
       </div>
     );
   }
