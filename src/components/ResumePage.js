@@ -139,7 +139,7 @@ class ResumePage extends Component {
             <Grid.Column width={2} >
               <Header className="number" color="blue">{ list.length }</Header>
             </Grid.Column>
-            <Grid.Column width={10} textalign="left">
+            <Grid.Column width={10} textAlign="left">
               { this.renderName(name) }
                 <ul>
                   { this.renderList(list) }

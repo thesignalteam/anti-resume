@@ -102,7 +102,7 @@ class AllResumes extends Component {
   render() {
     return (
       <div className="App" id="all_resumes">
-        <Segment vertical textalign="center">
+        <Segment vertical textAlign="center">
 
           {/* 2020 */}
           <div className="year_header" id="2020">
