@@ -175,7 +175,9 @@ class ResumePage extends Component {
     let gridValues = []
     if (Array.isArray(list)) {
       list.forEach((i, index) => {
-        gridValues.push(this.renderListItem(i, index))
+        if(i !== "") {
+          gridValues.push(this.renderListItem(i, index))
+        }
       })
     } else if (list.length == 1) {
         gridValues.push(this.renderListItem((list), 0))
