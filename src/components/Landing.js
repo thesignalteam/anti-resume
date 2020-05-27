@@ -33,15 +33,15 @@ class Landing extends Component {
     .then(
       (result) => {
         console.log("type of result " + typeof(result))
-        console.log(result); 
+        console.log(result);
         // const resumes_arr = JSON.stringify(result);
         // console.log("result is " + resumes_arr);
-        // console.log("type of resumes_arr" + typeof(resumes_arr)) 
+        // console.log("type of resumes_arr" + typeof(resumes_arr))
         this.setState({
           resumes_2020: result
         });
       },
-     
+
       (error) => {
         console.log("error is " + error);
       }
@@ -52,12 +52,12 @@ class Landing extends Component {
       .then(
         (result) => {
           console.log("type of result " + typeof(result))
-          console.log(result);  
+          console.log(result);
           this.setState({
             resumes_2019: result
           });
         },
-        
+
         (error) => {
           console.log("error is " + error);
         }
@@ -68,12 +68,12 @@ class Landing extends Component {
       .then(
         (result) => {
           console.log("type of result " + typeof(result))
-          console.log(result);  
+          console.log(result);
           this.setState({
             resumes_alums: result
           });
         },
-        
+
         (error) => {
           console.log("error is " + error);
         }
@@ -102,8 +102,8 @@ class Landing extends Component {
   createResumeCard = (resume, key, index) => {
     return (
       <Slide className="slider-card" index={ index }>
-        <Scrolling_tile name={ resume.name } 
-                        class={ resume.class } 
+        <Scrolling_tile name={ resume.name }
+                        class={ resume.class }
                         index={ key + 1 }
                         pic={ resume.profilePicUrl }
         />
@@ -165,7 +165,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={42}
+        totalSlides={41}
         visibleSlides={4}
         infinite="true">
         <div className="carousel-header" id="2020">
@@ -183,7 +183,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container-mobile"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={6}
+        totalSlides={41}
         visibleSlides={1}
         infinite="true">
         <div className="carousel-header" id="alumni">
@@ -203,7 +203,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={19}
+        totalSlides={15}
         visibleSlides={4}
         infinite="true">
         <div className="carousel-header" id="2019">
@@ -223,7 +223,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container-mobile"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={6}
+        totalSlides={15}
         visibleSlides={1}
         infinite="true">
         <div className="carousel-header">
@@ -244,7 +244,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={19}
+        totalSlides={4}
         visibleSlides={4}
         infinite="true">
         <div className="carousel-header" id="alumni">
@@ -264,7 +264,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container-mobile"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={6}
+        totalSlides={4}
         visibleSlides={1}
         infinite="true">
         <div className="carousel-header" id="alumni">
@@ -279,6 +279,8 @@ class Landing extends Component {
         </ButtonNext>
 
       </CarouselProvider>
+
+
 
       </Segment>
 

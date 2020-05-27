@@ -204,7 +204,8 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 
 #top-section {
   padding-bottom: 0;
-  height: 85vh;
+  /* height: 85vh; */
+  min-height: 80vh;
 }
 
 #top-section .main-header{
@@ -467,7 +468,7 @@ color: #A8AAB5;
 }
 
 #carousel {
-  height: 120vh;
+  min-height: 120vh;
   border: none;
 }
 
