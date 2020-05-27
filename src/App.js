@@ -15,12 +15,12 @@ class App extends Component {
 
   render() {
 
-      const HomeContainer = () => (
-        <div classname="container">
-          <Route exact path="/" component={Landing} />
-          <Footer/>
-        </div>
-      )
+      // const HomeContainer = () => (
+      //   <div classname="container">
+      //     <Route exact path="/" component={Landing} />
+      //     <Footer/>
+      //   </div>
+      // )
 
       const PageContainer = () => (
         <div className="container">
@@ -38,15 +38,15 @@ class App extends Component {
         <Router>
           <Switch>
             <div className="App">
-              <Route exact path="/" component={HomeContainer} />
+              {/* <Route exact path="/" component={HomeContainer} /> */}
               <Route component={PageContainer} />
             </div>
           </Switch>
         </Router>
       )
-        
-        
-          
+
+
+
 
   }
 }
