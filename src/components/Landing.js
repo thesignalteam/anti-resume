@@ -165,7 +165,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={41}
+        totalSlides={this.state.resumes_2020.length}
         visibleSlides={4}
         infinite="true">
         <div className="carousel-header" id="2020">
@@ -183,7 +183,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container-mobile"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={41}
+        totalSlides={this.state.resumes_2020.length}
         visibleSlides={1}
         infinite="true">
         <div className="carousel-header" id="alumni">
@@ -203,7 +203,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={15}
+        totalSlides={this.state.resumes_2019.length}
         visibleSlides={4}
         infinite="true">
         <div className="carousel-header" id="2019">
@@ -223,7 +223,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container-mobile"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={15}
+        totalSlides={this.state.resumes_2019.length}
         visibleSlides={1}
         infinite="true">
         <div className="carousel-header">
@@ -244,7 +244,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={4}
+        totalSlides={this.state.resumes_alums.length}
         visibleSlides={4}
         infinite="true">
         <div className="carousel-header" id="alumni">
@@ -264,7 +264,7 @@ class Landing extends Component {
       <CarouselProvider className="carousel-container-mobile"
         naturalSlideWidth={100}
         naturalSlideHeight={80}
-        totalSlides={4}
+        totalSlides={this.state.resumes_alums.length}
         visibleSlides={1}
         infinite="true">
         <div className="carousel-header" id="alumni">

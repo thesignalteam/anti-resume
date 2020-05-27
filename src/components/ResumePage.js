@@ -79,6 +79,7 @@ class ResumePage extends Component {
     if (Array.isArray(resumes)) {
       resumes.forEach((i, index) => {
         if (index == resumeId) {
+            console.log("index == resume Id is " + resumeId);
             gridValues.push(this.renderResumePage(i, index))
         } else {
             return (<p>index not found</p>)

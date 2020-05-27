@@ -131,7 +131,7 @@ class AllResumes extends Component {
             <h4 className="classYear">ALUMNI</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length)}
+            {this.renderResumes(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length )}
           </Grid>
 
         </Segment>
