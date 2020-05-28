@@ -151,7 +151,7 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 100px;
-  min-height: 100vh;
+  min-height: 80vh;
   font-family: "Avenir Next", Helvetica, Arial, sans-serif;
 }
 
