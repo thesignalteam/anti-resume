@@ -130,15 +130,19 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 }
 
 #nav-menu {
-  float: right;
-  margin-top: 3%;
-  margin-right: -15%;
-  font-family: "Avenir";
+  text-align: left;
+  margin-top: 48px;
+  padding-left: 50px;
+  font-family: "Avenir Next";
+}
+
+#nav-menu .item {
+  font-weight: 500;
 }
 
 #nav-left {
   margin-left: 10%;
-  margin-top: 3%;
+  margin-top: 40px;
 }
 
 .ui.inverted.vertical.segment {
@@ -206,14 +210,15 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
   padding-bottom: 0;
   /* height: 85vh; */
   min-height: 80vh;
+  margin-top: 7em;
 }
 
 #top-section .main-header{
   font-family: Avenir Next;
-font-style: normal;
-font-weight: 600;
-font-size: 44px;
-line-height: 60px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 60px;
 
 color: #333333;
 }

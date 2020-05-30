@@ -19,26 +19,30 @@ import { Image, Header, Container, Menu } from 'semantic-ui-react';
 
             <Menu secondary size="huge" id="nav-menu">
               <Menu.Item
+                class="item"
                 name='Home'
                 href="/"
                 active={activeItem === 'Home'}
                 onClick={this.handleItemClick}
               />
               <Menu.Item
+                class="item"
                 name='About'
                 href="/about"
                 active={activeItem === 'About'}
                 onClick={this.handleItemClick}
               />
               <Menu.Item 
+                class="item"
                 name='Seniors'
                 href="/all/#2020"
                 active={activeItem === 'Seniors'}
                 onClick={this.handleItemClick}
               />
               <Menu.Item
+                class="item"
                 name='Alumni'
-                href="/all/#2019"
+                href="/all/#alumni"
                 active={activeItem === 'Alumni'}
                 onClick={this.handleItemClick}
               />
