@@ -10,21 +10,18 @@ body {
   }
 
 nav.ui.container {
-  position: absolute;
+  position: fixed;
   top: 0;
-  width: 1200px;
+  width: 100%;
+  z-index: 11;
+  background-color: white;
 }
 
-  nav.ui.container .ui.header {
-    float: left;
-    margin-top: 12px;
-    font-family: "Avenir Next", Helvetica, Arial, sans-serif;
-  }
-
-  nav.ui.container .ui.inverted.compact.menu {
-    float: right;
-  }
-
+nav.ui.container .ui.header {
+  float: left;
+  margin-top: 12px;
+  font-family: "Avenir Next", Helvetica, Arial, sans-serif;
+}
 
 }
 
@@ -130,9 +127,10 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 }
 
 #nav-menu {
-  text-align: left;
+  text-align: right;
+  float: right;
   margin-top: 48px;
-  padding-left: 50px;
+  padding-right: 12%;
   font-family: "Avenir Next";
 }
 
@@ -141,7 +139,7 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 }
 
 #nav-left {
-  margin-left: 10%;
+  margin-left: 9%;
   margin-top: 40px;
 }
 

@@ -34,9 +34,16 @@ import { Image, Header, Container, Menu } from 'semantic-ui-react';
               />
               <Menu.Item 
                 class="item"
-                name='Seniors'
+                name='2020'
                 href="/all/#2020"
-                active={activeItem === 'Seniors'}
+                active={activeItem === '2020'}
+                onClick={this.handleItemClick}
+              />
+              <Menu.Item 
+                class="item"
+                name='2019'
+                href="/all/#2019"
+                active={activeItem === '2019'}
                 onClick={this.handleItemClick}
               />
               <Menu.Item
