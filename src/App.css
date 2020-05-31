@@ -13,8 +13,8 @@ nav.ui.container {
   position: fixed;
   top: 0;
   width: 100%;
-  
-
+  z-index: 11;
+  background-color: white;
 }
 
 nav.ui.container .ui.header {
