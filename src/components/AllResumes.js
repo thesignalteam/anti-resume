@@ -22,8 +22,7 @@ class AllResumes extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log("type of result " + typeof (result))
-          console.log(result);
+          // console.log(result);
           this.setState({
             resumes_2020: result
           });
@@ -38,8 +37,7 @@ class AllResumes extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log("type of result " + typeof (result))
-          console.log(result);
+          // console.log(result);
           this.setState({
             resumes_2019: result
           });
@@ -54,8 +52,7 @@ class AllResumes extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log("type of result " + typeof (result))
-          console.log(result);
+          // console.log(result);
           this.setState({
             resumes_alums: result
           });
@@ -72,7 +69,7 @@ class AllResumes extends Component {
     return (
       <Grid.Column mobile={16} tablet={8} computer={4}>
         <Scrolling_tile name={resume.name}
-          class={resume.class}
+          classT={resume.class}
           index={key + 1}
           pic={resume.profilePicUrl}
         />
@@ -109,7 +106,7 @@ class AllResumes extends Component {
             <h4 className="classYear">2020</h4>
           </div>
           <Grid columns={5} only='computer' relaxed>
-            {this.renderResumes(this.state.resumes_2020, 0)}
+            {this.renderResumes(this.state.resumes_2020, 0, "2020")}
           </Grid>
 
           <br></br>
@@ -120,7 +117,7 @@ class AllResumes extends Component {
             <h4 className="classYear">2019</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resumes_2019, this.state.resumes_2020.length)}
+            {this.renderResumes(this.state.resumes_2019, this.state.resumes_2020.length, "2019")}
           </Grid>
 
           <br></br>
@@ -131,7 +128,7 @@ class AllResumes extends Component {
             <h4 className="classYear">ALUMNI</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length )}
+            {this.renderResumes(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length, "alumni" )}
           </Grid>
 
         </Segment>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Icon, Button, Image, Divider, Segment, Header, Grid} from 'semantic-ui-react';
+import { Segment} from 'semantic-ui-react';
 
 
 function Footer() {
