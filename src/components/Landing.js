@@ -86,7 +86,7 @@ class Landing extends Component {
         gridValues.push(this.createResumeCard(i, buffer + gridValues.length - 1, index))
         index++
       })
-    } else if (resumes.length === 1) {
+    } else if (resumes.length == 1) {
       gridValues.push(this.createResumeCard(resumes, buffer, index))
     }
 

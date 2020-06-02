@@ -83,7 +83,7 @@ class AllResumes extends Component {
       resumes.forEach((i) => {
         gridValues.push(this.createResumeCard(i, buffer + gridValues.length - 1))
       })
-    } else if (resumes.length === 1) {
+    } else if (resumes.length == 1) {
       gridValues.push(this.createResumeCard(resumes, 0))
     } else {
       return (

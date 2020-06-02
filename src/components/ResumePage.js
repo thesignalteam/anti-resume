@@ -74,20 +74,20 @@ class ResumePage extends Component {
     let resumeClass = this.state.resumeClass
     let gridValues = []
     if (Array.isArray(resumes)) {
+      console.log("resumeClass " + resumeClass);
       resumes.forEach((i, index) => {
         let resumeJson = JSON.parse(JSON.stringify(i))
         let classT = resumeJson.class 
-
-        if (index === resumeId && classT === resumeClass) {
-          // console.log("index == resume Id is " + resumeId);
+        if (index == resumeId && classT == resumeClass) {
+          console.log("index == resume Id is " + resumeId);
           // console.log("resumes.length " + resumes.length)
-          // console.log(JSON.stringify(i));
+          console.log(JSON.stringify(i));
           gridValues.push(this.renderResumePage(i, index))
         } else {
           return (<p>index not found</p>)
         }
       })
-    } else if (resumes.length === 1) {
+    } else if (resumes.length == 1) {
       gridValues.push(this.renderResumePage(resumes, 0))
     } else {
       return (<p>page not found</p>)
@@ -182,7 +182,7 @@ class ResumePage extends Component {
           gridValues.push(this.renderListItem(i, index))
         }
       })
-    } else if (list.length === 1) {
+    } else if (list.length == 1) {
       gridValues.push(this.renderListItem((list), 0))
     }
 
