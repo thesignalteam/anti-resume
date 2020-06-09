@@ -16,3 +16,5 @@ cd antiResume_backend
 npm install
 npm run start:server
 ```
+
+For deployment information, contact [@rgemawat2000](https://github.com/rgemawat2000). 
