@@ -51,5 +51,5 @@ app.set("port", port);
 const server = http.createServer(app);
 server.on("error", onError);
 server.on("listening", onListening);
-server.listen(port, "3.23.60.188");
+server.listen(port, "0.0.0.0");
 

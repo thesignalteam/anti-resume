@@ -219,11 +219,11 @@ class ResumePage extends Component {
           <Header className="name" as="h3">{resume.name}</Header>
           <p className="year">{resume.class}</p>
           <p class="description">{resume.shortBio}</p>
-          <div className="icons">
+          {/* <div className="icons">
             <LinkIcon className="resume-icons" />
             <LinkedInIcon className="resume-icons" />
             <MailOutlineIcon className="resume-icons" href={email} />
-          </div>
+          </div> */}
         </Segment>
 
         {this.renderLsTaken(resume)}
