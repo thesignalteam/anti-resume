@@ -17,6 +17,9 @@
     "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^0.88.2"
   },
+  "optionalDependencies": {
+    "fsevents": "2.1.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -38,5 +41,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3003"
+  "proxy": "http://18.221.87.140:3003"
 }

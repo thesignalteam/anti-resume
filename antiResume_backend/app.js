@@ -39,7 +39,7 @@ app.get('/api/getResume/:email', (req, res) => {
             if (error) {
                 return res.status(400).end();
             } else {
-                console.log(result);
+                // console.log(result);
                 res.json(result);
                // return res.status(200).json(result);
             }
@@ -53,7 +53,7 @@ app.get('/api/getProfessorResume/:email', (req, res) => {
             if (error) {
                 return res.status(400).end();
             } else {
-                console.log(result);
+                // console.log(result);
                 res.json(result);
                // return res.status(200).json(result);
             }
@@ -67,7 +67,7 @@ app.get('/api/getAllProfessorResumes', (req, res) => {
             if (error) {
                 return res.status(400).end();
             } else {
-                console.log("all prof : " + result);
+                // console.log("all prof : " + result);
                 res.json(result);
                // return res.status(200).json(result);
             }
@@ -84,7 +84,7 @@ app.get('/api/getAllResumes/:type/:class', (req, res) => {
                 return res.status(400).end();
             } else {
                 // console.log("all : " + result);
-                console.log("class size " + result.length);
+                // console.log("class size " + result.length);
                 res.json(result);
                 //return res.status(200).json(result);
             }
@@ -100,7 +100,7 @@ app.get('/api/getAllResumes/:type', (req, res) => {
                 return res.status(400).end();
             } else {
                 // console.log("all : " + result);
-                console.log("size " + result.length);
+                // console.log("size " + result.length);
                 res.json(result);
                 //return res.status(200).json(result);
             }

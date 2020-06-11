@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Icon, Button, Image, Divider, Segment, Header, Grid} from 'semantic-ui-react'
+import { Card, Segment, Header} from 'semantic-ui-react'
 
 
 
@@ -14,13 +14,13 @@ function Scrolling_tile(props) {
     style = "center-cropped"
   }
 
-  return <Card id="Scrolling_tile" textAlign="center" href={ "/resume/" + props.class + "/" + props.index }>
+  return <Card id="Scrolling_tile" textAlign="center" href={ "/resume/" + props.classT + "/" + props.index }>
     <Card.Content>
 
       <Segment basic padded className="tile_content">
       <img className={style} src={propic}></img>
       <Header className="name" as="h3">{ props.name }</Header>
-      <Card.Meta className="year">{ props.class }</Card.Meta>
+      <Card.Meta className="year">{ props.classT }</Card.Meta>
       </Segment>
 
     </Card.Content>

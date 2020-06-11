@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Icon, Button, Image, Divider, Segment, Header, Grid} from 'semantic-ui-react'
+import { Card, Button, Image, Segment, Header, Grid} from 'semantic-ui-react'
 import StarIcon from '@material-ui/icons/Star';
 
 
