@@ -132,7 +132,7 @@ class Landing extends Component {
                       our GPA, our internship, or our job. The Signal is currently sharing anti-resumes of Penn alumni
                       and students in an effort to promote discussion and reflection on what failure really means.
                     </p>
-                  <Button id="submit-button" size="huge" href="/about">LEARN MORE ABOUT US<Icon name='arrow right' /></Button>
+                  <Button id="submit-button" size="huge" href="/about">LEARN MORE ABOUT US →</Button>
                 </Container>
 
             </Segment>
@@ -186,7 +186,7 @@ class Landing extends Component {
         totalSlides={this.state.resumes_2020.length}
         visibleSlides={1}
         infinite="true">
-        <div className="carousel-header" id="alumni">
+        <div className="carousel-header" id="2020">
           <h4 className="classYear">2020</h4>
         </div>
         <Slider className="slider_test">
