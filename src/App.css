@@ -27,8 +27,9 @@ nav.ui.container .ui.header {
 
 @media only screen and (max-width: 991px) {
   #top-section  {
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 4%;
+    padding-right: 4%;
+    /* CLARECHANGE */
     text-align: center;
   }
 
@@ -62,6 +63,15 @@ nav.ui.container .ui.header {
     margin: 0 auto;
   }
 
+  #resume .section {
+    width: 90% !important;
+  }
+
+  #about iframe {
+    height: 250px !important;
+  }
+
+
 }
 
 @media only screen and (max-width: 768px) {
@@ -69,8 +79,14 @@ nav.ui.container .ui.header {
     display: none;
   }
 
+  #carousel {
+    min-height: 50px !important;
+  }
+
+
+
   #carousel .carousel-container-mobile {
-    display: block !important;
+    display: none !important;
   }
 
   #carousel .buttonPanel {
@@ -80,11 +96,51 @@ nav.ui.container .ui.header {
   }
 
 
-  #video iframe {
-    width: 100%;
+  #about .segment {
+    width: 80% !important;
   }
 
+  #about h1 {
+    margin: auto;
+  }
+
+  #about .box {
+    margin: auto;
+    padding: auto !important;
+  }
+
+  #nav-menu {
+    display: none;
+  }
+
+  #nav-mobile {
+    display: block !important;
+    width: 100%;
+    margin-top: 50px;
+    /* text-align: center; */
+  }
+
+  #top-section {
+    margin-top: 0 !important;
+  }
+
+  #top-section .segment-content {
+    margin-top: 0 !important;
+  }
+
+  #Scrolling_tile {
+    margin: auto;
+    width: 90% !important;
+  }
+
+  #all_resumes .resume-segment {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+
 }
+
 
 @media only screen and (max-width: 590px) {
   #carousel .buttonPanel {
@@ -95,7 +151,6 @@ nav.ui.container .ui.header {
   }
 
 }
-
 
 .ui.inverted.vertical.center.aligned.segment {
   padding-top: 36px;
@@ -136,6 +191,10 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 
 #nav-menu .item {
   font-weight: 500;
+}
+
+#nav-mobile {
+  display: none;
 }
 
 #nav-left {
@@ -199,8 +258,9 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 }
 
 #main-grid .left-column{
-  position: relative;
-  left: 60px;
+  /* position: relative;
+  left: 60px; */
+  /* CLARECHANGE */
   min-height: vh;
 }
 
@@ -244,8 +304,9 @@ color: #333333;
 }
 
 #top-section .segment-content {
-  padding-left: 0;
-  padding-right: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  /* CLARECHANGE */
   margin-top: 200px;
 }
 
@@ -535,8 +596,8 @@ color: #A8AAB5;
 /* identical to box height, or 200% */
   text-align: center;
   color: #000000;
-  margin-left: 30%;
-  margin-right: 30%;
+  margin-left: auto; /*CLARECHANGE*/
+  margin-right: auto;
   padding-bottom: 30px;
   padding-top: 30px;
   min-width: 350px;
@@ -620,6 +681,7 @@ color: #333333;
 margin-left: 80px;
 margin-right: 80px;
 text-align: left;
+margin-bottom: 50px;
 
 }
 
@@ -731,7 +793,7 @@ color: #333333;
   font-size: 32px;
   line-height: 36px;
   margin-left: 20%;
-  margin-top: 10%;
+  margin-top: 15%;
 }
 
 #about h2 {
@@ -799,10 +861,23 @@ padding-right: 20px;
   padding-bottom: 0.5%;
   margin-bottom: 8%;
   margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#about .first-box {
+  /* position: relative;
+  left: 50px; */
+  /* margin-left: 30px; */
 }
 
 #about .top-segment {
   margin-top: 50px;
+}
+
+#about iframe {
+  width: 100%;
+  height: 450px;
 }
 
 #all_resumes {

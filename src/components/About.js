@@ -12,7 +12,7 @@ function About() {
       <h3>Failures at Penn Video</h3>
 
       <p align="center">
-        <iframe className="video-screen" width="700" height="400" style={{border:"none", overflow:"hidden", position: "center"}} scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjointhesignal%2Fvideos%2F2073803059583829%2F&show_text=0&width=560" ></iframe>
+        <iframe className="video-screen"  style={{border:"none", overflow:"hidden", position: "center"}} scrolling="no" frameborder="0" allowTransparency="true" allowFullScreen="true" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fjointhesignal%2Fvideos%2F2073803059583829%2F&show_text=0&width=560" ></iframe>
       </p>
 
       <p>In Spring 2019, we interviewed a dozen graduating seniors on their failures at Penn.</p>
@@ -30,8 +30,8 @@ function About() {
       </p>
 
       <Grid columns={3} relaxed>
-        <Grid.Column>
-          <div className="box" style={{marginLeft: '6%'}}>
+        <Grid.Column mobile={16} tablet={16} computer={5}>
+          <div className="box first-box">
             <h4>DEVELOPING</h4>
             <ul>
               <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:rgemawat@seas.upenn.edu">Rajvi Gemawat</a></li>
@@ -40,7 +40,7 @@ function About() {
             </ul>
           </div>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column mobile={16} tablet={16} computer={5}>
           <div className="box">
             <h4>MARKETING & DESIGN</h4>
             <ul>
@@ -49,8 +49,8 @@ function About() {
             </ul>
           </div>
         </Grid.Column>
-        <Grid.Column>
-          <div className="box" style={{marginLeft: '-6%'}}>
+        <Grid.Column mobile={16} tablet={16} computer={5}>
+          <div className="box">
             <h4>THE SIGNAL @ PENN</h4>
             <ul>
               <li><i class="fab fa-facebook-square"></i> &nbsp; <a href="mailto:rgemawat@seas.upenn.edu">@The Signal</a></li>

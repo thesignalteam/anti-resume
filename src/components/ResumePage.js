@@ -77,7 +77,7 @@ class ResumePage extends Component {
       console.log("resumeClass " + resumeClass);
       resumes.forEach((i, index) => {
         let resumeJson = JSON.parse(JSON.stringify(i))
-        let classT = resumeJson.class 
+        let classT = resumeJson.class
         if (index == resumeId && classT == resumeClass) {
           console.log("index == resume Id is " + resumeId);
           // console.log("resumes.length " + resumes.length)
@@ -219,11 +219,7 @@ class ResumePage extends Component {
           <Header className="name" as="h3">{resume.name}</Header>
           <p className="year">{resume.class}</p>
           <p class="description">{resume.shortBio}</p>
-          <div className="icons">
-            <LinkIcon className="resume-icons" />
-            <LinkedInIcon className="resume-icons" />
-            <MailOutlineIcon className="resume-icons" href={email} />
-          </div>
+
         </Segment>
 
         {this.renderLsTaken(resume)}

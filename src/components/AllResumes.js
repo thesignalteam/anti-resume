@@ -99,13 +99,13 @@ class AllResumes extends Component {
   render() {
     return (
       <div className="App" id="all_resumes">
-        <Segment vertical textAlign="center">
+        <Segment vertical textAlign="center" className="resume-segment">
 
           {/* 2020 */}
           <div className="year_header" id="2020">
             <h4 className="classYear">2020</h4>
           </div>
-          <Grid columns={5} only='computer' relaxed>
+          <Grid columns={5} relaxed>
             {this.renderResumes(this.state.resumes_2020, 0, "2020")}
           </Grid>
 

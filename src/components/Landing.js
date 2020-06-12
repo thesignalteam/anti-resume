@@ -110,7 +110,7 @@ class Landing extends Component {
       <div className="App">
 
         {/* main landing page */}
-        <Segment vertical textAlign="left" id="top-section">
+        <Segment vertical textAlign="center" id="top-section">
           <Grid divided='vertically' id="main-grid">
             <Grid.Row stackable columns={2}>
               <Grid.Column mobile={16} tablet={16} computer={8} className="left-column">
@@ -147,8 +147,9 @@ class Landing extends Component {
         <Segment vertical textAlign="center" id="carousel">
 
           <Segment basic padded id="scroll_section">
-            <Button className="top_button" href="#2020">SENIORS</Button>
-            <Button className="top_button" href="#alumni">ALUMNI</Button>
+            <Button className="top_button" href="/all/#2020">2020</Button>
+            <Button className="top_button" href="/all/#2019">2019</Button>
+            <Button className="top_button" href="/all/#alumni">ALUMNI</Button>
             {/* <Button className="top_button">PROFESSORS</Button> */}
           </Segment>
 
