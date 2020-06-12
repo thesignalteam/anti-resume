@@ -53,7 +53,8 @@ function About() {
           <div className="box">
             <h4>THE SIGNAL @ PENN</h4>
             <ul>
-              <li><i class="fab fa-facebook-square"></i> &nbsp; <a href="mailto:rgemawat@seas.upenn.edu">@The Signal</a></li>
+            <li><i class="fa fa-external-link"></i> &nbsp; <a href="https://thesign.al/">The Signal</a></li>
+              <li><i class="fab fa-facebook-square"></i> &nbsp; <a href="https://www.facebook.com/jointhesignal/">@The Signal</a></li>
               <li><i class="fab fa-instagram"></i> &nbsp; <a href="https://www.instagram.com/signal.penn/">@signal.penn</a></li>
               <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:thesignalwriters@gmail.com">The Signal</a></li>
             </ul>
