@@ -88,5 +88,10 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+#config for aws and mongo
 config.json
+
+# build files
+build/
 
