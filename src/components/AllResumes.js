@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Segment, Grid } from 'semantic-ui-react';
-import "../App.css";
+import "../style/App.css";
 import Scrolling_tile from "./Scrolling_tile";
 
 
