@@ -1,3 +1,5 @@
+/* @import './semantic.css'; */
+
 @font-face {
   font-family: 'Avenir Next';
   src: url('fonts/AvenirNext-Regular.ttf') format('truetype');
@@ -114,6 +116,7 @@ nav.ui.container .ui.header {
     width: 100px !important;
     right: 50px !important;
     margin-left: 100px !important;
+    color: #676767;
   }
 
 

@@ -7,7 +7,7 @@ import {
   Grid,
   Icon,
 } from "semantic-ui-react";
-import "../App.css";
+import "../style/App.css";
 import Top_tile from "./TopTile";
 import Scrolling_tile from "./Scrolling_tile";
 import { CarouselProvider, Slider, Slide, ButtonNext } from 'pure-react-carousel';
@@ -127,7 +127,7 @@ class Landing extends Component {
                       and students in an effort to promote discussion and reflection on what failure really means.
                     </p>
 
-                    <Button id="submit-button" size="huge" href="/about">LEARN MORE ABOUT US<Icon name='arrow right' /></Button>
+                    <Button id="submit-button" size="huge" href="/about">LEARN MORE ABOUT US &nbsp; <i class="fas fa-long-arrow-alt-right"></i></Button>
                   </Container>
 
                 </Segment>
@@ -169,7 +169,7 @@ class Landing extends Component {
               {this.renderScrollingTiles(this.state.resumes_2020, 0, "2020")}
             </Slider>
             <ButtonNext className="buttonPanel" icon>
-              <Icon name='arrow right' />
+              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
           </CarouselProvider>
 
@@ -186,7 +186,7 @@ class Landing extends Component {
               {this.renderScrollingTiles(this.state.resumes_2020, 0, "2020")}
             </Slider>
             <ButtonNext className="buttonPanel" icon>
-              <Icon name='arrow right' />
+              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
           </CarouselProvider>
 
@@ -206,7 +206,7 @@ class Landing extends Component {
             </Slider>
 
             <ButtonNext className="buttonPanel" icon>
-              <Icon name='arrow right' />
+              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
           </CarouselProvider>
 
@@ -224,7 +224,7 @@ class Landing extends Component {
             </Slider>
 
             <ButtonNext className="buttonPanel" icon>
-              <Icon name='arrow right' />
+              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
           </CarouselProvider>
 
@@ -244,7 +244,7 @@ class Landing extends Component {
             </Slider>
 
             <ButtonNext className="buttonPanel" icon>
-              <Icon name='arrow right' />
+             <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
           </CarouselProvider>
 
@@ -262,7 +262,7 @@ class Landing extends Component {
             </Slider>
 
             <ButtonNext className="buttonPanel" icon>
-              <Icon name='arrow right' />
+             <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
           </CarouselProvider>
 
