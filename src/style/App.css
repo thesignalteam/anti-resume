@@ -9,7 +9,7 @@
 
 @font-face {
   font-family: 'Avenir Next';
-  src: url('fonts/AvenirNext-Medium.ttf') format('truetype'); 
+  src: url('fonts/AvenirNext-Medium.ttf') format('truetype');
   font-weight: 500;
   font-style: normal;
 }
@@ -256,14 +256,14 @@ nav.ui.container .ui.inverted.compact.menu .active.item {
 .ui.content.container h2.header {
   font-size: 32px;
   color: rgb(51, 51, 51);
-  
+
 }
 
 .ui.content.container p {
   font-size: 20px;
   line-height: 1.6;
   font-weight: 300;
-  
+
 }
 
 .ui.inverted.vertical.segment footer.ui.segment {
@@ -741,7 +741,6 @@ font-weight: bold;
 font-size: 32px;
 line-height: 36px;
 /* identical to box height, or 112% */
-
 color: #2F80ED;
 text-align: right;
 padding-left: 20px;
@@ -754,6 +753,7 @@ font-weight: 600;
 font-size: 20px;
 line-height: 28px;
 /* identical to box height, or 140% */
+padding-left: 30px;
 
 color: #2F80ED;
 margin-bottom: 5px;
