@@ -27,6 +27,14 @@
   font-family: "Avenir Next", sans-serif !important;
 }
 
+html,body
+{
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
 @media only screen and (min-width: 768px) {
   .ui.container {
     width: 700px;
@@ -104,9 +112,13 @@ nav.ui.container .ui.header {
 
   #carousel {
     min-height: 50px !important;
+    padding-bottom: 0 !important;
+
   }
 
-
+  #about iframe {
+    height: 150px !important;
+  }
 
   #carousel .carousel-container-mobile {
     display: none !important;
@@ -160,6 +172,25 @@ nav.ui.container .ui.header {
   #all_resumes .resume-segment {
     padding-left: 50px;
     padding-right: 50px;
+  }
+
+  #footer-seg .footer-text {
+    position: absolute;
+    left: 5px;
+    font-size: 14px !important;
+  }
+
+  #footer-seg {
+    padding-top: 0 !important;
+  }
+
+  #top-section .segment-content {
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  #top-section {
+    padding-left: 0;
   }
 
 
@@ -602,8 +633,28 @@ color: #A8AAB5;
 
 #footer-seg {
   min-height: 10px;
-  padding: 0;
+  padding-top: 80px;
+  padding-bottom: 0;
   text-align: center;
+}
+
+#footer-seg .subscribe {
+  margin-left: 10px;
+}
+
+#footer-seg .subscribe-text {
+  border-radius: 5px;
+  height: 35px;
+  width: 30%;
+  border-width: thin;
+}
+
+#footer-seg .subscribe-div {
+  line-height: 200%;
+}
+
+#footer-seg .subscribe-header {
+  margin-top: 5px;
 }
 
 #footer-seg .footer-text {
@@ -625,6 +676,12 @@ color: #A8AAB5;
 
 #footer-seg .footer-p {
   display: inline-block;
+}
+
+#footer-seg .fa-envelope {
+  font-size: 32px;
+  display: inline-block;
+  float: left,
 }
 
 #resume {
