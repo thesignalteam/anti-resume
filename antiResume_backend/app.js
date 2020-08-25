@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const Profile = require('./models/profile.js');
 const Professor = require('./models/professors.js');
-const fileRoutes = require('./routes/file-upload.js'); 
+const fileRoutes = require('./routes/file-upload.js');
 const configuration = require("./config.json")["production"];
 
 const bodyParser = require("body-parser");
@@ -110,8 +110,8 @@ app.get('/api/getAllResumes/:type', (req, res) => {
 app.post('/api/addNewResume', (req, res) => {
     var newResume = new Profile({
         email: req.body.email,
-        name: req.body.name, 
-        type: req.body.type, 
+        name: req.body.name,
+        type: req.body.type,
         shortBio: req.body.shortBio,
         companiesRejectedFrom: req.body.companiesRejectedFrom,
         clubsRejectedFrom: req.body.clubsRejectedFrom,
@@ -155,4 +155,42 @@ app.get('*', function (req, res) {
     return res.status(404).end();
 });
 
-module.exports = app; 
+app.post("/api/subscribe-newsletter", function(req,res){
+
+  var email = req.body.email;
+
+  const data = {
+    members: [{
+      email_address: email,
+      status: "subscribed",
+    }]
+  }
+
+  const jsonData = JSON.stringify(data);
+
+  const url = "https://us17.api.mailchimp.com/3.0/lists/listID";
+
+  const options = {
+    method: "POST",
+    auth:"thesignal:apiKey"
+  }
+
+  const request = https.request(url, options, function(response){
+    //send success alert
+    if (response.statusCode === 200) {
+      res.render("success", {pageLink:pageLink});
+    } else {
+      res.render("failure", {pageLink:pageLink});
+    }
+
+    response.on("data", function(data) {
+      console.log(JSON.parse(data));
+    })
+  })
+
+  request.write(jsonData);
+  request.end();
+
+});
+
+module.exports = app;

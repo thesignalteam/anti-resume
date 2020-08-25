@@ -175,9 +175,16 @@ nav.ui.container .ui.header {
   }
 
   #footer-seg .footer-text {
-    position: absolute;
-    left: 5px;
+    /* position: absolute;
+    left: 5px; */
     font-size: 14px !important;
+  }
+
+
+
+  #footer-seg .footer-content {
+    position: absolute;
+    left: 7px;
   }
 
   #footer-seg {
