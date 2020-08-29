@@ -41,7 +41,7 @@ app.get('/api/getResume/:email', (req, res) => {
             } else {
                 // console.log(result);
                 res.json(result);
-               // return res.status(200).json(result);
+                // return res.status(200).json(result);
             }
         });
 });
@@ -55,13 +55,13 @@ app.get('/api/getProfessorResume/:email', (req, res) => {
             } else {
                 // console.log(result);
                 res.json(result);
-               // return res.status(200).json(result);
+                // return res.status(200).json(result);
             }
         });
 });
 
 app.get('/api/getAllProfessorResumes', (req, res) => {
-    var conditions = { }
+    var conditions = {}
     Professor.find(conditions,
         function (error, result) {
             if (error) {
@@ -69,7 +69,7 @@ app.get('/api/getAllProfessorResumes', (req, res) => {
             } else {
                 // console.log("all prof : " + result);
                 res.json(result);
-               // return res.status(200).json(result);
+                // return res.status(200).json(result);
             }
         });
 });
@@ -77,7 +77,7 @@ app.get('/api/getAllProfessorResumes', (req, res) => {
 
 // class
 app.get('/api/getAllResumes/:type/:class', (req, res) => {
-    var conditions = { type: req.params.type, class: req.params.class}
+    var conditions = { type: req.params.type, class: req.params.class }
     Profile.find(conditions,
         function (error, result) {
             if (error) {
@@ -93,7 +93,7 @@ app.get('/api/getAllResumes/:type/:class', (req, res) => {
 
 // class
 app.get('/api/getAllResumes/:type', (req, res) => {
-    var conditions = { type: req.params.type}
+    var conditions = { type: req.params.type }
     Profile.find(conditions,
         function (error, result) {
             if (error) {
@@ -115,18 +115,18 @@ app.post('/api/addNewResume', (req, res) => {
         shortBio: req.body.shortBio,
         companiesRejectedFrom: req.body.companiesRejectedFrom,
         clubsRejectedFrom: req.body.clubsRejectedFrom,
-        thingIsworeIdFinish:  req.body.thingIsworeIdFinish,
-        everydayLs : req.body.everydayLs,
-        memoriesImade : req.body.memoriesImade,
-        thingsLearnt : req.body.thingsLearnt,
+        thingIsworeIdFinish: req.body.thingIsworeIdFinish,
+        everydayLs: req.body.everydayLs,
+        memoriesImade: req.body.memoriesImade,
+        thingsLearnt: req.body.thingsLearnt,
         booksForFun: req.body.booksForFun,
-        thingsProudOf : req.body.thingsProudOf,
-        unconventionalSkills : req.body.unconventionalSkills,
-        quirks : req.body.quirks,
-        comfortZone : req.body.comfortZone,
-        endOfTheWorld : req.body.endOfTheWorld,
-        leapsOfFaith : req.body.leapsOfFaith,
-        other : req.body.other,
+        thingsProudOf: req.body.thingsProudOf,
+        unconventionalSkills: req.body.unconventionalSkills,
+        quirks: req.body.quirks,
+        comfortZone: req.body.comfortZone,
+        endOfTheWorld: req.body.endOfTheWorld,
+        leapsOfFaith: req.body.leapsOfFaith,
+        other: req.body.other,
     });
 
     newResume.save((err) => {
@@ -145,9 +145,66 @@ app.post('/api/addClass', (req, res) => {
     Profile.updateMany({}, { class: "2020" }, { multi: true }, function (err, raw) {
         if (err) return handleError(err);
         console.log('The raw response from Mongo was ', raw);
-      });
+    });
 });
 
+app.post("/api/subscribe-newsletter", function (req, res) {
+    var email = req.body.email;
+    console.log(email);
+    const data = {
+        members: [{
+            email_address: email,
+            status: "subscribed",
+        }]
+    }
+
+    const jsonData = JSON.stringify(data);
+    const options = {
+        url: 'https://us17.api.mailchimp.com/3.0/lists/' + configuration.mailchimp.listId,
+        method: 'POST',
+        headers: {
+            //auth configuration.mailchimp.apiKey
+            Authorization : 'thesignal:' + configuration.mailchimp.apiKey,
+
+        },
+        body: jsonData 
+    }
+
+    req(options, (err, res, body) => {
+        if (err) {
+            return res.status(500).end();
+        } else {
+            if(res.statusCode === 200) {
+                return res.status(201).json({ message: 'added email successfully' });
+            } else {
+                return res.status(500).end();
+            }
+        }
+    })
+
+
+    //   const url = "https://us17.api.mailchimp.com/3.0/lists/" + configuration.mailchimp.listId;
+    //   const options = {
+    //     method: "POST",
+    //     auth: "thesignal:" + configuration.mailchimp.apiKey
+    //   }
+
+    //   const request = https.request(url, options, function(response){
+    //     //send success alert
+    //     if (response.statusCode === 200) {
+    //       res.render("success", {pageLink:pageLink});
+    //     } else {
+    //       res.render("failure", {pageLink:pageLink});
+    //     }
+
+    //     response.on("data", function(data) {
+    //       console.log(JSON.parse(data));
+    //     })
+    //   })
+
+    //   request.write(jsonData);
+    //   request.end();
+});
 
 app.get('*', function (req, res) {
     //res.render('error');
@@ -155,42 +212,6 @@ app.get('*', function (req, res) {
     return res.status(404).end();
 });
 
-app.post("/api/subscribe-newsletter", function(req,res){
-
-  var email = req.body.email;
-
-  const data = {
-    members: [{
-      email_address: email,
-      status: "subscribed",
-    }]
-  }
-
-  const jsonData = JSON.stringify(data);
-
-  const url = "https://us17.api.mailchimp.com/3.0/lists/listID";
-
-  const options = {
-    method: "POST",
-    auth:"thesignal:apiKey"
-  }
-
-  const request = https.request(url, options, function(response){
-    //send success alert
-    if (response.statusCode === 200) {
-      res.render("success", {pageLink:pageLink});
-    } else {
-      res.render("failure", {pageLink:pageLink});
-    }
-
-    response.on("data", function(data) {
-      console.log(JSON.parse(data));
-    })
-  })
-
-  request.write(jsonData);
-  request.end();
-
-});
-
 module.exports = app;
+
+

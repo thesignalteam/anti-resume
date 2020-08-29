@@ -5,7 +5,6 @@ import {
   Header,
   Segment,
   Grid,
-  Icon,
 } from "semantic-ui-react";
 import "../style/App.css";
 import Top_tile from "./TopTile";

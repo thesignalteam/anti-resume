@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Segment, Header, Grid } from 'semantic-ui-react';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import LinkIcon from '@material-ui/icons/Link';
-import MailOutlineIcon from '@material-ui/icons/MailOutline';
+
 
 class ResumePage extends Component {
 
