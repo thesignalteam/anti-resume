@@ -12,6 +12,7 @@ class AllResumes extends Component {
       resumes_2020: [],
       resumes_2019: [],
       resumes_alums: [],
+      resumes_faculty : [],
       response: '',
       responseToPost: '',
     }
@@ -128,7 +129,15 @@ class AllResumes extends Component {
             <h4 className="classYear">ALUMNI</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length, "alumni" )}
+            {this.renderResumes(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length, "alumni")}
+          </Grid>
+
+          {/* professors */}
+          <div className="year_header" id="faculty">
+            <h4 className="classYear">Faculty</h4>
+          </div>
+          <Grid columns={5} relaxed>
+            {this.renderResumes(this.state.resume_faculty, this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length, "faculty")}
           </Grid>
 
         </Segment>

@@ -21,6 +21,7 @@ class Landing extends Component {
       resumes_2020: [],
       resumes_2019: [],
       resumes_alums: [],
+      resumes_faculty : [],
       response: '',
       responseToPost: '',
     }
@@ -241,7 +242,6 @@ class Landing extends Component {
             <Slider className="slider_test">
               {this.renderScrollingTiles(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length, "alumni")}
             </Slider>
-
             <ButtonNext className="buttonPanel" icon>
              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
@@ -262,6 +262,43 @@ class Landing extends Component {
 
             <ButtonNext className="buttonPanel" icon>
              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
+            </ButtonNext>
+          </CarouselProvider>
+
+           {/*Fourth Carousel*/}
+           <CarouselProvider className="carousel-container"
+            naturalSlideWidth={100}
+            naturalSlideHeight={80}
+            totalSlides={this.state.resumes_faculty.length}
+            visibleSlides={4}
+            infinite="true">
+            <div className="carousel-header" id="2019">
+              <h4 className="classYear">FACULTY</h4>
+              <p><a href="/all/#2019">See All</a></p>
+            </div>
+            <Slider className="slider_test">
+              {this.renderScrollingTiles(this.state.resumes_faculty, this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length, "faculty")}
+            </Slider>
+
+            <ButtonNext className="buttonPanel" icon>
+              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
+            </ButtonNext>
+          </CarouselProvider>
+
+          <CarouselProvider className="carousel-container-mobile"
+            naturalSlideWidth={100}
+            naturalSlideHeight={80}
+            totalSlides={this.state.resumes_faculty.length}
+            visibleSlides={1}
+            infinite="true">
+            <div className="carousel-header">
+              FACULTY
+            </div>
+            <Slider className="slider_test">
+            {this.renderScrollingTiles(this.state.resumes_faculty, this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length, "faculty")}
+            </Slider>
+            <ButtonNext className="buttonPanel" icon>
+              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
           </CarouselProvider>
 
