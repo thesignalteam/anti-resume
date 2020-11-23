@@ -9,7 +9,7 @@ import {
 import "../style/App.css";
 import Top_tile from "./TopTile";
 import Scrolling_tile from "./Scrolling_tile";
-import { CarouselProvider, Slider, Slide, ButtonNext } from 'pure-react-carousel';
+import { CarouselProvider, Slider, Slide, ButtonNext, ButtonBack } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 
 
@@ -127,7 +127,7 @@ class Landing extends Component {
                       and students in an effort to promote discussion and reflection on what failure really means.
                     </p>
 
-                    <Button id="submit-button" size="huge" href="/about">LEARN MORE ABOUT US &nbsp; <i class="fas fa-long-arrow-alt-right"></i></Button>
+                    <Button id="submit-button" size="huge" href="https://docs.google.com/forms/d/e/1FAIpQLSfV7UZGbPXdVsRgCA2dm3QmrAIWoKy_PYoRbqPBXdcZ50nmuQ/viewform">SUBMIT YOUR ANTI-RESUME &nbsp; <i class="fas fa-long-arrow-alt-right"></i></Button>
                   </Container>
 
                 </Segment>
@@ -151,6 +151,7 @@ class Landing extends Component {
             <Button className="top_button" href="/all/#2020">2020</Button>
             <Button className="top_button" href="/all/#2019">2019</Button>
             <Button className="top_button" href="/all/#alumni">ALUMNI</Button>
+            <Button className="top_button" href="/all/#faculty">FACULTY</Button>
             {/* <Button className="top_button">PROFESSORS</Button> */}
           </Segment>
 
@@ -168,6 +169,9 @@ class Landing extends Component {
             <Slider className="slider_test">
               {this.renderScrollingTiles(this.state.resumes_2020, 0, "2020")}
             </Slider>
+            <ButtonBack className="buttonPanelBack" icon>
+              <i class="fas fa-long-arrow-alt-left fa-2x"></i>
+            </ButtonBack>
             <ButtonNext className="buttonPanel" icon>
               <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
@@ -196,7 +200,7 @@ class Landing extends Component {
             naturalSlideHeight={80}
             totalSlides={this.state.resumes_2019.length}
             visibleSlides={4}
-            infinite="true">
+            infinite={true}>
             <div className="carousel-header" id="2019">
               <h4 className="classYear">2019</h4>
               <p><a href="/all/#2019">See All</a></p>
@@ -204,7 +208,9 @@ class Landing extends Component {
             <Slider className="slider_test">
               {this.renderScrollingTiles(this.state.resumes_2019, this.state.resumes_2020.length, "2019")}
             </Slider>
-
+            <ButtonBack className="buttonPanelBack" icon>
+              <i class="fas fa-long-arrow-alt-left fa-2x"></i>
+            </ButtonBack>
             <ButtonNext className="buttonPanel" icon>
               <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
@@ -222,7 +228,9 @@ class Landing extends Component {
             <Slider className="slider_test">
               {this.renderScrollingTiles(this.state.resumes_2019, this.state.resumes_2020.length,  "2019")}
             </Slider>
-
+            <ButtonBack className="buttonPanelBack" icon>
+              <i class="fas fa-long-arrow-alt-left fa-2x"></i>
+            </ButtonBack>
             <ButtonNext className="buttonPanel" icon>
               <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
@@ -242,6 +250,9 @@ class Landing extends Component {
             <Slider className="slider_test">
               {this.renderScrollingTiles(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length, "alumni")}
             </Slider>
+            <ButtonBack className="buttonPanelBack" icon>
+              <i class="fas fa-long-arrow-alt-left fa-2x"></i>
+            </ButtonBack>
             <ButtonNext className="buttonPanel" icon>
              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
@@ -279,7 +290,9 @@ class Landing extends Component {
             <Slider className="slider_test">
               {this.renderScrollingTiles(this.state.resumes_faculty, this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length, "faculty")}
             </Slider>
-
+            <ButtonBack className="buttonPanelBack" icon>
+              <i class="fas fa-long-arrow-alt-left fa-2x"></i>
+            </ButtonBack>
             <ButtonNext className="buttonPanel" icon>
               <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
