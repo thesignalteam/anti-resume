@@ -151,7 +151,7 @@ class Landing extends Component {
             <Button className="top_button" href="/all/#2020">2020</Button>
             <Button className="top_button" href="/all/#2019">2019</Button>
             <Button className="top_button" href="/all/#alumni">ALUMNI</Button>
-            <Button className="top_button" href="/all/#faculty">FACULTY</Button>
+            {/* <Button className="top_button" href="/all/#faculty">FACULTY</Button> */}
             {/* <Button className="top_button">PROFESSORS</Button> */}
           </Segment>
 
@@ -277,7 +277,7 @@ class Landing extends Component {
           </CarouselProvider>
 
            {/*Fourth Carousel*/}
-           <CarouselProvider className="carousel-container"
+           {/* <CarouselProvider className="carousel-container"
             naturalSlideWidth={100}
             naturalSlideHeight={80}
             totalSlides={this.state.resumes_faculty.length}
@@ -313,7 +313,7 @@ class Landing extends Component {
             <ButtonNext className="buttonPanel" icon>
               <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
-          </CarouselProvider>
+          </CarouselProvider> */}
 
         </Segment>
 

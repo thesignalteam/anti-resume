@@ -53,13 +53,13 @@ import { Image, Header, Container, Menu } from 'semantic-ui-react';
                 active={activeItem === 'Alumni'}
                 onClick={this.handleItemClick}
               />
-               <Menu.Item
+               {/* <Menu.Item
                 class="item"
                 name='Faculty'
                 href="/all/#faculty"
                 active={activeItem === 'Faculty'}
                 onClick={this.handleItemClick}
-              />
+              /> */}
 
             </Menu>
 
@@ -99,13 +99,13 @@ import { Image, Header, Container, Menu } from 'semantic-ui-react';
                 active={activeItem === 'Alumni'}
                 onClick={this.handleItemClick}
               />
-              <Menu.Item
+              {/* <Menu.Item
                 class="item"
                 name='Faculty'
                 href="/all/#faculty"
                 active={activeItem === 'Faculty'}
                 onClick={this.handleItemClick}
-              />
+              /> */}
 
             </Menu>
 
