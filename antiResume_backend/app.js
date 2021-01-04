@@ -74,7 +74,6 @@ app.get('/api/getAllProfessorResumes', (req, res) => {
         });
 });
 
-
 // class
 app.get('/api/getAllResumes/:type/:class', (req, res) => {
     var conditions = { type: req.params.type, class: req.params.class }
@@ -106,6 +105,7 @@ app.get('/api/getAllResumes/:type', (req, res) => {
             }
         });
 });
+
 
 app.post('/api/addNewResume', (req, res) => {
     var newResume = new Profile({
@@ -141,6 +141,49 @@ app.post('/api/addNewResume', (req, res) => {
     });
 });
 
+app.post('/api/addNewProfessor', (req, res) => {
+    var newResume = new Professor({
+        email: req.body.email,
+        name: req.body.name,
+        department: req.body.department,
+        position: req.body.position,
+        shortBio: req.body.shortBio,
+        linkedIn: req.body.linkedIn,
+        personalWebsite: req.body.personalWebsite,
+        coursesTaught: req.body.coursesTaught,
+        companiesRejectedFrom: req.body.companiesRejectedFrom,
+        thingIsworeIdFinish: req.body.thingIsworeIdFinish,
+        everydayLs: req.body.everydayLs,
+        memoriesImade: req.body.memoriesImade,
+        thingsLearnt: req.body.thingsLearnt,
+        booksForFun: req.body.booksForFun,
+        thingsProudOf: req.body.thingsProudOf,
+        unconventionalSkills: req.body.unconventionalSkills,
+        hobbies: req.body.hobbies,
+        unexpectedTwists: req.body.unexpectedTwists,
+        obstacles: req.body.obstacles,
+        quirks: req.body.quirks,
+        comfortZone: req.body.comfortZone,
+        endOfTheWorld: req.body.endOfTheWorld,
+        leapsOfFaith: req.body.leapsOfFaith,
+        studentsKnow: req.body.studentsKnow,
+        advise: req.body.advise,
+        other: req.body.other,
+    });
+
+    newResume.save((err) => {
+        if (err) {
+            res.type('html').status(500);
+            res.write('could not add professor resume ' + err);
+            console.log(err);
+            return res.status(500).end();
+        } else {
+            return res.status(201).json({ message: 'professor resume added successfully' });
+        }
+    });
+});
+
+
 app.post('/api/addClass', (req, res) => {
     Profile.updateMany({}, { class: "2020" }, { multi: true }, function (err, raw) {
         if (err) return handleError(err);
@@ -164,17 +207,17 @@ app.post("/api/subscribe-newsletter", function (req, res) {
         method: 'POST',
         headers: {
             //auth configuration.mailchimp.apiKey
-            Authorization : 'thesignal:' + configuration.mailchimp.apiKey,
+            Authorization: 'thesignal:' + configuration.mailchimp.apiKey,
 
         },
-        body: jsonData 
+        body: jsonData
     }
 
     req(options, (err, res, body) => {
         if (err) {
             return res.status(500).end();
         } else {
-            if(res.statusCode === 200) {
+            if (res.statusCode === 200) {
                 return res.status(201).json({ message: 'added email successfully' });
             } else {
                 return res.status(500).end();
