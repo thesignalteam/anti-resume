@@ -72,6 +72,21 @@ class Landing extends Component {
           console.log("error is " + error);
         }
       )
+
+      fetch('/api/getAllProfessorResumes')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          this.setState({
+            resumes_faculty: result
+          });
+        },
+
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
   }
 
   onChange = e => {
@@ -151,7 +166,7 @@ class Landing extends Component {
             <Button className="top_button" href="/all/#2020">2020</Button>
             <Button className="top_button" href="/all/#2019">2019</Button>
             <Button className="top_button" href="/all/#alumni">ALUMNI</Button>
-            {/* <Button className="top_button" href="/all/#faculty">FACULTY</Button> */}
+            <Button className="top_button" href="/all/#faculty">FACULTY</Button>
             {/* <Button className="top_button">PROFESSORS</Button> */}
           </Segment>
 
@@ -277,7 +292,7 @@ class Landing extends Component {
           </CarouselProvider>
 
            {/*Fourth Carousel*/}
-           {/* <CarouselProvider className="carousel-container"
+           <CarouselProvider className="carousel-container"
             naturalSlideWidth={100}
             naturalSlideHeight={80}
             totalSlides={this.state.resumes_faculty.length}
@@ -285,7 +300,7 @@ class Landing extends Component {
             infinite="true">
             <div className="carousel-header" id="2019">
               <h4 className="classYear">FACULTY</h4>
-              <p><a href="/all/#2019">See All</a></p>
+              <p><a href="/all/#faculty">See All</a></p>
             </div>
             <Slider className="slider_test">
               {this.renderScrollingTiles(this.state.resumes_faculty, this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length, "faculty")}
@@ -313,7 +328,7 @@ class Landing extends Component {
             <ButtonNext className="buttonPanel" icon>
               <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
-          </CarouselProvider> */}
+          </CarouselProvider>
 
         </Segment>
 

@@ -63,8 +63,23 @@ class AllResumes extends Component {
           console.log("error is " + error);
         }
       )
-  }
 
+      fetch('/api/getAllProfessorResumes')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          this.setState({
+            resumes_faculty: result
+          });
+        },
+
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
+
+  }
 
   createResumeCard = (resume, key) => {
     return (
@@ -132,13 +147,16 @@ class AllResumes extends Component {
             {this.renderResumes(this.state.resumes_alums, this.state.resumes_2020.length + this.state.resumes_2019.length, "alumni")}
           </Grid>
 
+          <br></br>
+          <br></br>
+
           {/* professors */}
-          {/* <div className="year_header" id="faculty">
-            <h4 className="classYear">Faculty</h4>
+          <div className="year_header" id="faculty">
+            <h4 className="classYear">FACULTY</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resume_faculty, this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length, "faculty")}
-          </Grid> */}
+            {this.renderResumes(this.state.resumes_faculty, this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length, "faculty")}
+          </Grid>
 
         </Segment>
 
