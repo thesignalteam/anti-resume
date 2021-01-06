@@ -22,6 +22,21 @@ function About() {
       <h3>Podcast</h3>
       <p style={{paddingBottom: 20}}>In 2019, The Art of Failure <a href="https://www.artoffailurepodcast.com/episodes-blog/failureresume">interviewed Olivia and Sophia about the project</a> in their podcast.</p>
     </Segment>
+
+    <Segment className="segment">
+      <h2>Anti-Resume Project at Other Schools</h2>
+      <p><a href="https://unite25.wixsite.com/unite/journey?fbclid=IwAR36DYvd_rkqcgStWKQ695qaxKOcQ3fbAaNxJm1NvlFwPqnGXd0wxiYteE8">Illinois Institute of Technology</a></p>
+      <h3>Coming Soon At...</h3>
+      <p>Harvard</p>
+      <p>University of Toronto</p>
+      <br></br>
+      <p>If you're interested in bringing the anti-resume project to your school, we'd love to help! Send us a message on our Facebook page below.</p>
+
+     
+    </Segment>
+
+
+    
     <Segment className="segment">
       <h2>Contact Us</h2>
       <h3>We'd love to hear from you!</h3>
@@ -88,9 +103,9 @@ function About() {
         </ul>
       </div> */}
 
-      <p style={{paddingBottom: 20}}>
+      {/* <p style={{paddingBottom: 20}}>
         We hope to re-open a form for anti-resumes soon.
-      </p>
+      </p> */}
 
     </Segment>
   </div>
