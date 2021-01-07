@@ -9,7 +9,7 @@ const professorProfile = mongoose.Schema({
     shortBio: {type: String, required: true},
     linkedIn: {type: String},
     personalWebsite: {type: String},
-    coursesTaught: {type: String}, 
+    coursesTaught: [{type: String }], 
     companiesRejectedFrom: [{type: String }],
     thingIsworeIdFinish:  [{type: String }],
     everydayLs : [{type: String }],
