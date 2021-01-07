@@ -112,7 +112,7 @@ class Landing extends Component {
     return (
       <Slide className="slider-card" index={index}>
         <Scrolling_tile name={resume.name}
-          classT={resume.class}
+          classT={resume.class ? resume.class : resume.department }
           index={key + 1}
           pic={resume.profilePicUrl}
         />
