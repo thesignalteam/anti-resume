@@ -85,7 +85,7 @@ class AllResumes extends Component {
     return (
       <Grid.Column mobile={16} tablet={8} computer={4}>
         <Scrolling_tile name={resume.name}
-          classT={resume.class}
+          classT={resume.class ? resume.class : resume.department }
           index={key + 1}
           pic={resume.profilePicUrl}
         />

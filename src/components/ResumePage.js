@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import { Segment, Header, Grid } from 'semantic-ui-react';
+import LinkIcon from '@material-ui/icons/Link';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+
+
 
 
 class ResumePage extends Component {
@@ -233,11 +238,11 @@ class ResumePage extends Component {
           <Header className="name" as="h3">{resume.name}</Header>
           <p className="year">{resume.class}</p>
           <p class="description">{resume.shortBio}</p>
-          {/* <div className="icons">
-            <LinkIcon className="resume-icons" />
-            <LinkedInIcon className="resume-icons" />
-            <MailOutlineIcon className="resume-icons" href={email} />
-          </div> */}
+          <div className="icons">
+            {resume.personalWebsite && <LinkIcon className="resume-icons" href={resume.personalWebsite}/>}
+            {resume.linkedIn && <LinkedInIcon className="resume-icons" href={resume.linkedin}/>}
+            {resume.publicEmail && <MailOutlineIcon className="resume-icons" href={resume.publicEmail} />}
+          </div>
         </Segment>
 
         {this.renderLsTaken(resume)}
