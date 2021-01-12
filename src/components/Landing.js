@@ -18,6 +18,7 @@ class Landing extends Component {
   constructor() {
     super();
     this.state = {
+      resumes_2021: [],
       resumes_2020: [],
       resumes_2019: [],
       resumes_alums: [],
@@ -28,6 +29,21 @@ class Landing extends Component {
   }
 
   componentDidMount = () => {
+    fetch('/api/getAllResumes/senior/2021')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          this.setState({
+            resumes_2021: result
+          });
+        },
+
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
+
     fetch('/api/getAllResumes/senior/2020')
       .then(res => res.json())
       .then(
@@ -163,6 +179,7 @@ class Landing extends Component {
         <Segment vertical textAlign="center" id="carousel">
 
           <Segment basic padded id="scroll_section">
+            <Button className="top_button" href="/all/#2021">2021</Button>
             <Button className="top_button" href="/all/#2020">2020</Button>
             <Button className="top_button" href="/all/#2019">2019</Button>
             <Button className="top_button" href="/all/#alumni">ALUMNI</Button>
@@ -170,7 +187,46 @@ class Landing extends Component {
             {/* <Button className="top_button">PROFESSORS</Button> */}
           </Segment>
 
-          {/*First carousel*/}
+          {/*2021 carousel*/}
+          <CarouselProvider className="carousel-container"
+            naturalSlideWidth={100}
+            naturalSlideHeight={80}
+            totalSlides={this.state.resumes_2021.length}
+            visibleSlides={4}
+            infinite="true">
+            <div className="carousel-header" id="2020">
+              <h4 className="classYear">2021</h4>
+              <p><a href="/all/#2020">See All</a></p>
+            </div>
+            <Slider className="slider_test">
+              {this.renderScrollingTiles(this.state.resumes_2021, 0, "2021")}
+            </Slider>
+            <ButtonBack className="buttonPanelBack" icon>
+              <i class="fas fa-long-arrow-alt-left fa-2x"></i>
+            </ButtonBack>
+            <ButtonNext className="buttonPanel" icon>
+              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
+            </ButtonNext>
+          </CarouselProvider>
+
+          <CarouselProvider className="carousel-container-mobile"
+            naturalSlideWidth={100}
+            naturalSlideHeight={80}
+            totalSlides={this.state.resumes_2021.length}
+            visibleSlides={1}
+            infinite="true">
+            <div className="carousel-header" id="alumni">
+              <h4 className="classYear">2021</h4>
+            </div>
+            <Slider className="slider_test">
+              {this.renderScrollingTiles(this.state.resumes_2021, 0, "2021")}
+            </Slider>
+            <ButtonNext className="buttonPanel" icon>
+              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
+            </ButtonNext>
+          </CarouselProvider>
+
+          {/*2020 carousel*/}
           <CarouselProvider className="carousel-container"
             naturalSlideWidth={100}
             naturalSlideHeight={80}
@@ -209,7 +265,7 @@ class Landing extends Component {
             </ButtonNext>
           </CarouselProvider>
 
-          {/*Second Carousel*/}
+          {/*2019 Carousel*/}
           <CarouselProvider className="carousel-container"
             naturalSlideWidth={100}
             naturalSlideHeight={80}
@@ -251,7 +307,7 @@ class Landing extends Component {
             </ButtonNext>
           </CarouselProvider>
 
-          {/*Third Carousel*/}
+          {/*Alumni Carousel*/}
           <CarouselProvider className="carousel-container"
             naturalSlideWidth={100}
             naturalSlideHeight={80}
@@ -291,7 +347,7 @@ class Landing extends Component {
             </ButtonNext>
           </CarouselProvider>
 
-           {/*Fourth Carousel*/}
+           {/*Faculty Carousel*/}
            <CarouselProvider className="carousel-container"
             naturalSlideWidth={100}
             naturalSlideHeight={80}

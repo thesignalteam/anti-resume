@@ -32,6 +32,13 @@ import { Image, Header, Container, Menu } from 'semantic-ui-react';
                 active={activeItem === 'About'}
                 onClick={this.handleItemClick}
               />
+               <Menu.Item
+                class="item"
+                name='2021'
+                href="/all/#2021"
+                active={activeItem === '2021'}
+                onClick={this.handleItemClick}
+              />
               <Menu.Item
                 class="item"
                 name='2020'
@@ -76,6 +83,13 @@ import { Image, Header, Container, Menu } from 'semantic-ui-react';
                 name='About'
                 href="/about"
                 active={activeItem === 'About'}
+                onClick={this.handleItemClick}
+              />
+              <Menu.Item
+                class="item"
+                name='2021'
+                href="/all/#2021"
+                active={activeItem === '2021'}
                 onClick={this.handleItemClick}
               />
               <Menu.Item
