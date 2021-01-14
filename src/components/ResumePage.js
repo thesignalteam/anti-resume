@@ -1,5 +1,10 @@
 import React, { Component } from "react";
 import { Segment, Header, Grid } from 'semantic-ui-react';
+import LinkIcon from '@material-ui/icons/Link';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import MailOutlineIcon from '@material-ui/icons/MailOutline';
+
+
 
 
 class ResumePage extends Component {
@@ -10,6 +15,7 @@ class ResumePage extends Component {
       resumes_2020: [],
       resumes_2019: [],
       resumes_alums: [],
+      resumes_faculty: [],
       response: '',
       responseToPost: '',
       resumeClass: props.match.params.class,
@@ -64,10 +70,25 @@ class ResumePage extends Component {
         }
       )
 
+      fetch('/api/getAllProfessorResumes')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          this.setState({
+            resumes_faculty: result
+          });
+        },
+
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
+
   }
 
   getCurrentResume = (resumes) => {
-    resumes = this.state.resumes_2020.concat(this.state.resumes_2019).concat(this.state.resumes_alums)
+    resumes = this.state.resumes_2020.concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty)
     let resumeId = this.state.resumeId
     let resumeClass = this.state.resumeClass
     let gridValues = []
@@ -75,7 +96,7 @@ class ResumePage extends Component {
       console.log("resumeClass " + resumeClass);
       resumes.forEach((i, index) => {
         let resumeJson = JSON.parse(JSON.stringify(i))
-        let classT = resumeJson.class
+        let classT = resumeJson.class ? resumeJson.class : resumeJson.department
         if (index == resumeId && classT == resumeClass) {
           console.log("index == resume Id is " + resumeId);
           // console.log("resumes.length " + resumes.length)
@@ -217,11 +238,11 @@ class ResumePage extends Component {
           <Header className="name" as="h3">{resume.name}</Header>
           <p className="year">{resume.class}</p>
           <p class="description">{resume.shortBio}</p>
-          {/* <div className="icons">
-            <LinkIcon className="resume-icons" />
-            <LinkedInIcon className="resume-icons" />
-            <MailOutlineIcon className="resume-icons" href={email} />
-          </div> */}
+          <div className="icons">
+            {resume.personalWebsite && <LinkIcon className="resume-icons" href={resume.personalWebsite}/>}
+            {resume.linkedIn && <LinkedInIcon className="resume-icons" href={resume.linkedin}/>}
+            {resume.publicEmail && <MailOutlineIcon className="resume-icons" href={resume.publicEmail} />}
+          </div>
         </Segment>
 
         {this.renderLsTaken(resume)}

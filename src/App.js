@@ -29,6 +29,8 @@ class App extends Component {
           <Route exact path="/resume" component={Resume} />
           <Route exact path="/all" component={AllResumes} />
           <Route exact path="/resume/:class/:resumeId" component={Resume} />
+          {/* <Route exact path="/resume/:resumeId" component={Resume} /> */}
+
           <Footer />
         </div>
       )
