@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require("mongoose");
 const Profile = require('../models/profile.js');
+const Professor = require('../models/professors.js');
 
 const upload = require('../services/file-upload.js');
 const singleUpload = upload.single('image');
