@@ -27,7 +27,7 @@ const professorProfile = mongoose.Schema({
     endOfTheWorld : [{type: String}],
     leapsOfFaith : [{type: String}],
     studentsKnow: [{type: String}],
-    advise: [{type: String}],
+    advice: [{type: String}],
     other : [{type: String}]
 });
 
