@@ -158,7 +158,7 @@ class Landing extends Component {
                       and students in an effort to promote discussion and reflection on what failure really means.
                     </p>
 
-                    <Button id="submit-button" size="huge" href="https://forms.gle/zeP72nW59jjVVKzDA">SUBMIT YOUR ANTI-RESUME &nbsp; <i class="fas fa-long-arrow-alt-right"></i></Button>
+                    <Button id="submit-button" size="huge" href="https://forms.gle/zeP72nW59jjVVKzDA" target="blank">SUBMIT YOUR ANTI-RESUME &nbsp; <i class="fas fa-long-arrow-alt-right"></i></Button>
                   </Container>
 
                 </Segment>
@@ -179,7 +179,7 @@ class Landing extends Component {
         <Segment vertical textAlign="center" id="carousel">
 
           <Segment basic padded id="scroll_section">
-            <Button className="top_button" href="/all/#2021">2021</Button>
+            {/*<Button className="top_button" href="/all/#2021">2021</Button>*/}
             <Button className="top_button" href="/all/#2020">2020</Button>
             <Button className="top_button" href="/all/#2019">2019</Button>
             <Button className="top_button" href="/all/#alumni">ALUMNI</Button>
@@ -188,7 +188,7 @@ class Landing extends Component {
           </Segment>
 
           {/*2021 carousel*/}
-          <CarouselProvider className="carousel-container"
+          {/*<CarouselProvider className="carousel-container"
             naturalSlideWidth={100}
             naturalSlideHeight={80}
             totalSlides={this.state.resumes_2021.length}
@@ -224,7 +224,7 @@ class Landing extends Component {
             <ButtonNext className="buttonPanel" icon>
               <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
-          </CarouselProvider>
+          </CarouselProvider> */}
 
           {/*2020 carousel*/}
           <CarouselProvider className="carousel-container"

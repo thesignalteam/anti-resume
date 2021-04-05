@@ -163,7 +163,8 @@ class ResumePage extends Component {
           {this.renderCategoryList(resume.companiesRejectedFrom, '"Thank you for applying but..." Jobs', false)}
           {this.renderCategoryList(resume.clubsRejectedFrom, "Clubs that Weren't a Good Fit", false)}
           {this.renderCategoryList(resume.thingIsworeIdFinish, "Things I Swore I'd Finish But Never Did", false)}
-          {this.renderCategoryList(resume.everydayLs, "Everyday L's", true)}
+          {this.renderCategoryList(resume.everydayLs, "Everyday L's", false)}
+          {this.renderCategoryList(resume.regretsIHave, "Regrets I Have", true)}
         </Grid>
       </Segment>
     )

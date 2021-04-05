@@ -14,13 +14,6 @@ class App extends Component {
 
   render() {
 
-      // const HomeContainer = () => (
-      //   <div classname="container">
-      //     <Route exact path="/" component={Landing} />
-      //     <Footer/>
-      //   </div>
-      // )
-
       const PageContainer = () => (
         <div className="container">
           <NavBar />
@@ -29,8 +22,6 @@ class App extends Component {
           <Route exact path="/resume" component={Resume} />
           <Route exact path="/all" component={AllResumes} />
           <Route exact path="/resume/:class/:resumeId" component={Resume} />
-          {/* <Route exact path="/resume/:resumeId" component={Resume} /> */}
-
           <Footer />
         </div>
       )

@@ -576,7 +576,7 @@ color: #333333;
 font-style: normal;
 font-weight: bold;
 font-size: 16px;
-line-height: 36px;
+line-height: 24px;
 /* or 225% */
 
 text-align: center;
@@ -585,7 +585,7 @@ color: #A8AAB5;
 }
 
 #Scrolling_tile .tile_content {
-  padding-top: 60px;
+  padding-top: 20px;
 }
 
 #carousel {

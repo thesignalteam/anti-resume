@@ -25,8 +25,9 @@ function About() {
 
     <Segment className="segment">
       <h2>Anti-Resume Project at Other Schools</h2>
-      <p><a href="https://unite25.wixsite.com/unite/journey?fbclid=IwAR36DYvd_rkqcgStWKQ695qaxKOcQ3fbAaNxJm1NvlFwPqnGXd0wxiYteE8">Illinois Institute of Technology</a></p>
-      <h3>Coming Soon At...</h3>
+      <p><a href="https://www.dukeantiresume.org/?fbclid=IwAR25NjZBysg6bdsPmfq_QYCiwDU0OnTVdWXbKh7N8ebP6JmI0NT2vge1dDI" target="blank">Duke University</a></p>
+      <p><a href="https://unite25.wixsite.com/unite/journey?fbclid=IwAR36DYvd_rkqcgStWKQ695qaxKOcQ3fbAaNxJm1NvlFwPqnGXd0wxiYteE8" target="blank">Illinois Institute of Technology</a></p>
+      <h3>Coming Soon To...</h3>
       <p>Harvard</p>
       <p>University of Toronto</p>
       <br></br>
@@ -51,7 +52,7 @@ function About() {
             <ul>
               <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:rgemawat@seas.upenn.edu">Rajvi Gemawat</a></li>
               <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:oodwyer@seas.upenn.edu">Olivia O'Dwyer</a></li>
-              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:caroldotli@gmail.com">Carol Li</a></li>
+              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:hkwang@wharton.upenn.edu">Hannah Wang</a></li>
             </ul>
           </div>
         </Grid.Column>
@@ -59,8 +60,10 @@ function About() {
           <div className="box">
             <h4>MARKETING & DESIGN</h4>
             <ul>
-              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:hmelinda@wharton.upenn.edu">Melinda Hu</a></li>
-              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:jytan@sas.upenn.edu">Jessica Tan</a></li>
+              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:LKaf@seas.upenn.edu">Lauren Kafkaloff</a></li>
+              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:soshen@wharton.upenn.edu">Sophie Shen</a></li>
+              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:annawang@seas.upenn.edu">Anna Wang</a></li>
+
             </ul>
           </div>
         </Grid.Column>
