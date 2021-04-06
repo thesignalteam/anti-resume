@@ -5,14 +5,11 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
 
 
-
-
 class ResumePage extends Component {
 
   constructor(props, { match }) {
     super();
     this.state = {
-      resumes_2021: [],
       resumes_2020: [],
       resumes_2019: [],
       resumes_alums: [],
@@ -26,21 +23,6 @@ class ResumePage extends Component {
   }
 
   componentDidMount = () => {
-    fetch('/api/getAllResumes/senior/2021')
-      .then(res => res.json())
-      .then(
-        (result) => {
-          // console.log(result);
-          this.setState({
-            resumes_2021: result
-          });
-        },
-
-        (error) => {
-          console.log("error is " + error);
-        }
-      )
-
     fetch('/api/getAllResumes/senior/2020')
       .then(res => res.json())
       .then(
@@ -86,7 +68,7 @@ class ResumePage extends Component {
         }
       )
 
-      fetch('/api/getAllProfessorResumes')
+    fetch('/api/getAllProfessorResumes')
       .then(res => res.json())
       .then(
         (result) => {
@@ -104,7 +86,7 @@ class ResumePage extends Component {
   }
 
   getCurrentResume = (resumes) => {
-    resumes = this.state.resumes_2021.concat(this.state.resumes_2020).concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty)
+    resumes = this.state.resumes_2020.concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty)
     let resumeId = this.state.resumeId
     let resumeClass = this.state.resumeClass
     let gridValues = []
@@ -131,6 +113,20 @@ class ResumePage extends Component {
     return gridValues
   }
 
+  // professor info 
+  renderInfo = (resume) => {
+    return (
+      <Grid.Row class="row">
+        <Header className="category" as="h4" color="blue" textAlign="left">
+          <p> Courses Taught currently or in the past </p>
+        </Header>
+        <Grid.Column textAlign="left">
+          <p className="description"> {resume.coursesTaught} </p>
+        </Grid.Column>
+      </Grid.Row>
+    )
+  }
+
   // bright side
   renderBrightSide = (resume) => {
     return (
@@ -145,9 +141,13 @@ class ResumePage extends Component {
           {this.renderCategoryList(resume.quirks, "Quirks That Make Me Who I Am", false)}
           {this.renderCategoryList(resume.comfortZone, "Things I've Done That Pushed Me Out of My Comfort Zone", false)}
           {this.renderCategoryList(resume.endOfTheWorld, "Failures That Seemed Like the End of the World Back Then But Don't Matter in Hindsight", false)}
+          {this.renderCategoryList(resume.unexpectedTwists, "Unexpected Twists in Life", false)}
+          {this.renderCategoryList(resume.hobbies, "New Hobbies I Have Picked Up or Want to Pick Up", false)}
           {this.renderCategoryList(resume.leapsOfFaith, "Leaps of Faith", false)}
           {this.renderCategoryList(resume.obstacles, "Obstacles I Have Overcome", false)}
           {this.renderCategoryList(resume.lifeEvents, "Life Events That Have Made Me Stronger", false)}
+          {this.renderCategoryList(resume.advice, "Advice You Would Give to Your Undergraduate Self", false)}
+          {this.renderCategoryList(resume.studentsKnow, "What I Want My Students to Know About Me", false)}
           {this.renderCategoryList(resume.other, "Other Things I Appreciated", true)}
         </Grid>
       </Segment>
@@ -163,8 +163,7 @@ class ResumePage extends Component {
           {this.renderCategoryList(resume.companiesRejectedFrom, '"Thank you for applying but..." Jobs', false)}
           {this.renderCategoryList(resume.clubsRejectedFrom, "Clubs that Weren't a Good Fit", false)}
           {this.renderCategoryList(resume.thingIsworeIdFinish, "Things I Swore I'd Finish But Never Did", false)}
-          {this.renderCategoryList(resume.everydayLs, "Everyday L's", false)}
-          {this.renderCategoryList(resume.regrets, "Regrets I Have", true)}
+          {this.renderCategoryList(resume.everydayLs, "Everyday L's", true)}
         </Grid>
       </Segment>
     )
@@ -210,7 +209,6 @@ class ResumePage extends Component {
   }
 
   renderList = (list) => {
-
     let gridValues = []
     if (Array.isArray(list)) {
       list.forEach((i, index) => {
@@ -227,7 +225,7 @@ class ResumePage extends Component {
 
   renderListItem = (item) => {
     return (
-      <li className="bullet">
+      <li key={item} className="bullet">
         <p className="content">{item}</p>
       </li>
     )
@@ -255,13 +253,16 @@ class ResumePage extends Component {
           <Header className="name" as="h3">{resume.name}</Header>
           <p className="year">{resume.class}</p>
           <p class="description">{resume.shortBio}</p>
+
           <div className="icons">
-            {resume.personalWebsite && <LinkIcon className="resume-icons" href={resume.personalWebsite}/>}
-            {resume.linkedIn && <LinkedInIcon className="resume-icons" href={resume.linkedin}/>}
+            {resume.personalWebsite && <LinkIcon className="resume-icons" href={resume.personalWebsite} />}
+            {resume.linkedIn && <LinkedInIcon className="resume-icons" href={resume.linkedin} />}
             {resume.publicEmail && <MailOutlineIcon className="resume-icons" href={resume.publicEmail} />}
           </div>
-        </Segment>
+          {this.renderInfo(resume)}
 
+        </Segment>
+        {/* {this.renderInfo(resume)} */}
         {this.renderLsTaken(resume)}
         {this.renderBrightSide(resume)}
       </div>
@@ -280,3 +281,4 @@ class ResumePage extends Component {
 
 
 export default ResumePage;
+
