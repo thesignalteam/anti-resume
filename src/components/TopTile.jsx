@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Image, Segment, Header, Grid} from 'semantic-ui-react'
+import { Card, Button, Image, Segment, Header, Grid } from 'semantic-ui-react'
 import StarIcon from '@material-ui/icons/Star';
 
 
@@ -21,24 +21,27 @@ function Top_tile() {
   //   <Button>Hi</Button>
   //   </Card>
 
-    return <Card id="top_tile" >
-      <Card.Content>
-        <Card.Meta className="featured" textAlign="left"><StarIcon/>
-          FEATURED</Card.Meta>
+  return <Card id="top_tile" >
+    <Card.Content>
+      <Card.Meta className="featured" textAlign="right">
+        <StarIcon />
+          FEATURED
+          </Card.Meta>
 
-        <Segment basic>
+      <Segment basic>
         <Image
           // floated='center'
           size='tiny'
-          src= 'https://anti-resume-photos.s3.us-east-2.amazonaws.com/2018-07-18%2006.02.42%202%20-%20Benjamin%20Oh.jpg'
+          src='https://anti-resume-photos.s3.us-east-2.amazonaws.com/2018-07-18%2006.02.42%202%20-%20Benjamin%20Oh.jpg'
           margin="60px"
           circular
         />
-        <Header className="name"as="h3">Benjamin Oh</Header>
-        <Card.Meta className="year">2019</Card.Meta>
-        </Segment>
+        <Header className="name" as="h3">Benjamin Oh</Header>
+        {/* <Card.Meta className="year">2019</Card.Meta> */}
+        <Card.Meta className="year"></Card.Meta>
+      </Segment>
 
-        <Segment basic>
+      <Segment basic>
 
         <Grid columns={2} relaxed>
           <Grid.Row class="row">
@@ -57,7 +60,7 @@ function Top_tile() {
             </Grid.Column>
             <Grid.Column width={12} textAlign="left">
               <Header className="category" as="h4" color="blue">Leaps of Faith</Header>
-              </Grid.Column>
+            </Grid.Column>
           </Grid.Row>
 
 
@@ -73,13 +76,13 @@ function Top_tile() {
         </Grid>
 
 
-        </Segment>
-        <Button className="read_more" basic color='blue' size='large' href="http://www.antiresume.org/resume/2019/54">
-          READ MORE
+      </Segment>
+      <Button className="read_more" basic color='blue' size='large' href="http://www.antiresume.org/resume/2019/54">
+        READ MORE
         </Button>
-      </Card.Content>
+    </Card.Content>
 
-    </Card>
+  </Card>
 
 
 }

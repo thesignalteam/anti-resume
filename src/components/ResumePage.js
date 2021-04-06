@@ -12,6 +12,7 @@ class ResumePage extends Component {
   constructor(props, { match }) {
     super();
     this.state = {
+      resumes_2021: [],
       resumes_2020: [],
       resumes_2019: [],
       resumes_alums: [],
@@ -25,6 +26,21 @@ class ResumePage extends Component {
   }
 
   componentDidMount = () => {
+    fetch('/api/getAllResumes/senior/2021')
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          this.setState({
+            resumes_2021: result
+          });
+        },
+
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
+
     fetch('/api/getAllResumes/senior/2020')
       .then(res => res.json())
       .then(
@@ -88,7 +104,7 @@ class ResumePage extends Component {
   }
 
   getCurrentResume = (resumes) => {
-    resumes = this.state.resumes_2020.concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty)
+    resumes = this.state.resumes_2021.concat(this.state.resumes_2020).concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty)
     let resumeId = this.state.resumeId
     let resumeClass = this.state.resumeClass
     let gridValues = []
@@ -147,7 +163,8 @@ class ResumePage extends Component {
           {this.renderCategoryList(resume.companiesRejectedFrom, '"Thank you for applying but..." Jobs', false)}
           {this.renderCategoryList(resume.clubsRejectedFrom, "Clubs that Weren't a Good Fit", false)}
           {this.renderCategoryList(resume.thingIsworeIdFinish, "Things I Swore I'd Finish But Never Did", false)}
-          {this.renderCategoryList(resume.everydayLs, "Everyday L's", true)}
+          {this.renderCategoryList(resume.everydayLs, "Everyday L's", false)}
+          {this.renderCategoryList(resume.regrets, "Regrets I Have", true)}
         </Grid>
       </Segment>
     )

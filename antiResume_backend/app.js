@@ -172,6 +172,7 @@ app.post('/api/addNewProfessor', (req, res) => {
         leapsOfFaith: req.body.leapsOfFaith,
         studentsKnow: req.body.studentsKnow,
         advice: req.body.advice,
+        regrets: req.body.regrets,
         other: req.body.other,
     });
 
