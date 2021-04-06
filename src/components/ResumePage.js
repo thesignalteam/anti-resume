@@ -252,14 +252,14 @@ class ResumePage extends Component {
           <img className={style} src={propic} />
           <Header className="name" as="h3">{resume.name}</Header>
           <p className="year">{resume.class}</p>
+          <p className="year">{resume.position} - {resume.department}</p>
           <p class="description">{resume.shortBio}</p>
-
+          {this.renderInfo(resume)}
           <div className="icons">
             {resume.personalWebsite && <LinkIcon className="resume-icons" href={resume.personalWebsite} />}
             {resume.linkedIn && <LinkedInIcon className="resume-icons" href={resume.linkedin} />}
             {resume.publicEmail && <MailOutlineIcon className="resume-icons" href={resume.publicEmail} />}
           </div>
-          {this.renderInfo(resume)}
 
         </Segment>
         {/* {this.renderInfo(resume)} */}
