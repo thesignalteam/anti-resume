@@ -21,13 +21,14 @@ const professorProfile = mongoose.Schema({
     unconventionalSkills : [{type: String}], 
     hobbies: [{type: String}],
     unexpectedTwists: [{type: String}], 
+    regrets: [{type: String}],
     obstacles :[{type: String}], 
     quirks : [{type: String}],
     comfortZone : [{type: String}],
     endOfTheWorld : [{type: String}],
     leapsOfFaith : [{type: String}],
     studentsKnow: [{type: String}],
-    advise: [{type: String}],
+    advice: [{type: String}],
     other : [{type: String}]
 });
 
