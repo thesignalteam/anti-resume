@@ -38,7 +38,7 @@ function Top_tile() {
         />
         <Header className="name" as="h3">Jamie-Lee Josslyn</Header>
         {/* <Card.Meta className="year">2019</Card.Meta> */}
-        <Card.Meta className="year"></Card.Meta>
+        <Card.Meta className="year">Associate Director & Instructor - Center for Programs in Contemporary Writing </Card.Meta>
       </Segment>
 
       <Segment basic>
