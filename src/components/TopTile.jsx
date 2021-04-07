@@ -32,11 +32,11 @@ function Top_tile() {
         <Image
           // floated='center'
           size='tiny'
-          src='https://anti-resume-photos.s3.us-east-2.amazonaws.com/2018-07-18%2006.02.42%202%20-%20Benjamin%20Oh.jpg'
+          src='https://anti-resume-photos.s3.us-east-2.amazonaws.com/Screen%20Shot%202021-03-23%20at%201.20.19%20PM.png'
           margin="60px"
           circular
         />
-        <Header className="name" as="h3">Benjamin Oh</Header>
+        <Header className="name" as="h3">Jamie-Lee Josslyn</Header>
         {/* <Card.Meta className="year">2019</Card.Meta> */}
         <Card.Meta className="year"></Card.Meta>
       </Segment>
@@ -46,20 +46,20 @@ function Top_tile() {
         <Grid columns={2} relaxed>
           <Grid.Row class="row">
             <Grid.Column width={2} >
-              <Header className="number" as="h4" color="blue">5</Header>
+              <Header className="number" as="h4" color="blue">7</Header>
             </Grid.Column>
             <Grid.Column width={12} textAlign="left">
-              <Header className="category" as="h4" color="blue">Clubs That Weren't a Good Fit</Header>
+              <Header className="category" as="h4" color="blue">Pieces of Advice You Would Give to Your Undergraduate Self</Header>
             </Grid.Column>
           </Grid.Row>
 
 
           <Grid.Row>
             <Grid.Column width={2}>
-              <Header className="number" as="h4" color="blue">4</Header>
+              <Header className="number" as="h4" color="blue">5</Header>
             </Grid.Column>
             <Grid.Column width={12} textAlign="left">
-              <Header className="category" as="h4" color="blue">Leaps of Faith</Header>
+              <Header className="category" as="h4" color="blue">Things I'm Proud of That You Won't See on a Resume</Header>
             </Grid.Column>
           </Grid.Row>
 
@@ -69,7 +69,7 @@ function Top_tile() {
 
             </Grid.Column>
             <Grid.Column width={12} textAlign="left" >
-              <Header className="description">Declaring a gap year and leaving the country</Header>
+              <Header className="description">How many push-ups I can do</Header>
             </Grid.Column>
           </Grid.Row>
 
@@ -77,7 +77,7 @@ function Top_tile() {
 
 
       </Segment>
-      <Button className="read_more" basic color='blue' size='large' href="http://www.antiresume.org/resume/2019/54">
+      <Button className="read_more" basic color='blue' size='large' href="http://www.antiresume.org/resume/Center%20for%20Programs%20in%20Contemporary%20Writing/62">
         READ MORE
         </Button>
     </Card.Content>

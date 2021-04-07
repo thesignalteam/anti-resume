@@ -113,19 +113,6 @@ class ResumePage extends Component {
     return gridValues
   }
 
-  // professor info 
-  renderInfo = (resume) => {
-    return (
-      <Grid.Row class="row">
-        <Header className="category" as="h4" color="blue" textAlign="left">
-          <p> Courses Taught currently or in the past </p>
-        </Header>
-        <Grid.Column textAlign="left">
-          <p className="description"> {resume.coursesTaught} </p>
-        </Grid.Column>
-      </Grid.Row>
-    )
-  }
 
   // bright side
   renderBrightSide = (resume) => {
@@ -133,7 +120,7 @@ class ResumePage extends Component {
       <Segment className="section">
         <div class="ui medium header category-head">On the Bright Side</div>
         <Grid columns={2} relaxed>
-          {this.renderCategoryList(resume.memoriesImade, "Memories I Made When I Wasn't Studying / Working:", false)}
+          {this.renderCategoryList(resume.memoriesImade, "Memories I Made When I Wasn't Studying / Working", false)}
           {this.renderCategoryList(resume.thingsLearnt, "Things I've Learned That Will Still Matter in 10 Years", false)}
           {this.renderCategoryList(resume.booksForFun, "Books I've Read For Fun", false)}
           {this.renderCategoryList(resume.thingsProudOf, "Things I'm Proud of That You Won't See on a Resume", false)}
@@ -146,7 +133,7 @@ class ResumePage extends Component {
           {this.renderCategoryList(resume.leapsOfFaith, "Leaps of Faith", false)}
           {this.renderCategoryList(resume.obstacles, "Obstacles I Have Overcome", false)}
           {this.renderCategoryList(resume.lifeEvents, "Life Events That Have Made Me Stronger", false)}
-          {this.renderCategoryList(resume.advice, "Advice You Would Give to Your Undergraduate Self", false)}
+          {this.renderCategoryList(resume.advice, "Pieces of Advice You Would Give to Your Undergraduate Self", false)}
           {this.renderCategoryList(resume.studentsKnow, "What I Want My Students to Know About Me", false)}
           {this.renderCategoryList(resume.other, "Other Things I Appreciated", true)}
         </Grid>
@@ -163,7 +150,7 @@ class ResumePage extends Component {
           {this.renderCategoryList(resume.companiesRejectedFrom, '"Thank you for applying but..." Jobs', false)}
           {this.renderCategoryList(resume.clubsRejectedFrom, "Clubs that Weren't a Good Fit", false)}
           {this.renderCategoryList(resume.thingIsworeIdFinish, "Things I Swore I'd Finish But Never Did", false)}
-          {this.renderCategoryList(resume.regrets, "Regrets I have", false)}
+          {this.renderCategoryList(resume.regrets, "Regrets I Have", false)}
           {this.renderCategoryList(resume.everydayLs, "Everyday L's", true)}
         </Grid>
       </Segment>
@@ -254,16 +241,15 @@ class ResumePage extends Component {
           <Header className="name" as="h3">{resume.name}</Header>
           <p className="year">{resume.class}</p>
           <p className="year">{resume.position} - {resume.department}</p>
+          <p class="description"><b style={{color: "#9F9F9F"}}>Courses Taught: </b>{resume.coursesTaught}</p>
           <p class="description">{resume.shortBio}</p>
-          {this.renderInfo(resume)}
           <div className="icons">
-            {resume.personalWebsite && <LinkIcon className="resume-icons" href={resume.personalWebsite} />}
-            {resume.linkedIn && <LinkedInIcon className="resume-icons" href={resume.linkedin} />}
-            {resume.publicEmail && <MailOutlineIcon className="resume-icons" href={resume.publicEmail} />}
+            {resume.personalWebsite && <LinkIcon className="resume-icons" onClick={event =>  window.open(resume.personalWebsite, '_blank')} />}
+            {resume.linkedIn && <LinkedInIcon className="resume-icons" href={resume.linkedin} onClick={event =>  window.open(resume.linkedin, '_blank')} />}
+            {resume.publicEmail && <MailOutlineIcon className="resume-icons" onClick={event =>  window.open("mailto:" + resume.publicEmail, '_blank')} />}
           </div>
 
         </Segment>
-        {/* {this.renderInfo(resume)} */}
         {this.renderLsTaken(resume)}
         {this.renderBrightSide(resume)}
       </div>
