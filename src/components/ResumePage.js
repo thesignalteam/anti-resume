@@ -91,14 +91,14 @@ class ResumePage extends Component {
     let resumeClass = this.state.resumeClass
     let gridValues = []
     if (Array.isArray(resumes)) {
-      console.log("resumeClass " + resumeClass);
+      // console.log("resumeClass " + resumeClass);
       resumes.forEach((i, index) => {
         let resumeJson = JSON.parse(JSON.stringify(i))
         let classT = resumeJson.class ? resumeJson.class : resumeJson.department
         if (index == resumeId && classT == resumeClass) {
-          console.log("index == resume Id is " + resumeId);
+          // console.log("index == resume Id is " + resumeId);
           // console.log("resumes.length " + resumes.length)
-          console.log(JSON.stringify(i));
+          // console.log(JSON.stringify(i));
           gridValues.push(this.renderResumePage(i, index))
         } else {
           return (<p>index not found</p>)
