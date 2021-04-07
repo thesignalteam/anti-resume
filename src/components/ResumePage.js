@@ -242,10 +242,20 @@ class ResumePage extends Component {
           <p className="year">{resume.class}</p>
           <p className="year">{resume.position} - {resume.department}</p>
           <p class="description"><b style={{color: "#9F9F9F"}}>Courses Taught: </b>{resume.coursesTaught}</p>
-          <p class="description">{resume.shortBio}</p>
+          {key != 61 ? <p class="description">{resume.shortBio}</p> : 
+          <p class="description">Award-winning writer Lise Funderburg teaches creative nonfiction at The 
+          University of Pennsylvania and leads writing workshops in venues ranging from the second floor of a 
+          Tokyo coffee shop to the yoga studio on her street to the all-too-familiar virtual classroom known as 
+          Zoom. Lise is the author of the bestselling memoir, <i>Pig Candy: Taking My Father South, Taking My Father 
+          Home</i>. She also authored the groundbreaking oral history, <i>Black, White, Other: Biracial Americans Talk 
+          About Race and Identity</i>, which was recently released in a 20th anniversary edition. Lise’s latest book 
+          is <i>Apple, Tree: Writers on Their Parents</i>, a collection of 25 original essays she commissioned and edited, 
+          published in 2019 by the University of Nebraska Press. Lise's essays have appeared in The New York Times, 
+          Chattahoochee Review, Cleaver, Broad Street, National Geographic, TIME, and Brevity, among other publications.</p>}
+
           <div className="icons">
             {resume.personalWebsite && <LinkIcon className="resume-icons" onClick={event =>  window.open(resume.personalWebsite, '_blank')} />}
-            {resume.linkedIn && <LinkedInIcon className="resume-icons" href={resume.linkedin} onClick={event =>  window.open(resume.linkedin, '_blank')} />}
+            {resume.linkedIn && <LinkedInIcon className="resume-icons"  onClick={event =>  window.open(resume.linkedIn, '_blank')} />}
             {resume.publicEmail && <MailOutlineIcon className="resume-icons" onClick={event =>  window.open("mailto:" + resume.publicEmail, '_blank')} />}
           </div>
 
