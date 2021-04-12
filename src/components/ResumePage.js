@@ -240,8 +240,8 @@ class ResumePage extends Component {
           <img className={style} src={propic} />
           <Header className="name" as="h3">{resume.name}</Header>
           <p className="year">{resume.class}</p>
-          <p className="year">{resume.position} - {resume.department}</p>
-          <p class="description"><b style={{color: "#9F9F9F"}}>Courses Taught: </b>{resume.coursesTaught}</p>
+          {resume.position && <p className="year">{resume.position} - {resume.department}</p>}
+          {resume.coursesTaught && <p class="description"><b style={{color: "#9F9F9F"}}>Courses Taught: </b>{resume.coursesTaught}</p>}
           {key != 61 ? <p class="description">{resume.shortBio}</p> : 
           <p class="description">Award-winning writer Lise Funderburg teaches creative nonfiction at The 
           University of Pennsylvania and leads writing workshops in venues ranging from the second floor of a 

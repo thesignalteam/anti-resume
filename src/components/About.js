@@ -45,8 +45,8 @@ function About() {
       If you have thoughts or questions about this project, please reach out!
       </p>
 
-      <Grid columns={3} relaxed>
-        <Grid.Column mobile={16} tablet={16} computer={5}>
+      <Grid columns={2} relaxed>
+        <Grid.Column mobile={16} tablet={16} computer={8}>
           <div className="box first-box">
             <h4>DEVELOPING</h4>
             <ul>
@@ -56,7 +56,7 @@ function About() {
             </ul>
           </div>
         </Grid.Column>
-        <Grid.Column mobile={16} tablet={16} computer={5}>
+        <Grid.Column mobile={16} tablet={16} computer={8}>
           <div className="box">
             <h4>MARKETING & DESIGN</h4>
             <ul>
@@ -67,7 +67,19 @@ function About() {
             </ul>
           </div>
         </Grid.Column>
-        <Grid.Column mobile={16} tablet={16} computer={5}>
+        <Grid.Column mobile={16} tablet={16} computer={8}>
+          <div className="box">
+            <h4>PREVIOUS MEMBERS</h4>
+            <ul>
+            <li>Sophia Ye '20</li>
+              <li>Melinda Hu '20</li>
+              <li>Carol Li '22</li>
+              <li>Kaitlyn Rentala '22</li>
+              <li>Jess Tan '22</li>
+            </ul>
+          </div>
+        </Grid.Column>
+        <Grid.Column mobile={16} tablet={16} computer={8}>
           <div className="box">
             <h4>THE SIGNAL @ PENN</h4>
             <ul>
