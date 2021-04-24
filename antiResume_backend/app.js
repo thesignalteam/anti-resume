@@ -106,7 +106,6 @@ app.get('/api/getAllResumes/:type', (req, res) => {
         });
 });
 
-
 app.post('/api/addNewResume', (req, res) => {
     var newResume = new Profile({
         email: req.body.email,
@@ -129,6 +128,8 @@ app.post('/api/addNewResume', (req, res) => {
         comfortZone: req.body.comfortZone,
         endOfTheWorld: req.body.endOfTheWorld,
         leapsOfFaith: req.body.leapsOfFaith,
+        regrets: req.body.regrets,
+        obstacles: req.body.obstacles,
         other: req.body.other,
     });
 
