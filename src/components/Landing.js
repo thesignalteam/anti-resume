@@ -188,7 +188,7 @@ class Landing extends Component {
           </Segment>
 
           {/*2021 carousel*/}
-          {/*<CarouselProvider className="carousel-container"
+          <CarouselProvider className="carousel-container"
             naturalSlideWidth={100}
             naturalSlideHeight={80}
             totalSlides={this.state.resumes_2021.length}
@@ -224,7 +224,7 @@ class Landing extends Component {
             <ButtonNext className="buttonPanel" icon>
               <i class="fas fa-long-arrow-alt-right fa-2x"></i>
             </ButtonNext>
-          </CarouselProvider> */}
+          </CarouselProvider>
 
           {/*2020 carousel*/}
           <CarouselProvider className="carousel-container"
