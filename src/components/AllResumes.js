@@ -135,7 +135,7 @@ class AllResumes extends Component {
         <Segment vertical textAlign="center" className="resume-segment">
 
           {/* 2021 */}
-          {/*<div className="year_header" id="2021">
+          <div className="year_header" id="2021">
             <h4 className="classYear">2021</h4>
           </div>
           <Grid columns={5} relaxed>
@@ -143,7 +143,7 @@ class AllResumes extends Component {
           </Grid>
 
           <br></br>
-          <br></br> */}
+          <br></br>
 
           {/* 2020 */}
           <div className="year_header" id="2020">
