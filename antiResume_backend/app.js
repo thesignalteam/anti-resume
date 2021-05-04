@@ -130,6 +130,9 @@ app.post('/api/addNewResume', (req, res) => {
         endOfTheWorld: req.body.endOfTheWorld,
         leapsOfFaith: req.body.leapsOfFaith,
         other: req.body.other,
+        regretsIHave: req.body.regretsIHave, 
+        obstacles: req.body.obstacles, 
+        lifeEvents: req.body.lifeEvents,
     });
 
     newResume.save((err) => {
