@@ -14,7 +14,7 @@ const studentProfile = mongoose.Schema({
     clubsRejectedFrom: [{type: String }],
     thingIsworeIdFinish:  [{type: String }],
     everydayLs : [{type: String }],
-    regretsIHave: [{type: String}],
+    regrets: [{type: String}],
     memoriesImade : [{type: String}],
     thingsLearnt : [{type: String}],
     booksForFun: [{type: String}],
