@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Segment, Grid } from 'semantic-ui-react';
 import "../style/App.css";
 import Scrolling_tile from "./Scrolling_tile";
-
+const ip = require("../utils.json")["ip"];
 
 class AllResumes extends Component {
 
@@ -21,7 +21,7 @@ class AllResumes extends Component {
 
   componentDidMount = () => {
 
-    fetch('/api/getAllResumes/senior/2021')
+    fetch(`${ip}/api/getAllResumes/senior/2021`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -36,7 +36,7 @@ class AllResumes extends Component {
         }
       )
 
-    fetch('/api/getAllResumes/senior/2020')
+    fetch(`${ip}/api/getAllResumes/senior/2020`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -51,7 +51,7 @@ class AllResumes extends Component {
         }
       )
 
-    fetch('/api/getAllResumes/senior/2019')
+    fetch(`${ip}/api/getAllResumes/senior/2019`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -66,7 +66,7 @@ class AllResumes extends Component {
         }
       )
 
-    fetch('/api/getAllResumes/alumni')
+    fetch(`${ip}/api/getAllResumes/alumni`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -81,7 +81,7 @@ class AllResumes extends Component {
         }
       )
 
-      fetch('/api/getAllProfessorResumes')
+      fetch(`${ip}/api/getAllProfessorResumes`)
       .then(res => res.json())
       .then(
         (result) => {

@@ -3,7 +3,7 @@ import { Segment, Header, Grid } from 'semantic-ui-react';
 import LinkIcon from '@material-ui/icons/Link';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-
+const ip = require("../utils.json")["ip"];
 
 class ResumePage extends Component {
 
@@ -24,7 +24,7 @@ class ResumePage extends Component {
   }
 
   componentDidMount = () => {
-    fetch('/api/getAllResumes/senior/2021')
+    fetch(`${ip}/api/getAllResumes/senior/2021`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -39,7 +39,7 @@ class ResumePage extends Component {
         }
       )
 
-    fetch('/api/getAllResumes/senior/2020')
+    fetch(`${ip}/api/getAllResumes/senior/2020`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -54,7 +54,7 @@ class ResumePage extends Component {
         }
       )
 
-    fetch('/api/getAllResumes/senior/2019')
+    fetch(`${ip}/api/getAllResumes/senior/2019`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -69,7 +69,7 @@ class ResumePage extends Component {
         }
       )
 
-    fetch('/api/getAllResumes/alumni')
+    fetch(`${ip}/api/getAllResumes/alumni`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -84,7 +84,7 @@ class ResumePage extends Component {
         }
       )
 
-    fetch('/api/getAllProfessorResumes')
+    fetch(`${ip}/api/getAllProfessorResumes`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -132,6 +132,7 @@ class ResumePage extends Component {
 
   // bright side
   renderBrightSide = (resume) => {
+    console.log(resume)
     return (
       <Segment className="section">
         <div class="ui medium header category-head">On the Bright Side</div>
@@ -257,22 +258,22 @@ class ResumePage extends Component {
           <Header className="name" as="h3">{resume.name}</Header>
           <p className="year">{resume.class}</p>
           {resume.position && <p className="year">{resume.position} - {resume.department}</p>}
-          {resume.coursesTaught && <p class="description"><b style={{color: "#9F9F9F"}}>Courses Taught: </b>{resume.coursesTaught}</p>}
-          {key != 61 ? <p class="description">{resume.shortBio}</p> : 
-          <p class="description">Award-winning writer Lise Funderburg teaches creative nonfiction at The 
-          University of Pennsylvania and leads writing workshops in venues ranging from the second floor of a 
-          Tokyo coffee shop to the yoga studio on her street to the all-too-familiar virtual classroom known as 
-          Zoom. Lise is the author of the bestselling memoir, <i>Pig Candy: Taking My Father South, Taking My Father 
-          Home</i>. She also authored the groundbreaking oral history, <i>Black, White, Other: Biracial Americans Talk 
-          About Race and Identity</i>, which was recently released in a 20th anniversary edition. Lise’s latest book 
-          is <i>Apple, Tree: Writers on Their Parents</i>, a collection of 25 original essays she commissioned and edited, 
-          published in 2019 by the University of Nebraska Press. Lise's essays have appeared in The New York Times, 
+          {resume.coursesTaught && <p class="description"><b style={{ color: "#9F9F9F" }}>Courses Taught: </b>{resume.coursesTaught}</p>}
+          {key != 61 ? <p class="description">{resume.shortBio}</p> :
+            <p class="description">Award-winning writer Lise Funderburg teaches creative nonfiction at The
+            University of Pennsylvania and leads writing workshops in venues ranging from the second floor of a
+            Tokyo coffee shop to the yoga studio on her street to the all-too-familiar virtual classroom known as
+          Zoom. Lise is the author of the bestselling memoir, <i>Pig Candy: Taking My Father South, Taking My Father
+          Home</i>. She also authored the groundbreaking oral history, <i>Black, White, Other: Biracial Americans Talk
+          About Race and Identity</i>, which was recently released in a 20th anniversary edition. Lise’s latest book
+          is <i>Apple, Tree: Writers on Their Parents</i>, a collection of 25 original essays she commissioned and edited,
+          published in 2019 by the University of Nebraska Press. Lise's essays have appeared in The New York Times,
           Chattahoochee Review, Cleaver, Broad Street, National Geographic, TIME, and Brevity, among other publications.</p>}
 
           <div className="icons">
-            {resume.personalWebsite && <LinkIcon className="resume-icons" onClick={event =>  window.open(resume.personalWebsite, '_blank')} />}
-            {resume.linkedIn && <LinkedInIcon className="resume-icons"  onClick={event =>  window.open(resume.linkedIn, '_blank')} />}
-            {resume.publicEmail && <MailOutlineIcon className="resume-icons" onClick={event =>  window.open("mailto:" + resume.publicEmail, '_blank')} />}
+            {resume.personalWebsite && <LinkIcon className="resume-icons" onClick={event => window.open(resume.personalWebsite, '_blank')} />}
+            {resume.linkedIn && <LinkedInIcon className="resume-icons" onClick={event => window.open(resume.linkedIn, '_blank')} />}
+            {resume.publicEmail && <MailOutlineIcon className="resume-icons" onClick={event => window.open("mailto:" + resume.publicEmail, '_blank')} />}
           </div>
 
         </Segment>

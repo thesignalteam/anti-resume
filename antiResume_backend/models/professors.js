@@ -17,6 +17,7 @@ const professorProfile = mongoose.Schema({
     memoriesImade : [{type: String}],
     thingsLearnt : [{type: String}],
     booksForFun: [{type: String}],
+    lifeEvents : [{type: String}], 
     thingsProudOf : [{type: String}],
     unconventionalSkills : [{type: String}], 
     hobbies: [{type: String}],
