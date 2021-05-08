@@ -112,6 +112,7 @@ app.post('/api/addNewResume', (req, res) => {
     var newResume = new Profile({
         email: req.body.email.toLowerCase(),
         name: req.body.name,
+        class: req.body.class,
         type: req.body.type,
         shortBio: req.body.shortBio,
         linkedIn: req.body.linkedIn, 
@@ -133,9 +134,10 @@ app.post('/api/addNewResume', (req, res) => {
         leapsOfFaith: req.body.leapsOfFaith,
         regrets: req.body.regrets,
         obstacles: req.body.obstacles,
-        lifeEvents: req.body.lifeEvents, 
         other: req.body.other,
-        class: req.body.class
+        regretsIHave: req.body.regretsIHave, 
+        obstacles: req.body.obstacles, 
+        lifeEvents: req.body.lifeEvents,
     });
 
     newResume.save((err) => {
