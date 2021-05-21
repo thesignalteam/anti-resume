@@ -179,7 +179,7 @@ class Landing extends Component {
         <Segment vertical textAlign="center" id="carousel">
 
           <Segment basic padded id="scroll_section">
-            {/*<Button className="top_button" href="/all/#2021">2021</Button>*/}
+            <Button className="top_button" href="/all/#2021">2021</Button>
             <Button className="top_button" href="/all/#2020">2020</Button>
             <Button className="top_button" href="/all/#2019">2019</Button>
             <Button className="top_button" href="/all/#alumni">ALUMNI</Button>
@@ -196,7 +196,7 @@ class Landing extends Component {
             infinite="true">
             <div className="carousel-header" id="2020">
               <h4 className="classYear">2021</h4>
-              <p><a href="/all/#2020">See All</a></p>
+              <p><a href="/all/#2021">See All</a></p>
             </div>
             <Slider className="slider_test">
               {this.renderScrollingTiles(this.state.resumes_2021, 0, "2021")}
