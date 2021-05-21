@@ -164,7 +164,7 @@ class ResumePage extends Component {
       <Segment className="section middle">
         <div class="ui medium header category-head">L's Taken</div>
         <Grid columns={2} relaxed>
-          {this.renderCategoryList(resume.companiesRejectedFrom, '"Thank you for applying but..." Jobs', false)}
+          {this.renderCategoryList(resume.companiesRejectedFrom, '"Thank you for applying but..." Jobs/Programs', false)}
           {this.renderCategoryList(resume.clubsRejectedFrom, "Clubs that Weren't a Good Fit", false)}
           {this.renderCategoryList(resume.thingIsworeIdFinish, "Things I Swore I'd Finish But Never Did", false)}
           {this.renderCategoryList(resume.regretsIHave, "Regrets I Have", false)}
