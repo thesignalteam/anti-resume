@@ -11,7 +11,7 @@ import Top_tile from "./TopTile";
 import Scrolling_tile from "./Scrolling_tile";
 import { CarouselProvider, Slider, Slide, ButtonNext, ButtonBack } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
-
+const ip = require("../utils.json")["ip"];
 
 class Landing extends Component {
 
@@ -29,7 +29,7 @@ class Landing extends Component {
   }
 
   componentDidMount = () => {
-    fetch('/api/getAllResumes/senior/2021')
+    fetch(`${ip}/api/getAllResumes/senior/2021`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -44,7 +44,7 @@ class Landing extends Component {
         }
       )
 
-    fetch('/api/getAllResumes/senior/2020')
+    fetch(`${ip}/api/getAllResumes/senior/2020`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -59,7 +59,7 @@ class Landing extends Component {
         }
       )
 
-    fetch('/api/getAllResumes/senior/2019')
+    fetch(`${ip}/api/getAllResumes/senior/2019`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -74,7 +74,7 @@ class Landing extends Component {
         }
       )
 
-    fetch('/api/getAllResumes/alumni')
+    fetch(`${ip}/api/getAllResumes/alumni`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -89,7 +89,7 @@ class Landing extends Component {
         }
       )
 
-      fetch('/api/getAllProfessorResumes')
+      fetch(`${ip}/api/getAllProfessorResumes`)
       .then(res => res.json())
       .then(
         (result) => {

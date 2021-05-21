@@ -76,6 +76,7 @@ app.get('/api/getAllProfessorResumes', (req, res) => {
 
 // class
 app.get('/api/getAllResumes/:type/:class', (req, res) => {
+    console.log('hey in get all resumes ')
     var conditions = { type: req.params.type, class: req.params.class }
     Profile.find(conditions,
         function (error, result) {
@@ -107,9 +108,11 @@ app.get('/api/getAllResumes/:type', (req, res) => {
 });
 
 app.post('/api/addNewResume', (req, res) => {
+    console.log("hey" + req.body.lifeEvents);
     var newResume = new Profile({
-        email: req.body.email,
+        email: req.body.email.toLowerCase(),
         name: req.body.name,
+        class: req.body.class,
         type: req.body.type,
         shortBio: req.body.shortBio,
         linkedIn: req.body.linkedIn, 
@@ -125,6 +128,7 @@ app.post('/api/addNewResume', (req, res) => {
         thingsProudOf: req.body.thingsProudOf,
         unconventionalSkills: req.body.unconventionalSkills,
         quirks: req.body.quirks,
+        profilePicUrl: req.body.profilePicUrl,
         comfortZone: req.body.comfortZone,
         endOfTheWorld: req.body.endOfTheWorld,
         leapsOfFaith: req.body.leapsOfFaith,
@@ -172,6 +176,7 @@ app.post('/api/addNewProfessor', (req, res) => {
         quirks: req.body.quirks,
         comfortZone: req.body.comfortZone,
         endOfTheWorld: req.body.endOfTheWorld,
+        lifeEvents: req.body.lifeEvents,
         leapsOfFaith: req.body.leapsOfFaith,
         studentsKnow: req.body.studentsKnow,
         advice: req.body.advice,

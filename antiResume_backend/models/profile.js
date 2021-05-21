@@ -4,7 +4,7 @@ const studentProfile = mongoose.Schema({
     email: {type: String, required: true, unique:true},
     name: {type: String, required: true},
     profilePicUrl: {type: String}, 
-    class: {type: String}, 
+    class: {type: String, required: true}, 
     type: {type: String, required: true}, 
     shortBio: {type: String, required: true},
     linkedIn: {type: String},
@@ -25,7 +25,7 @@ const studentProfile = mongoose.Schema({
     endOfTheWorld : [{type: String}],
     leapsOfFaith : [{type: String}],
     obstacles :[{type: String}], 
-    lifeEvents : {type: String}, 
+    lifeEvents : [{type: String}], 
     other : [{type: String}]
 });
 
