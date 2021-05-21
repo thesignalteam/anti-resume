@@ -135,7 +135,6 @@ app.post('/api/addNewResume', (req, res) => {
         obstacles: req.body.obstacles,
         other: req.body.other,
         regrets: req.body.regrets, 
-        obstacles: req.body.obstacles, 
         lifeEvents: req.body.lifeEvents,
     });
 
