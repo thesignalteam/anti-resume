@@ -1,3 +1,4 @@
 {
-    "ip": "http://localhost:3003" 
+    "ip": "",
+    "localip": "http://localhost:3003"
 }
