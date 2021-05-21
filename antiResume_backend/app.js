@@ -128,10 +128,9 @@ app.post('/api/addNewResume', (req, res) => {
         comfortZone: req.body.comfortZone,
         endOfTheWorld: req.body.endOfTheWorld,
         leapsOfFaith: req.body.leapsOfFaith,
-        regrets: req.body.regrets,
         obstacles: req.body.obstacles,
         other: req.body.other,
-        regretsIHave: req.body.regretsIHave, 
+        regrets: req.body.regrets, 
         obstacles: req.body.obstacles, 
         lifeEvents: req.body.lifeEvents,
     });
