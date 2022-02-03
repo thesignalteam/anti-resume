@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button, Image, Segment, Header, Grid } from 'semantic-ui-react'
 import StarIcon from '@material-ui/icons/Star';
-
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 // const extra = (
 //   <a>

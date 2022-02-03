@@ -1,6 +1,7 @@
 import React from "react";
 import { Segment } from 'semantic-ui-react';
 import Mailchimp from 'react-mailchimp-form'
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 
 function Footer() {

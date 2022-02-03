@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image, Header, Container, Menu } from 'semantic-ui-react';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default class NavBar extends Component {
   state = { activeItem: '' }

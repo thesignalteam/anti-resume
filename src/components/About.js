@@ -1,5 +1,6 @@
 import React from "react";
 import { Segment, Grid} from 'semantic-ui-react';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 
 function About() {

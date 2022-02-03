@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Segment, Header} from 'semantic-ui-react'
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 
 

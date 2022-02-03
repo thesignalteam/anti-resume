@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import { Segment, Grid } from 'semantic-ui-react';
 import "../style/App.css";
 import Scrolling_tile from "./Scrolling_tile";
