@@ -15,6 +15,7 @@ class ResumePage extends Component {
       resumes_2019: [],
       resumes_alums: [],
       resumes_faculty: [],
+      resumes_curf: [],
       response: '',
       responseToPost: '',
       resumeClass: props.match.params.class,
@@ -99,10 +100,25 @@ class ResumePage extends Component {
         }
       )
 
+      fetch(`${ip}/api/getAllCurfResumes`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          this.setState({
+            resumes_curf: result
+          });
+        },
+
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
+
   }
 
   getCurrentResume = (resumes) => {
-    resumes = this.state.resumes_2021.concat(this.state.resumes_2020.concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty))
+    resumes = this.state.resumes_2021.concat(this.state.resumes_2020.concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty).concat(this.state.resumes_curf))
     let resumeId = this.state.resumeId
     let resumeClass = this.state.resumeClass
     let gridValues = []
