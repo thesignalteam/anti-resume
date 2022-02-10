@@ -96,7 +96,7 @@ app.get('/api/getAllCurfResumes', (req, res) => {
             if (error) {
                 return res.status(400).end();
             } else {
-                console.log("all curf : " + result);
+                // console.log("all curf : " + result);
                 res.json(result);
                 // return res.status(200).json(result);
             }
