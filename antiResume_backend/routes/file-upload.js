@@ -15,7 +15,7 @@ router.post('/image-upload/:type', function (req, res) {
     profilePic = "";
     singleUpload(req, res, function (err) {
         if (err) {
-            console.log(err)
+            console.log("err " + err)
             return res.status(422).send({ errors: [{ title: 'File Upload Error', detail: err.message }] });
         }
 
@@ -25,7 +25,7 @@ router.post('/image-upload/:type', function (req, res) {
             console.log("req.email " + req.body.email);
             console.log("req.profile pic url " + profilePic);
             var update = { profilePicUrl: profilePic }
-            
+            console.log("here")
             if (type === 'Professor') {
                 Professor.findOneAndUpdate(conditions, update, { new: true },
                     function (error, result) {

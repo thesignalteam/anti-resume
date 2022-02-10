@@ -18,7 +18,7 @@ const curfProfile = mongoose.Schema({
     booksForFun: [{type: String}],
     thingsProudOf : [{type: String}],
     unconventionalSkills : [{type: String}],
-    thingsIwouldDoInstead: [{type: String}],
+    thingsIwouldDoInstead: [{type: String}], 
     unexpectedTwists: [{type: String}], 
     quirks : [{type: String}],
     comfortZone : [{type: String}],
