@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const Profile = require('./models/profile.js');
 const Professor = require('./models/professors.js');
+const Curf = require('./models/curf.js');
 const fileRoutes = require('./routes/file-upload.js');
 const configuration = require("./config.json")["production"];
 
@@ -60,6 +61,20 @@ app.get('/api/getProfessorResume/:email', (req, res) => {
         });
 });
 
+app.get('/api/getCurfResume/:email', (req, res) => {
+    var conditions = { email: req.params.email }
+    Curf.findOne(conditions,
+        function (error, result) {
+            if (error) {
+                return res.status(400).end();
+            } else {
+                // console.log(result);
+                res.json(result);
+                // return res.status(200).json(result);
+            }
+        });
+});
+
 app.get('/api/getAllProfessorResumes', (req, res) => {
     var conditions = {}
     Professor.find(conditions,
@@ -68,6 +83,20 @@ app.get('/api/getAllProfessorResumes', (req, res) => {
                 return res.status(400).end();
             } else {
                 // console.log("all prof : " + result);
+                res.json(result);
+                // return res.status(200).json(result);
+            }
+        });
+});
+
+app.get('/api/getAllCurfResumes', (req, res) => {
+    var conditions = {}
+    Curf.find(conditions,
+        function (error, result) {
+            if (error) {
+                return res.status(400).end();
+            } else {
+                // console.log("all curf : " + result);
                 res.json(result);
                 // return res.status(200).json(result);
             }
@@ -91,7 +120,7 @@ app.get('/api/getAllResumes/:type/:class', (req, res) => {
         });
 });
 
-// class
+
 app.get('/api/getAllResumes/:type', (req, res) => {
     var conditions = { type: req.params.type }
     Profile.find(conditions,
@@ -195,8 +224,47 @@ app.post('/api/addNewProfessor', (req, res) => {
     });
 });
 
+app.post('/api/addNewCurf', (req, res) => {
+    var newResume = new Curf({
+        email: req.body.email,
+        name: req.body.name,
+        class: req.body.class,
+        type: req.body.type, 
+        linkedIn: req.body.linkedIn, 
+        personalWebsite: req.body.personalWebsite,
+        publicEmail: req.body.publicEmail,
+        shortBio: req.body.shortBio,
+        companiesRejectedFrom: req.body.companiesRejectedFrom,
+        thingIsworeIdFinish: req.body.thingIsworeIdFinish,
+        everydayLs: req.body.everydayLs,
+        memoriesImade: req.body.memoriesImade,
+        thingsLearnt: req.body.thingsLearnt,
+        booksForFun: req.body.booksForFun,
+        thingsProudOf: req.body.thingsProudOf,
+        unconventionalSkills: req.body.unconventionalSkills,
+        thingsIwouldDoInstead: req.thingsIwouldDoInstead, 
+        unexpectedTwists: req.body.unexpectedTwists,
+        quirks: req.body.quirks,
+        comfortZone: req.body.comfortZone,
+        endOfTheWorld: req.body.endOfTheWorld,
+        leapsOfFaith: req.body.leapsOfFaith,
+        advice: req.body.advice,
+    });
 
-app.post('/api/addClass', (req, res) => {
+    newResume.save((err) => {
+        if (err) {
+            res.type('html').status(500);
+            res.write('could not add curf resume ' + err);
+            console.log(err);
+            return res.status(500).end();
+        } else {
+            return res.status(201).json({ message: 'curf resume added successfully' });
+        }
+    });
+});
+
+
+app.post('/api/addClass-2020', (req, res) => {
     Profile.updateMany({}, { class: "2020" }, { multi: true }, function (err, raw) {
         if (err) return handleError(err);
         console.log('The raw response from Mongo was ', raw);

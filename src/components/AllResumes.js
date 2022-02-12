@@ -1,8 +1,11 @@
 import React, { Component } from "react";
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import { Segment, Grid } from 'semantic-ui-react';
 import "../style/App.css";
 import Scrolling_tile from "./Scrolling_tile";
-const ip = require("../utils.json")["ip"];
+var ip = require("../utils.json")["ip"];
+// ip = require("../utils.json")["localip"]; // for local dev
+
 
 class AllResumes extends Component {
 
@@ -13,7 +16,8 @@ class AllResumes extends Component {
       resumes_2020: [],
       resumes_2019: [],
       resumes_alums: [],
-      resumes_faculty : [],
+      resumes_faculty: [],
+      resumes_curf: [],
       response: '',
       responseToPost: '',
     }
@@ -81,7 +85,7 @@ class AllResumes extends Component {
         }
       )
 
-      fetch(`${ip}/api/getAllProfessorResumes`)
+    fetch(`${ip}/api/getAllProfessorResumes`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -96,13 +100,28 @@ class AllResumes extends Component {
         }
       )
 
+    fetch(`${ip}/api/getAllCurfResumes`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          console.log(result);
+          this.setState({
+            resumes_curf: result
+          });
+        },
+
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
+
   }
 
   createResumeCard = (resume, key) => {
     return (
       <Grid.Column mobile={16} tablet={8} computer={4}>
         <Scrolling_tile name={resume.name}
-          classT={resume.class ? resume.class : resume.department }
+          classT={resume.class ? resume.class : resume.department}
           index={key + 1}
           pic={resume.profilePicUrl}
         />
@@ -184,6 +203,17 @@ class AllResumes extends Component {
           </div>
           <Grid columns={5} relaxed>
             {this.renderResumes(this.state.resumes_faculty, this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length + this.state.resumes_2021.length, "faculty")}
+          </Grid>
+
+          <br></br>
+          <br></br>
+          
+          {/* curf */}
+          <div className="year_header" id="curf">
+            <h4 className="classYear">CURF</h4>
+          </div>
+          <Grid columns={5} relaxed>
+            {this.renderResumes(this.state.resumes_curf, this.state.resumes_faculty.length + this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length + this.state.resumes_2021.length, "curf")}
           </Grid>
 
         </Segment>

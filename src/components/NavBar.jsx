@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Image, Header, Container, Menu } from 'semantic-ui-react';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 export default class NavBar extends Component {
   state = { activeItem: '' }
@@ -14,8 +15,8 @@ export default class NavBar extends Component {
       <Container as="nav">
         <Header as="h2" id="nav-left">
           <Image circular src='../../tower.png' />
-              The Signal
-            </Header>
+          The Signal
+        </Header>
 
         <Menu secondary size="huge" id="nav-menu">
           <Menu.Item
@@ -32,7 +33,13 @@ export default class NavBar extends Component {
             active={activeItem === 'About'}
             onClick={this.handleItemClick}
           />
-
+          <Menu.Item
+            class="item"
+            name='Curf'
+            href="/all/#curf"
+            active={activeItem === 'Curf'}
+            onClick={this.handleItemClick}
+          />
           <Menu.Item
             class="item"
             name='2021'
@@ -54,13 +61,13 @@ export default class NavBar extends Component {
             active={activeItem === '2019'}
             onClick={this.handleItemClick}
           />
-          <Menu.Item
+          {/* <Menu.Item
             class="item"
             name='Alumni'
             href="/all/#alumni"
             active={activeItem === 'Alumni'}
             onClick={this.handleItemClick}
-          />
+          /> */}
           <Menu.Item
             class="item"
             name='Faculty'
@@ -88,6 +95,14 @@ export default class NavBar extends Component {
           />
           <Menu.Item
             class="item"
+            name='Curf'
+            href="/all/#curf"
+            active={activeItem === 'Curf'}
+            onClick={this.handleItemClick}
+          />
+
+          <Menu.Item
+            class="item"
             name='2021'
             href="/all/#2021"
             active={activeItem === '2021'}
@@ -107,13 +122,13 @@ export default class NavBar extends Component {
             active={activeItem === '2019'}
             onClick={this.handleItemClick}
           />
-          <Menu.Item
+          {/* <Menu.Item
             class="item"
             name='Alumni'
             href="/all/#alumni"
             active={activeItem === 'Alumni'}
             onClick={this.handleItemClick}
-          />
+          /> */}
           <Menu.Item
             class="item"
             name='Faculty'
