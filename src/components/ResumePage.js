@@ -3,7 +3,8 @@ import { Segment, Header, Grid } from 'semantic-ui-react';
 import LinkIcon from '@material-ui/icons/Link';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
-const ip = require("../utils.json")["ip"];
+var ip = require("../utils.json")["ip"];
+// ip = require("../utils.json")["localip"]; // for local dev
 
 class ResumePage extends Component {
 
