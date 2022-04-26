@@ -11,6 +11,7 @@ class ResumePage extends Component {
   constructor(props, { match }) {
     super();
     this.state = {
+      resumes_2022: [],
       resumes_2021: [],
       resumes_2020: [],
       resumes_2019: [],
@@ -26,6 +27,21 @@ class ResumePage extends Component {
   }
 
   componentDidMount = () => {
+    fetch(`${ip}/api/getAllResumes/senior/2021`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          this.setState({
+            resumes_2022: result
+          });
+        },
+
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
+
     fetch(`${ip}/api/getAllResumes/senior/2021`)
       .then(res => res.json())
       .then(
@@ -119,7 +135,7 @@ class ResumePage extends Component {
   }
 
   getCurrentResume = (resumes) => {
-    resumes = this.state.resumes_2021.concat(this.state.resumes_2020.concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty).concat(this.state.resumes_curf))
+    resumes = this.state.resumes_2022.concat(this.state.resumes_2021).concat(this.state.resumes_2020.concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty).concat(this.state.resumes_curf))
     let resumeId = this.state.resumeId
     let resumeClass = this.state.resumeClass
     let gridValues = []
@@ -149,7 +165,7 @@ class ResumePage extends Component {
 
   // bright side
   renderBrightSide = (resume) => {
-    console.log(resume)
+   // console.log(resume)
     return (
       <Segment className="section">
         <div class="ui medium header category-head">On the Bright Side</div>
@@ -184,6 +200,7 @@ class ResumePage extends Component {
           {this.renderCategoryList(resume.companiesRejectedFrom, '"Thank you for applying but..." Jobs/Programs', false)}
           {this.renderCategoryList(resume.clubsRejectedFrom, "Clubs that Weren't a Good Fit", false)}
           {this.renderCategoryList(resume.thingIsworeIdFinish, "Things I Swore I'd Finish But Never Did", false)}
+          {this.renderCategoryList(resume.thingsIwouldDoInstead, "Things I Would Do Instead of Business Trips and Meetings", false)}
           {this.renderCategoryList(resume.regrets, "Regrets I Have", false)}
           {this.renderCategoryList(resume.everydayLs, "Everyday L's", true)}
         </Grid>

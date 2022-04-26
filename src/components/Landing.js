@@ -18,6 +18,7 @@ class Landing extends Component {
   constructor() {
     super();
     this.state = {
+      resumes_2022: [],
       resumes_2021: [],
       resumes_2020: [],
       resumes_2019: [],
@@ -29,6 +30,21 @@ class Landing extends Component {
   }
 
   componentDidMount = () => {
+    fetch(`${ip}/api/getAllResumes/senior/2022`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          this.setState({
+            resumes_2022: result
+          });
+        },
+
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
+
     fetch(`${ip}/api/getAllResumes/senior/2021`)
       .then(res => res.json())
       .then(
@@ -179,6 +195,8 @@ class Landing extends Component {
         <Segment vertical textAlign="center" id="carousel">
 
           <Segment basic padded id="scroll_section">
+            <Button className="top_button" href="/all/#2022">2022</Button>
+
             <Button className="top_button" href="/all/#2021">2021</Button>
             <Button className="top_button" href="/all/#2020">2020</Button>
             <Button className="top_button" href="/all/#2019">2019</Button>
@@ -186,6 +204,28 @@ class Landing extends Component {
             <Button className="top_button" href="/all/#faculty">FACULTY</Button>
             {/* <Button className="top_button">PROFESSORS</Button> */}
           </Segment>
+
+          {/*2022 carousel*/}
+          <CarouselProvider className="carousel-container"
+            naturalSlideWidth={100}
+            naturalSlideHeight={80}
+            totalSlides={this.state.resumes_2022.length}
+            visibleSlides={4}
+            infinite="true">
+            <div className="carousel-header" id="2022">
+              <h4 className="classYear">2022</h4>
+              <p><a href="/all/#2022">See All</a></p>
+            </div>
+            <Slider className="slider_test">
+              {this.renderScrollingTiles(this.state.resumes_2022, 0, "2022")}
+            </Slider>
+            <ButtonBack className="buttonPanelBack" icon>
+              <i class="fas fa-long-arrow-alt-left fa-2x"></i>
+            </ButtonBack>
+            <ButtonNext className="buttonPanel" icon>
+              <i class="fas fa-long-arrow-alt-right fa-2x"></i>
+            </ButtonNext>
+          </CarouselProvider>
 
           {/*2021 carousel*/}
           <CarouselProvider className="carousel-container"

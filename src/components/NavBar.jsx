@@ -42,6 +42,13 @@ export default class NavBar extends Component {
           />
           <Menu.Item
             class="item"
+            name='2022'
+            href="/all/#2022"
+            active={activeItem === '2022'}
+            onClick={this.handleItemClick}
+          />
+          <Menu.Item
+            class="item"
             name='2021'
             href="/all/#2021"
             active={activeItem === '2021'}

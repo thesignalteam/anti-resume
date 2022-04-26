@@ -12,6 +12,7 @@ class AllResumes extends Component {
   constructor() {
     super();
     this.state = {
+      resumes_2022: [],
       resumes_2021: [],
       resumes_2020: [],
       resumes_2019: [],
@@ -24,6 +25,21 @@ class AllResumes extends Component {
   }
 
   componentDidMount = () => {
+
+    fetch(`${ip}/api/getAllResumes/senior/2022`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          // console.log(result);
+          this.setState({
+            resumes_2022: result
+          });
+        },
+
+        (error) => {
+          console.log("error is " + error);
+        }
+      )
 
     fetch(`${ip}/api/getAllResumes/senior/2021`)
       .then(res => res.json())
@@ -104,7 +120,7 @@ class AllResumes extends Component {
       .then(res => res.json())
       .then(
         (result) => {
-          console.log(result);
+          // console.log(result);
           this.setState({
             resumes_curf: result
           });
@@ -153,12 +169,24 @@ class AllResumes extends Component {
       <div className="App" id="all_resumes">
         <Segment vertical textAlign="center" className="resume-segment">
 
+          {/* 2022 */}
+          <div className="year_header" id="2022">
+            <h4 className="classYear">2022</h4>
+          </div>
+          <Grid columns={5} relaxed>
+            {this.renderResumes(this.state.resumes_2022, 0, "2022")}
+          </Grid>
+
+          <br></br>
+          <br></br>
+
+
           {/* 2021 */}
           <div className="year_header" id="2021">
             <h4 className="classYear">2021</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resumes_2021, 0, "2021")}
+            {this.renderResumes(this.state.resumes_2021, this.state.resumes_2022.length, "2021")}
           </Grid>
 
           <br></br>
@@ -191,7 +219,7 @@ class AllResumes extends Component {
             <h4 className="classYear">ALUMNI</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resumes_alums, this.state.resumes_2019.length + this.state.resumes_2021.length + this.state.resumes_2020.length, "alumni")}
+            {this.renderResumes(this.state.resumes_alums, this.state.resumes_2019.length + this.state.resumes_2021.length + this.state.resumes_2020.length + this.state.resumes_2022.length, "alumni")}
           </Grid>
 
           <br></br>
@@ -202,7 +230,7 @@ class AllResumes extends Component {
             <h4 className="classYear">FACULTY</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resumes_faculty, this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length + this.state.resumes_2021.length, "faculty")}
+            {this.renderResumes(this.state.resumes_faculty, this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length + this.state.resumes_2021.length + this.state.resumes_2022.length, "faculty")}
           </Grid>
 
           <br></br>
@@ -213,7 +241,7 @@ class AllResumes extends Component {
             <h4 className="classYear">CURF</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resumes_curf, this.state.resumes_faculty.length + this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length + this.state.resumes_2021.length, "curf")}
+            {this.renderResumes(this.state.resumes_curf, this.state.resumes_faculty.length + this.state.resumes_alums.length + this.state.resumes_2020.length + this.state.resumes_2019.length + this.state.resumes_2021.length + this.state.resumes_2022.length, "curf")}
           </Grid>
 
         </Segment>
