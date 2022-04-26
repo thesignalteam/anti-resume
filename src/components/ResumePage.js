@@ -211,6 +211,9 @@ class ResumePage extends Component {
   renderCategoryList = (list, name, last) => {
     if (list) {
       if (list.length >= 1) {
+        if (list[0] == "[]") {
+          return
+        }
         return (
           <Grid.Row class="row">
             <Grid.Column width={2} >
@@ -251,7 +254,7 @@ class ResumePage extends Component {
     let gridValues = []
     if (Array.isArray(list)) {
       list.forEach((i, index) => {
-        if (i !== "") {
+        if (i !== "" && i !== "[]") {
           gridValues.push(this.renderListItem(i, index))
         }
       })
