@@ -28,13 +28,15 @@ function About() {
       <h2>Anti-Resume Project at Other Schools</h2>
       <p><a href="https://www.dukeantiresume.org/?fbclid=IwAR25NjZBysg6bdsPmfq_QYCiwDU0OnTVdWXbKh7N8ebP6JmI0NT2vge1dDI" target="blank">Duke University</a></p>
       <p><a href="https://unite25.wixsite.com/unite/journey?fbclid=IwAR36DYvd_rkqcgStWKQ695qaxKOcQ3fbAaNxJm1NvlFwPqnGXd0wxiYteE8" target="blank">Illinois Institute of Technology</a></p>
-      <h3>Coming Soon To...</h3>
-      <p>Harvard</p>
-      <p>University of Toronto</p>
+      <p><a href="https://sites.google.com/view/sccanti-resumeproject/home" target="blank">Spartanburg Community College</a></p>
+      <p><a href="https://drexel.edu/pennoni/urep/enrichment-programs/anti-resume-project/" target="blank">Drexel University</a></p>
+      {/* <h3>Coming Soon To...</h3> */}
       <br></br>
-      <p>If you're interested in bringing the anti-resume project to your school, we'd love to help! Send us a message on our Facebook page below.</p>
-
-     
+      <p>If you're interested in bringing the anti-resume project to your school, we'd love to help! Send us a message on our Facebook page below.
+        We have also created a guide to help with starting the project.
+      </p>
+      <p><a href="https://docs.google.com/document/d/1gT9iSnUN3TRMNMUOsoKvF_nDOy3q446iIFY5htaSbd4/edit" target="blank">The Anti-Resume Project: A Guide
+</a></p>
     </Segment>
 
 
@@ -52,8 +54,9 @@ function About() {
             <h4>DEVELOPING</h4>
             <ul>
               <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:rgemawat@seas.upenn.edu">Rajvi Gemawat</a></li>
-              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:oodwyer@seas.upenn.edu">Olivia O'Dwyer</a></li>
               <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:hkwang@wharton.upenn.edu">Hannah Wang</a></li>
+              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:mkida@wharton.upenn.edu">Marcel Kida</a></li>
+              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:cathych1@sas.upenn.edu">Cathy Chen</a></li>
             </ul>
           </div>
         </Grid.Column>
@@ -61,10 +64,9 @@ function About() {
           <div className="box">
             <h4>MARKETING & DESIGN</h4>
             <ul>
-              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:LKaf@seas.upenn.edu">Lauren Kafkaloff</a></li>
               <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:soshen@wharton.upenn.edu">Sophie Shen</a></li>
+              <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:jlohbro@sas.upenn.edu">Joey Lohmann</a></li>
               <li><i class="far fa-envelope"></i> &nbsp; <a href="mailto:annawang@seas.upenn.edu">Anna Wang</a></li>
-
             </ul>
           </div>
         </Grid.Column>
@@ -72,6 +74,8 @@ function About() {
           <div className="box">
             <h4>PREVIOUS MEMBERS</h4>
             <ul>
+            <li>Lauren Kafkaloff '23</li>
+            <li>Olivia O'Dwyer '21' </li>
             <li>Sophia Ye '20</li>
               <li>Melinda Hu '20</li>
               <li>Carol Li '22</li>
