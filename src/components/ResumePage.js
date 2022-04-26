@@ -27,7 +27,7 @@ class ResumePage extends Component {
   }
 
   componentDidMount = () => {
-    fetch(`${ip}/api/getAllResumes/senior/2021`)
+    fetch(`${ip}/api/getAllResumes/senior/2022`)
       .then(res => res.json())
       .then(
         (result) => {
