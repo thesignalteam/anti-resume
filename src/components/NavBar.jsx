@@ -33,13 +33,13 @@ export default class NavBar extends Component {
             active={activeItem === 'About'}
             onClick={this.handleItemClick}
           />
-          <Menu.Item
+          {/* <Menu.Item
             class="item"
             name='Curf'
             href="/all/#curf"
             active={activeItem === 'Curf'}
             onClick={this.handleItemClick}
-          />
+          /> */}
           <Menu.Item
             class="item"
             name='2022'
@@ -100,11 +100,19 @@ export default class NavBar extends Component {
             active={activeItem === 'About'}
             onClick={this.handleItemClick}
           />
-          <Menu.Item
+          {/* <Menu.Item
             class="item"
             name='Curf'
             href="/all/#curf"
             active={activeItem === 'Curf'}
+            onClick={this.handleItemClick}
+          /> */}
+
+          <Menu.Item
+            class="item"
+            name='2022'
+            href="/all/#2022"
+            active={activeItem === '2022'}
             onClick={this.handleItemClick}
           />
 

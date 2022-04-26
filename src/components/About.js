@@ -75,7 +75,7 @@ function About() {
             <h4>PREVIOUS MEMBERS</h4>
             <ul>
             <li>Lauren Kafkaloff '23</li>
-            <li>Olivia O'Dwyer '21' </li>
+            <li>Olivia O'Dwyer '21 </li>
             <li>Sophia Ye '20</li>
               <li>Melinda Hu '20</li>
               <li>Carol Li '22</li>
