@@ -296,7 +296,7 @@ class ResumePage extends Component {
           <p className="year">{resume.class}</p>
           {resume.position && <p className="year">{resume.position} - {resume.department}</p>}
           {resume.coursesTaught && <p class="description"><b style={{ color: "#9F9F9F" }}>Courses Taught: </b>{resume.coursesTaught}</p>}
-          {key != 61 ? <p class="description">{resume.shortBio}</p> :
+          {key != -1 ? <p class="description">{resume.shortBio}</p> :
             <p class="description">Award-winning writer Lise Funderburg teaches creative nonfiction at The
             University of Pennsylvania and leads writing workshops in venues ranging from the second floor of a
             Tokyo coffee shop to the yoga studio on her street to the all-too-familiar virtual classroom known as
