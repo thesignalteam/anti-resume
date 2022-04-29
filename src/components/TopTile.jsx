@@ -32,13 +32,13 @@ function Top_tile() {
         <Image
           // floated='center'
           size='tiny'
-          src='https://anti-resume-photos.s3.us-east-2.amazonaws.com/Screen%20Shot%202021-03-23%20at%201.20.19%20PM.png'
+          src='https://anti-resume-photos.s3.us-east-2.amazonaws.com/Joey%20Lohmann.jpg'
           margin="60px"
           circular
         />
-        <Header className="name" as="h3">Jamie-Lee Josselyn</Header>
+        <Header className="name" as="h3">Joey Lohmann</Header>
         {/* <Card.Meta className="year">2019</Card.Meta> */}
-        <Card.Meta className="year">Associate Director & Instructor - Center for Programs in Contemporary Writing </Card.Meta>
+        <Card.Meta className="year">2022 </Card.Meta>
       </Segment>
 
       <Segment basic>
@@ -46,17 +46,17 @@ function Top_tile() {
         <Grid columns={2} relaxed>
           <Grid.Row class="row">
             <Grid.Column width={2} >
-              <Header className="number" as="h4" color="blue">7</Header>
+              <Header className="number" as="h4" color="blue">10</Header>
             </Grid.Column>
             <Grid.Column width={12} textAlign="left">
-              <Header className="category" as="h4" color="blue">Pieces of Advice You Would Give to Your Undergraduate Self</Header>
+              <Header className="category" as="h4" color="blue">Regrets I Have</Header>
             </Grid.Column>
           </Grid.Row>
 
 
           <Grid.Row>
             <Grid.Column width={2}>
-              <Header className="number" as="h4" color="blue">5</Header>
+              <Header className="number" as="h4" color="blue">10</Header>
             </Grid.Column>
             <Grid.Column width={12} textAlign="left">
               <Header className="category" as="h4" color="blue">Things I'm Proud of That You Won't See on a Resume</Header>
@@ -69,7 +69,7 @@ function Top_tile() {
 
             </Grid.Column>
             <Grid.Column width={12} textAlign="left" >
-              <Header className="description">How many push-ups I can do</Header>
+              <Header className="description"></Header>
             </Grid.Column>
           </Grid.Row>
 
@@ -77,7 +77,7 @@ function Top_tile() {
 
 
       </Segment>
-      <Button className="read_more" basic color='blue' size='large' href="http://antiresume.org/resume/Center%20for%20Programs%20in%20Contemporary%20Writing/101">
+      <Button className="read_more" basic color='blue' size='large' href="http://antiresume.org/resume/2022/45">
         READ MORE
         </Button>
     </Card.Content>
