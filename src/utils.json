@@ -1,4 +1,4 @@
 {
-    "ip": "",
-    "localip": "http://localhost:3003"
+    "ip": "https://anti-resume.herokuapp.com",
+    "localip": "https://anti-resume.herokuapp.com"
 }

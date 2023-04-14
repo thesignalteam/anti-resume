@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "node": "^14.0.0",
     "popper.js": "^1.16.1",
+    "gh-pages": "^3.1.0",
     "pure-react-carousel": "^1.27.8",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -25,6 +26,8 @@
     "fsevents": "2.1.2"
   },
   "scripts": {
+    "predelpoy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
