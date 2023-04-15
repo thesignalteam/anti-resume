@@ -46,6 +46,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://dashboard.heroku.com/apps/anti-resume",
+  "proxy": "https://anti-resume.herokuapp.com",
   "secure": "false"
 }
