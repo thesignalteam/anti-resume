@@ -135,7 +135,7 @@ class ResumePage extends Component {
   }
 
   getCurrentResume = (resumes) => {
-    resumes = this.state.resumes_2022.concat(this.state.resumes_2021).concat(this.state.resumes_2020.concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty).concat(this.state.resumes_curf))
+    resumes = this.state.resumes_2022.concat(this.state.resumes_2021).concat(this.state.resumes_2020).concat(this.state.resumes_2019).concat(this.state.resumes_alums).concat(this.state.resumes_faculty).concat(this.state.resumes_curf)
     let resumeId = this.state.resumeId
     let resumeClass = this.state.resumeClass
     let gridValues = []
@@ -168,7 +168,7 @@ class ResumePage extends Component {
    // console.log(resume)
     return (
       <Segment className="section">
-        <div class="ui medium header category-head">On the Bright Side</div>
+        <div className="ui medium header category-head">On the Bright Side</div>
         <Grid columns={2} relaxed>
           {this.renderCategoryList(resume.memoriesImade, "Memories I Made When I Wasn't Studying / Working", false)}
           {this.renderCategoryList(resume.thingsLearnt, "Things I've Learned That Will Still Matter in 10 Years", false)}
@@ -195,7 +195,7 @@ class ResumePage extends Component {
   renderLsTaken = (resume) => {
     return (
       <Segment className="section middle">
-        <div class="ui medium header category-head">L's Taken</div>
+        <div className="ui medium header category-head">L's Taken</div>
         <Grid columns={2} relaxed>
           {this.renderCategoryList(resume.companiesRejectedFrom, '"Thank you for applying but..." Jobs/Programs', false)}
           {this.renderCategoryList(resume.clubsRejectedFrom, "Clubs that Weren't a Good Fit", false)}
@@ -215,7 +215,7 @@ class ResumePage extends Component {
           return
         }
         return (
-          <Grid.Row class="row">
+          <Grid.Row className="row">
             <Grid.Column width={2} >
               <Header className="number" color="blue">{list.length}</Header>
             </Grid.Column>
@@ -295,9 +295,9 @@ class ResumePage extends Component {
           <Header className="name" as="h3">{resume.name}</Header>
           <p className="year">{resume.class}</p>
           {resume.position && <p className="year">{resume.position} - {resume.department}</p>}
-          {resume.coursesTaught && <p class="description"><b style={{ color: "#9F9F9F" }}>Courses Taught: </b>{resume.coursesTaught}</p>}
-          {key != -1 ? <p class="description">{resume.shortBio}</p> :
-            <p class="description">Award-winning writer Lise Funderburg teaches creative nonfiction at The
+          {resume.coursesTaught && <p className="description"><b style={{ color: "#9F9F9F" }}>Courses Taught: </b>{resume.coursesTaught}</p>}
+          {key != -1 ? <p className="description">{resume.shortBio}</p> :
+            <p className="description">Award-winning writer Lise Funderburg teaches creative nonfiction at The
             University of Pennsylvania and leads writing workshops in venues ranging from the second floor of a
             Tokyo coffee shop to the yoga studio on her street to the all-too-familiar virtual classroom known as
           Zoom. Lise is the author of the bestselling memoir, <i>Pig Candy: Taking My Father South, Taking My Father

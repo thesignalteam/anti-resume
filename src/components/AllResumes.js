@@ -197,7 +197,7 @@ class AllResumes extends Component {
             <h4 className="classYear">2020</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resumes_2020, this.state.resumes_2021.length, "2020")}
+            {this.renderResumes(this.state.resumes_2020, this.state.resumes_2021.length + this.state.resumes_2022.length, "2020")}
           </Grid>
 
           <br></br>
@@ -208,7 +208,7 @@ class AllResumes extends Component {
             <h4 className="classYear">2019</h4>
           </div>
           <Grid columns={5} relaxed>
-            {this.renderResumes(this.state.resumes_2019, this.state.resumes_2021.length + this.state.resumes_2020.length, "2019")}
+            {this.renderResumes(this.state.resumes_2019, this.state.resumes_2021.length + this.state.resumes_2020.length + this.state.resumes_2022.length, "2019")}
           </Grid>
 
           <br></br>
