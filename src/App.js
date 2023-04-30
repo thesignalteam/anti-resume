@@ -7,7 +7,6 @@ import Resume from "./components/ResumePage";
 
 import About from "./components/About";
 import Footer from "./components/Footer";
-
 import AllResumes from "./components/AllResumes";
 
 class App extends Component {
