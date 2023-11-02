@@ -174,7 +174,7 @@ class Landing extends Component {
                       and students in an effort to promote discussion and reflection on what failure really means.
                     </p>
 
-                    <Button id="submit-button" size="huge" href="https://forms.gle/WhGhh9iWb656P8ck9" target="blank">SUBMIT YOUR ANTI-RESUME &nbsp; <i class="fas fa-long-arrow-alt-right"></i></Button>
+                    {/* <Button id="submit-button" size="huge" href="https://forms.gle/WhGhh9iWb656P8ck9" target="blank">SUBMIT YOUR ANTI-RESUME &nbsp; <i class="fas fa-long-arrow-alt-right"></i></Button> */}
                   </Container>
 
                 </Segment>
